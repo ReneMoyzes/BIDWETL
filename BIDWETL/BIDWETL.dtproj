@@ -26,12 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">VSBMOYLEN</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACIzh7MnVASq8TWGGj0omNyOZ+yc/DvlWmf2LXWexfwCQAAAAAOgAAAAAIAACAAAABI/UoU0gbzIdBDiBnk/j2lfeWTrVctC3mqZUv6hQ/L/pAAAACj3cE9u9SCSq0dAFu771/LwuEfyNfO3hlNAENCRLyNV3HrYFbmKOhjqHKfekWQheo38bPsIvhfVhDL0xMha7VXHSQDnV6AdH3NPISKgmQVng7JCU9+p7i5lC9NxpXgzZhLdN72/lytiVT5dItSdPULfwzRRaLl98VEWKR5zQzCgoIOpA1T9HecJtG0pb0lfB5AAAAAziLPGtW5IYpDVDohrgtjo7PgvZH2aq/7SEH3A0dPhjGTSN8DXWRYf72fHcem7SdeXP7lJFOZzWrF8GVX3+9jCA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACr02q2sh/RUCU6Jbdcz47LjfST73fOIe1qzCT4P9JHIAAAAAAOgAAAAAIAACAAAADu9FOfSIUhOgBBZp2hnPKg4oPBbPqiireems6iUwaSiJAAAADkt5LCrVP/sBMvD91UOgLDjMUYMzg6yBIefiZm53axajHenl+R8CJgpkTeoI3vhsSxyugwh2QWVTJpOWgFOuWlZTvfTksh79qhZ1BoZZfqebaYio9JDosRCQ172DA5opHOVof/1Zwzd0RJ98Mg6J9HyK3epAmrZH0TW3qtYhK0issnrcJQrvPkJkWv3X66u9RAAAAAl7zHl+m8jltqav6NVU1E/abir7cDH20q1nRaU3Tg5qjNEsJ3kNtlG60vXbQ3HLRRXUrOhuXBMzuknWUKzNelGw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ODS_DF_AWSalesOrderDetails.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SQLAW.conmgr" />
@@ -356,22 +356,36 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="ODS_DF_AWSalesOrderDetails.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{DDC4056D-4F76-4241-AB10-E3AA34A15B9D}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{7171C687-174F-4B46-84B2-0994C94B42F4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ODS_DF_AWSalesOrderDetails</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">102</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D19EBEFA-E845-47C0-814C-E08B3F000297}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1A54000B-2FCD-4489-A38D-8D6773D4BA7F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="BATCH_ID">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{1816AECE-B063-49CE-895A-37DA0562BAC7}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="SOURCE_SYTEM">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">{1EA86232-EF89-47BC-91DB-C28E7F59FA84}</SSIS:Property>
