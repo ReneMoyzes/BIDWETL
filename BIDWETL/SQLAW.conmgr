@@ -3,6 +3,8 @@
   DTS:ObjectName="SQLAW"
   DTS:DTSID="{13C0A877-1A65-49CD-A9FA-077F312649D4}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::SQLAW_Password]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
@@ -10,7 +12,7 @@
       DTS:ConnectionString="Data Source=dbsys.cs.vsb.cz\sqldb;User ID=AdventureWorksDataReader;Initial Catalog=AdventureWorksLT2017;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-BIDWETL-{13C0A877-1A65-49CD-A9FA-077F312649D4}dbsys.cs.vsb.cz\sqldb.AdventureWorksLT2017.AdventureWorksDataReader;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAABdGphn/LKYuUo5Dx11bq3o2P4hd11Qf++yPD3rU1RXSAAAAAAOgAAAAAIAACAAAADxff8ZEyngmo5jbXZAgVM+VevAVVcNQx+c/ABEcAp8ZYAAAABTQnluIqgx5UDRTdNffo//WNteh8P99F/sr2crNcb+agGs9N2x5kqJxe3azP/5wJWqGUUUfRDV/OOYfpoCL/lpgO8TcZahpXUOOhvTjcDDy1/x12RP6aAf2Jk3U2Aa+8hc5wbyBL4bKX1FLQK/t1r7y7P+oYgswep0G9ANyXkZRkAAAAA6tVyt3JTvZbWudYnbhHJ5hQjsxUKkNPN8+enc4NtAeb0vglxK5rqAVil5O6P/YeYSC7e9Up8UZkJ3B/LEOw3L</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACwOHJZfKIeVOy7MYehWxevv/S88RWEIydttJfapGMI/AAAAAAOgAAAAAIAACAAAABcaSIQAGYbF882d0jIMlsT2u69qPnRuoxR7HfKB5bJFIAAAABQVQY3Xyr/31MxeBgdzzPkojjwe0rvQk9Tis1qgA6UjV45GMXmr7agtZB/f/a8EeEx2h6juqsS/JzZpTo+zmioC5DEB1qmYJJGLtEPpMwFF1Eh02P98U8ZlB9fIxWpOHwAvLUZ1GArG9UJ/Ppo61wIhaMCFbSE3qnWSNh+vq1e/EAAAACXIr3jRS+rPLp4EqoIgYThwnAGgO/YHvqczgPL44q4Fpdz5eUYa8uMGvyGssMAc2dsL26PoJlEv804gA5Vc7OW</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

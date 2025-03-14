@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VSBMOYLEN"
   DTS:CreatorName="VSBMOYLEN\MOY001"
-  DTS:DTSID="{7171C687-174F-4B46-84B2-0994C94B42F4}"
+  DTS:DTSID="{211D36BE-12C1-4365-AA3B-FE42018D267E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_DF_AWSalesOrderDetails"
   DTS:PackageType="5"
   DTS:VersionBuild="116"
-  DTS:VersionGUID="{158FB84E-9F8F-455C-B93E-B79C658D0895}">
+  DTS:VersionGUID="{6457C499-C059-40D2-8F5D-8847C16F3C80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{1816AECE-B063-49CE-895A-37DA0562BAC7}"
+      DTS:DTSID="{BD996950-F27B-472D-8074-51A0992B530B}"
       DTS:ObjectName="BATCH_ID">
       <DTS:Property
         DTS:DataType="3"
@@ -28,7 +28,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{1EA86232-EF89-47BC-91DB-C28E7F59FA84}"
+      DTS:DTSID="{D423F684-DEB2-48A4-9BED-69BBB3F30FB9}"
       DTS:ObjectName="SOURCE_SYTEM">
       <DTS:Property
         DTS:DataType="8"
@@ -37,7 +37,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{70C73D6C-3DC6-4D35-96ED-379F200DF891}"
+      DTS:DTSID="{7DB625B1-62FE-4E1D-B804-4EFA16A56F99}"
       DTS:ObjectName="TRUNCATE_STAGE">
       <DTS:Property
         DTS:DataType="11"
@@ -47,7 +47,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{44169934-9461-453C-9950-F83B75073E91}"
+      DTS:DTSID="{8DE64741-C5B1-4FFB-86A6-7D7139C06DA7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DELTA_COLUMNS_MAPPING">
@@ -57,7 +57,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8D5AF69F-C032-42D4-99DB-4FBDBA41D682}"
+      DTS:DTSID="{3768195F-F77B-4E22-9611-E16A130EAD6A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;_Delta]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -68,7 +68,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B3C90EB5-0172-48FC-ACD8-05B5BB3EB6E9}"
+      DTS:DTSID="{6D268F06-36A0-4DE2-B686-D1752C62EB7B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_SCHEMA">
@@ -77,7 +77,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{24B9C8F3-4177-412F-9B47-7CF53E61CC34}"
+      DTS:DTSID="{12002AD3-3398-46D5-85CF-4BB586B4376F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_TABLE">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6BD6FE25-6FC9-49F6-A932-2DED1BBE1616}"
+      DTS:DTSID="{C6CAAAE6-30E5-4E3C-820A-15F0D91AC0B9}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::DEST_SCHEMA]+&quot;].[&quot;+ @[User::DEST_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -97,7 +97,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1DCEED8-87D0-4DBD-90CE-F3AE18CEA9FF}"
+      DTS:DTSID="{BACAFAE0-E4C0-45A3-A2BC-5A01D4F4B031}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ETL_STATUS">
@@ -107,18 +107,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{30882411-BA01-4CFB-BCD2-8B96B4D86542}"
+      DTS:DTSID="{3EFD9772-3642-459E-BA4D-D7DBC1982602}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::StartTime]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_DATE">
       <DTS:VariableValue
-        DTS:DataType="7">3/14/2025 10:45:47 AM</DTS:VariableValue>
+        DTS:DataType="7">3/14/2025 11:21:24 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1B0C25FF-0A29-4E8B-9F7C-7C5C2F90608B}"
+      DTS:DTSID="{AFFB6C93-452E-4DA4-8B71-856D20AB69FA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_ID">
@@ -127,7 +127,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1398F86-E39A-423E-A4A8-79CBFD145B2D}"
+      DTS:DTSID="{5401DA21-8B13-4285-9B72-DC8773DA35A0}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_SCHEMA">
@@ -136,7 +136,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AB336A2E-E415-4228-BD2E-89D4A959A9CF}"
+      DTS:DTSID="{648CFD21-9DC3-4155-AADD-E7410C2CC88B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_TABLE">
@@ -145,7 +145,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E9DD939-70FD-4DE7-A826-42084BE5F251}"
+      DTS:DTSID="{02AC5A9F-C5CB-45AB-BA89-089B9BF54C99}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -156,7 +156,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{525DD1A4-ADC5-496D-BB99-02237339E53F}"
+      DTS:DTSID="{1C2A4D3F-072B-415E-BF43-B718F947D9C4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PRIMARY_KEY">
@@ -165,7 +165,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EC8E0F17-4848-4307-B293-A0653C9BB8A0}"
+      DTS:DTSID="{9CA60D29-6F6B-4F35-83C7-34805686AEB8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_COLUMNS">
@@ -174,16 +174,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6DCC61A7-A99D-42DF-9739-0C5E319BC45D}"
+      DTS:DTSID="{A2161502-CD16-4449-AF8B-5386143F1107}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_FILTER">
       <DTS:VariableValue
-        DTS:DataType="8">WHERE OrderQty&gt;6</DTS:VariableValue>
+        DTS:DataType="8">WHERE OrderQty&gt;4</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{811D3DD9-6F81-47A9-862A-B33D0D66B9C0}"
+      DTS:DTSID="{FB8B662B-CB68-44E9-ACAD-1F5F78200449}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_SCHEMA">
@@ -192,7 +192,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{05115DD4-E38F-4018-BF1E-0FB9620286DE}"
+      DTS:DTSID="{44EF79C9-9E92-4ED2-91F3-1AB3D3A3E456}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_TABLE">
@@ -201,7 +201,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{55C4DFEB-C802-44DD-B2E2-77EFE71FCBD7}"
+      DTS:DTSID="{B2D19FD9-1AE4-41AC-93EB-E66CF9F6F71F}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::SOURCE_SCHEMA]+&quot;].[&quot;+ @[User::SOURCE_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -212,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D0F9EBE-91B9-4022-B0BB-4843B607135D}"
+      DTS:DTSID="{CAC4D17F-7ECC-40B7-9A43-A901B956E1D9}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DECLARE  @ActionLoadID int=?;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN MATCHED AND target.[Hash] &lt;&gt; source.[Hash] THEN &#xA;    UPDATE SET &#xA;    &quot; + @[User::DELTA_COLUMNS_MAPPING] +&quot;,LOAD_ID=source.LOAD_ID, LOAD_DATE=source.LOAD_DATE, HASH=source.HASH&#xA;WHEN NOT MATCHED BY TARGET THEN &quot; +&#xA;&quot;    INSERT (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;     VALUES (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;OUTPUT &#xA;    $action AS Operation, &#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    source.* &#xA;    INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&#xA;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN NOT MATCHED BY SOURCE THEN &#xA;    DELETE &#xA;OUTPUT &#xA;    $action AS Operation,&#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    deleted.*&#xA;INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -249,18 +249,18 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FC896D13-26FA-43A8-9AC4-48D18084F972}"
+      DTS:DTSID="{D93324ED-5648-4F17-A07A-D1BC05698179}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot;+ @[User::SOURCE_COLUMNS]+ &quot; FROM &quot; +  @[User::SOURCE_TABLE_FULL_NAME] + &quot; &quot;+ @[User::SOURCE_FILTER]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_SOURCE_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT [SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate] FROM [SalesLT].[SalesOrderDetail] WHERE OrderQty&gt;6</DTS:VariableValue>
+        DTS:DataType="8">SELECT [SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate] FROM [SalesLT].[SalesOrderDetail] WHERE OrderQty&gt;4</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26848C7A-A34D-46DD-8EDF-1BE0BF8B6CE5}"
+      DTS:DTSID="{C4AC35A6-799B-407B-A66A-FC8449E4ABFD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -271,7 +271,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B01D522F-CD0E-4E6C-9C98-BB8B02EDB45B}"
+      DTS:DTSID="{49315162-9E46-45F7-85BC-BD43F6D12F19}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -282,7 +282,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7488C245-2B07-4D9B-8F1F-28603B60522D}"
+      DTS:DTSID="{A0EC9C69-C8E5-424E-9160-4663AE430C0C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SRC_RC">
@@ -291,7 +291,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10D5485A-77CD-4C9E-B692-CB3EFCABC13B}"
+      DTS:DTSID="{62A8EFD5-9C1E-40EA-A0FE-964B9B8967C1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;A&#xA;&#xA;B&#xA;&#xA;C&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -306,7 +306,7 @@ C</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7CEAA437-747F-489F-9891-BF201BBEA00B}"
+      DTS:DTSID="{39DF9ABE-E5D3-4AA0-8B65-A24E81C73B57}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Variable">
@@ -316,7 +316,7 @@ C</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D67FBF8-AD79-4438-A146-C532F280E2C2}"
+      DTS:DTSID="{1214B3C0-AC1A-407E-866E-DCF117A72DE8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Variable1">
@@ -329,7 +329,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1858169A-7E27-49D5-ABDE-F30CDD035518}"
+      DTS:DTSID="{F2DAA2E3-DC49-4906-802A-0D0FE5E3E54F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -366,7 +366,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\SQC ETL"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3A7CA609-E2AA-43EE-B84A-D58127CB9FFD}"
+      DTS:DTSID="{D5E22E1D-23D6-42D3-8D49-C2542BAFBA29}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQC ETL">
@@ -376,7 +376,7 @@ C</DTS:VariableValue>
           DTS:refId="Package\SQC ETL\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7868D4D3-51D2-4A9D-AC82-CF76EDF36D87}"
+          DTS:DTSID="{B96FC421-2C87-40F0-A302-0545C1479DF5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -2196,7 +2196,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{27E224AA-2E5A-43EE-9C2A-F9B3BC782B7F}"
+          DTS:DTSID="{DD235F62-BDEE-4B3E-A0E4-2A2F5F5BB46C}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR_CreateDeltaMapping"
@@ -2211,14 +2211,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               ReadOnlyVariables="User::SOURCE_COLUMNS"
               ReadWriteVariables="User::DELTA_COLUMNS_MAPPING">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2338,35 +2359,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
-    "ings")]
-
-namespace ST_4730307f83e847428af09071876d36d3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -2501,38 +2493,6 @@ namespace ST_4730307f83e847428af09071876d36d3
 	}
 }]]></ProjectItem>
               <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
-    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ScriptMain.cs" />
-    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
-      <msb:FileName>ScriptMain.cs</msb:FileName>
-      <msb:ColumnNumber>13</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>94</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
                 Name="ST_4730307f83e847428af09071876d36d3.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2619,35 +2579,75 @@ namespace ST_4730307f83e847428af09071876d36d3
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
+    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
+      <msb:FileName>ScriptMain.cs</msb:FileName>
+      <msb:ColumnNumber>13</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:LineNumber>94</msb:LineNumber>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyCopyright("Copyright @  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_4730307f83e847428af09071876d36d3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2846,7 +2846,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Merge"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{69B31AFD-EC81-458E-81A1-8E2EC3CAA28D}"
+          DTS:DTSID="{1BD05232-5023-4C32-BCF4-79E995CAA3E8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Merge"
@@ -2871,7 +2871,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Truncate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9358AA15-36B2-4E99-9F26-9F8BAC9EB67D}"
+          DTS:DTSID="{7C42275F-A4AC-472D-A032-A52DDAD4D665}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Truncate"
@@ -2890,7 +2890,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{647D42AB-29EF-4987-A829-9A9CDE5AF7EF}"
+          DTS:DTSID="{B332F945-3322-4A6E-AEC5-48D0D822D6DE}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_TruncateStg"
@@ -2911,7 +2911,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C1E39DC2-553C-4E5B-948C-3523C17E494C}"
+          DTS:DTSID="{D4B85393-768F-48F9-A826-E243153BB533}"
           DTS:From="Package\SQC ETL\SQL_Truncate"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2919,7 +2919,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{86E2478A-A1CC-40E5-B0BC-48EC382DFEA5}"
+          DTS:DTSID="{117F951F-05B3-438B-9451-E2302B36C37B}"
           DTS:From="Package\SQC ETL\Data Flow Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2927,7 +2927,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{D0246DE5-3FD6-42A6-88D0-A0521A81CDAD}"
+          DTS:DTSID="{E8CC6A25-644A-45C3-8FA8-1DB37A5EBB93}"
           DTS:From="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2935,7 +2935,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{4B79D2AE-91ED-46EF-9CDD-4B76181913C1}"
+          DTS:DTSID="{0BEEAD1E-6C66-485F-B0FA-729751EF5EEE}"
           DTS:From="Package\SQC ETL\SQL_Merge"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -2947,7 +2947,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="SQL_GetLoadID"
       DTS:Disabled="True"
-      DTS:DTSID="{61FCB8EC-0446-4790-AD18-FC02858F91D2}"
+      DTS:DTSID="{A5448859-55A9-4069-9DD5-8D944D72947B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetLoadID"
@@ -2970,7 +2970,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8805988F-F05E-4BB5-BD1B-A9B9B80A4331}"
+      DTS:DTSID="{97501AD9-5BDB-458B-8BB4-749D792C6302}"
       DTS:From="Package\SQL_GetLoadID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2978,7 +2978,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{513E28C2-C8E6-4796-82A1-1D13ECE92153}"
+      DTS:DTSID="{C9BF3247-7110-45C4-BB82-F6ED8EEB9CF8}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3005,17 +3005,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\SQC ETL\Data Flow Task"
           TopLeft="44.624993713572,135.578944123023" />
         <NodeLayout
-          Size="138,42"
-          Id="Package\SQC ETL\SQL_Merge"
-          TopLeft="58,320" />
-        <NodeLayout
           Size="207,43"
           Id="Package\SQC ETL\SCR_CreateDeltaMapping"
           TopLeft="21.374994887039,230.596487118735" />
         <NodeLayout
+          Size="138,42"
+          Id="Package\SQC ETL\SQL_Merge"
+          TopLeft="58,320" />
+        <NodeLayout
           Size="149,43"
           Id="Package\SQC ETL\SQL_Truncate"
           TopLeft="50.499993629754,35.210523941841" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\SQC ETL\SQL_TruncateStg"
+          TopLeft="44,410" />
         <EdgeLayout
           Id="Package\SQC ETL.PrecedenceConstraints[Constraint]"
           TopLeft="123.062493671663,78.210523941841">
@@ -3082,10 +3086,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\SQC ETL\SQL_TruncateStg"
-          TopLeft="44,410" />
         <EdgeLayout
           Id="Package\SQC ETL.PrecedenceConstraints[Constraint 3]"
           TopLeft="127.25,362">
@@ -3210,7 +3210,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3256,7 +3258,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3278,7 +3282,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

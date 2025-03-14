@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="dbsys.cs.vsb.cz_sqldb.MOY001.MOY001"
+  DTS:ObjectName="SQLDW"
   DTS:DTSID="{C58068DD-1191-4144-AD65-979852696497}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=dbsys.cs.vsb.cz\sqldb;User ID=MOY001;Initial Catalog=MOY001;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-BIDWETL-{C58068DD-1191-4144-AD65-979852696497}dbsys.cs.vsb.cz\sqldb.MOY001.MOY001;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAAAxzDtdo0OPd+MhRp/UDXqrFVANznaAqu9azduMSKaXhAAAAAAOgAAAAAIAACAAAADI/CYm3Bm/XHqh1hosDQKC6eruyky/enDUObOJof9IcYAAAAAaedyLzSi9+GNNx4Grmo+umsZE/s89sCrUzWvst4w54Ww2bBENe5eI9rG8LtmmQ85e9cbhRX8svMLlJbOEXBG2USPfZVvnKK0U494nTqMPKkWPgPjzjysM8P8+qDxYGmzlUVoqofNYpH3Nsf9zEwx2pGIoNxAslFnBaHP5qpRLyUAAAAAFohMJepcJlsOZuJja7YZgWy8Qu9lAVI+QA9blgIFEHDqd7E9SIpJvifNaIlLfXe7ihzPV4JgXQYtRKUHX/Akz</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAAB5ej463V3C9j9fWdidGA+OXkDwTgByI0KMuOvdQzV2yQAAAAAOgAAAAAIAACAAAAAy6kN0Gmea+tqNEwGnUQr2qd9ugdXSKOn2Q87eft2+44AAAACclMhyPfi18kKlaQDVJOEJrzpKFQ1M9baHXZ96mgdWRmewMgMN2ws3VOq8d6AnODtRl3fI0UjgTeEzl3WJJBO0ETUtlemAd6VdPelZ8hmXOkMuJPwjRk64585hCr2NPg9RAmC5WnsWi2I5Z4rMzb7AyBmACYalT4vFe0sTnEAgEkAAAAByZdEe+qkvIBZ+rLUfIZjRdBkCQzXtSfPLexBn3vlQqIBoWbgYG4LfxlUEI/LHqd6ciFc5QS6LOJWp/q2MplOG</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

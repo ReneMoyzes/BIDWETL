@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/5/2025 12:57:03 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VSBMOYLEN"
   DTS:CreatorName="VSBMOYLEN\MOY001"
-  DTS:DTSID="{7171C687-174F-4B46-84B2-0994C94B42F4}"
+  DTS:DTSID="{BF942EE2-23B1-4693-89AB-F8C8B9CE7A3B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_DF_AWSalesOrderDetails"
   DTS:PackageType="5"
-  DTS:VersionBuild="116"
-  DTS:VersionGUID="{158FB84E-9F8F-455C-B93E-B79C658D0895}">
+  DTS:VersionBuild="115"
+  DTS:VersionGUID="{A0F6BA90-BBBF-4228-AFE4-7FB63F988BF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{1816AECE-B063-49CE-895A-37DA0562BAC7}"
+      DTS:DTSID="{37325773-7429-42C0-A024-7F8AE562F8E9}"
       DTS:ObjectName="BATCH_ID">
       <DTS:Property
         DTS:DataType="3"
@@ -28,7 +28,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{1EA86232-EF89-47BC-91DB-C28E7F59FA84}"
+      DTS:DTSID="{E0BCB1E9-2F4B-4863-882F-D214BF2F4F92}"
       DTS:ObjectName="SOURCE_SYTEM">
       <DTS:Property
         DTS:DataType="8"
@@ -37,7 +37,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{70C73D6C-3DC6-4D35-96ED-379F200DF891}"
+      DTS:DTSID="{3BB98E41-8A22-47B3-BCA4-E09C76DD5A34}"
       DTS:ObjectName="TRUNCATE_STAGE">
       <DTS:Property
         DTS:DataType="11"
@@ -47,7 +47,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{44169934-9461-453C-9950-F83B75073E91}"
+      DTS:DTSID="{33D8E624-328A-4B23-9379-D049213EC9B1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DELTA_COLUMNS_MAPPING">
@@ -57,7 +57,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8D5AF69F-C032-42D4-99DB-4FBDBA41D682}"
+      DTS:DTSID="{A68E08DC-6C43-40C4-A227-E517A294235E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;_Delta]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -68,7 +68,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B3C90EB5-0172-48FC-ACD8-05B5BB3EB6E9}"
+      DTS:DTSID="{24F42DBB-33D4-4EB9-BA84-33F1EA3F0B2A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_SCHEMA">
@@ -77,7 +77,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{24B9C8F3-4177-412F-9B47-7CF53E61CC34}"
+      DTS:DTSID="{F73CDB2C-6B43-40C0-840B-13986F106AC3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_TABLE">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6BD6FE25-6FC9-49F6-A932-2DED1BBE1616}"
+      DTS:DTSID="{2E7365CE-9E4A-4C17-ADEE-0DCDA1C2EAE9}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::DEST_SCHEMA]+&quot;].[&quot;+ @[User::DEST_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -97,7 +97,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1DCEED8-87D0-4DBD-90CE-F3AE18CEA9FF}"
+      DTS:DTSID="{70FD3916-3D99-4117-A391-9411F6F0A2CE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ETL_STATUS">
@@ -107,7 +107,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{30882411-BA01-4CFB-BCD2-8B96B4D86542}"
+      DTS:DTSID="{8BCB9444-CF71-4CD0-A1EE-72FB40BF1DCA}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::StartTime]"
       DTS:IncludeInDebugDump="2345"
@@ -118,7 +118,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1B0C25FF-0A29-4E8B-9F7C-7C5C2F90608B}"
+      DTS:DTSID="{44E0FD60-7FD0-4174-826B-D6F372CA8960}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_ID">
@@ -127,7 +127,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1398F86-E39A-423E-A4A8-79CBFD145B2D}"
+      DTS:DTSID="{68C3ECB1-F171-4404-925A-B9592ACB051E}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_SCHEMA">
@@ -136,7 +136,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AB336A2E-E415-4228-BD2E-89D4A959A9CF}"
+      DTS:DTSID="{8AB8E1AD-9AE9-493F-9A13-C03552DBF0D4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_TABLE">
@@ -145,7 +145,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E9DD939-70FD-4DE7-A826-42084BE5F251}"
+      DTS:DTSID="{FE364D9D-E65F-476B-9239-1C24DB0ADA17}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -156,7 +156,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{525DD1A4-ADC5-496D-BB99-02237339E53F}"
+      DTS:DTSID="{CCFD4EFF-BED7-4E8D-90AE-20627E903DC4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PRIMARY_KEY">
@@ -165,7 +165,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EC8E0F17-4848-4307-B293-A0653C9BB8A0}"
+      DTS:DTSID="{313F6223-0A9D-4788-94FD-B2A5BB447E66}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_COLUMNS">
@@ -174,16 +174,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6DCC61A7-A99D-42DF-9739-0C5E319BC45D}"
+      DTS:DTSID="{6AAA4804-466F-4A4B-8228-64D48BB62448}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_FILTER">
       <DTS:VariableValue
-        DTS:DataType="8">WHERE OrderQty&gt;6</DTS:VariableValue>
+        DTS:DataType="8">WHERE OrderQty&gt;4</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{811D3DD9-6F81-47A9-862A-B33D0D66B9C0}"
+      DTS:DTSID="{2571E6DD-D331-475B-A76A-8058DEFBB3E2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_SCHEMA">
@@ -192,7 +192,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{05115DD4-E38F-4018-BF1E-0FB9620286DE}"
+      DTS:DTSID="{FAF6C152-A578-46C4-BA05-F49197716A37}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_TABLE">
@@ -201,7 +201,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{55C4DFEB-C802-44DD-B2E2-77EFE71FCBD7}"
+      DTS:DTSID="{EEFA8D58-CA21-45FA-8FA6-334601E94BA1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::SOURCE_SCHEMA]+&quot;].[&quot;+ @[User::SOURCE_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -212,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D0F9EBE-91B9-4022-B0BB-4843B607135D}"
+      DTS:DTSID="{331843C3-CE35-4A94-B6E8-14E811F9C0C3}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DECLARE  @ActionLoadID int=?;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN MATCHED AND target.[Hash] &lt;&gt; source.[Hash] THEN &#xA;    UPDATE SET &#xA;    &quot; + @[User::DELTA_COLUMNS_MAPPING] +&quot;,LOAD_ID=source.LOAD_ID, LOAD_DATE=source.LOAD_DATE, HASH=source.HASH&#xA;WHEN NOT MATCHED BY TARGET THEN &quot; +&#xA;&quot;    INSERT (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;     VALUES (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;OUTPUT &#xA;    $action AS Operation, &#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    source.* &#xA;    INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&#xA;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN NOT MATCHED BY SOURCE THEN &#xA;    DELETE &#xA;OUTPUT &#xA;    $action AS Operation,&#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    deleted.*&#xA;INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -249,18 +249,18 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FC896D13-26FA-43A8-9AC4-48D18084F972}"
+      DTS:DTSID="{BCC90B38-D40D-4688-B78E-CF03C995B67A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot;+ @[User::SOURCE_COLUMNS]+ &quot; FROM &quot; +  @[User::SOURCE_TABLE_FULL_NAME] + &quot; &quot;+ @[User::SOURCE_FILTER]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_SOURCE_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT [SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate] FROM [SalesLT].[SalesOrderDetail] WHERE OrderQty&gt;6</DTS:VariableValue>
+        DTS:DataType="8">SELECT [SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate] FROM [SalesLT].[SalesOrderDetail] WHERE OrderQty&gt;4</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26848C7A-A34D-46DD-8EDF-1BE0BF8B6CE5}"
+      DTS:DTSID="{79E331C5-7FEF-40D7-8968-0020B512C415}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -271,7 +271,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B01D522F-CD0E-4E6C-9C98-BB8B02EDB45B}"
+      DTS:DTSID="{FCA8E33B-D4E4-4378-83DD-EADB70CB2833}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -282,7 +282,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7488C245-2B07-4D9B-8F1F-28603B60522D}"
+      DTS:DTSID="{781BFA28-851C-4193-B2F6-5B10D5AF69F5}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SRC_RC">
@@ -291,7 +291,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10D5485A-77CD-4C9E-B692-CB3EFCABC13B}"
+      DTS:DTSID="{C5EC2895-D6D7-40E8-AC16-6E8FE9F9A910}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;A&#xA;&#xA;B&#xA;&#xA;C&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -306,7 +306,7 @@ C</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7CEAA437-747F-489F-9891-BF201BBEA00B}"
+      DTS:DTSID="{81865830-7C69-4499-907D-7CBDF17656DC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Variable">
@@ -316,7 +316,7 @@ C</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D67FBF8-AD79-4438-A146-C532F280E2C2}"
+      DTS:DTSID="{6805EC4C-1BC9-4959-902F-BCD3E136EFAA}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Variable1">
@@ -329,7 +329,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1858169A-7E27-49D5-ABDE-F30CDD035518}"
+      DTS:DTSID="{ACE94141-1138-4C24-9793-E36D2ED2278E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -366,7 +366,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\SQC ETL"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3A7CA609-E2AA-43EE-B84A-D58127CB9FFD}"
+      DTS:DTSID="{7C0A03E7-7C70-462D-9738-3C30C65FC360}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQC ETL">
@@ -376,7 +376,7 @@ C</DTS:VariableValue>
           DTS:refId="Package\SQC ETL\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7868D4D3-51D2-4A9D-AC82-CF76EDF36D87}"
+          DTS:DTSID="{3F1A45D6-40F2-4E14-891C-1DDF45526DDD}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -2196,7 +2196,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{27E224AA-2E5A-43EE-9C2A-F9B3BC782B7F}"
+          DTS:DTSID="{2E930484-7DFD-4881-B13B-75D3EB02A320}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR_CreateDeltaMapping"
@@ -2846,7 +2846,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Merge"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{69B31AFD-EC81-458E-81A1-8E2EC3CAA28D}"
+          DTS:DTSID="{C0D399FA-5B38-47FE-948F-0A629262370A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Merge"
@@ -2871,7 +2871,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Truncate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9358AA15-36B2-4E99-9F26-9F8BAC9EB67D}"
+          DTS:DTSID="{155AA143-8731-4521-96E6-C6FC0FEB4FDC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Truncate"
@@ -2890,7 +2890,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:Disabled="True"
-          DTS:DTSID="{647D42AB-29EF-4987-A829-9A9CDE5AF7EF}"
+          DTS:DTSID="{88A8EE2D-BFE0-4464-88CC-5605219871D8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_TruncateStg"
@@ -2911,7 +2911,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C1E39DC2-553C-4E5B-948C-3523C17E494C}"
+          DTS:DTSID="{689FC4BD-136E-4B41-B165-078C391BA118}"
           DTS:From="Package\SQC ETL\SQL_Truncate"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2919,7 +2919,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{86E2478A-A1CC-40E5-B0BC-48EC382DFEA5}"
+          DTS:DTSID="{DED0FAD2-F55C-4D19-A2EF-8ADD11AB384F}"
           DTS:From="Package\SQC ETL\Data Flow Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2927,7 +2927,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{D0246DE5-3FD6-42A6-88D0-A0521A81CDAD}"
+          DTS:DTSID="{5022F8AD-A480-4B53-BB2D-CF9C6B5BACFF}"
           DTS:From="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2935,7 +2935,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{4B79D2AE-91ED-46EF-9CDD-4B76181913C1}"
+          DTS:DTSID="{4D56A0BA-34C0-4EEC-964A-4CDCC11ED323}"
           DTS:From="Package\SQC ETL\SQL_Merge"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -2947,7 +2947,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="SQL_GetLoadID"
       DTS:Disabled="True"
-      DTS:DTSID="{61FCB8EC-0446-4790-AD18-FC02858F91D2}"
+      DTS:DTSID="{DF962F1B-0531-445C-B653-6A8380EC3D9C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetLoadID"
@@ -2970,7 +2970,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8805988F-F05E-4BB5-BD1B-A9B9B80A4331}"
+      DTS:DTSID="{5A9C86F7-73DD-4460-9DC7-43BDBE40231E}"
       DTS:From="Package\SQL_GetLoadID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2978,7 +2978,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{513E28C2-C8E6-4796-82A1-1D13ECE92153}"
+      DTS:DTSID="{203A0FBA-8B5C-4E84-9F5F-783BE1954AE9}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3210,7 +3210,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3256,7 +3258,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3278,7 +3282,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
