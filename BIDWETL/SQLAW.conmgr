@@ -3,16 +3,14 @@
   DTS:ObjectName="SQLAW"
   DTS:DTSID="{13C0A877-1A65-49CD-A9FA-077F312649D4}"
   DTS:CreationName="OLEDB">
-  <DTS:PropertyExpression
-    DTS:Name="Password">@[$Project::SQLAW_Password]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=dbsys.cs.vsb.cz\sqldb;User ID=AdventureWorksDataReader;Initial Catalog=AdventureWorksLT2017;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-BIDWETL-{13C0A877-1A65-49CD-A9FA-077F312649D4}dbsys.cs.vsb.cz\sqldb.AdventureWorksLT2017.AdventureWorksDataReader;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=dbsys.cs.vsb.cz\sqldb;User ID=AdventureWorksDataReader;Initial Catalog=AdventureWorksLT2017;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-BIDWETL-{13C0A877-1A65-49CD-A9FA-077F312649D4}dbsys.cs.vsb.cz\sqldb.AdventureWorksLT2017.AdventureWorksDataReader;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACwOHJZfKIeVOy7MYehWxevv/S88RWEIydttJfapGMI/AAAAAAOgAAAAAIAACAAAABcaSIQAGYbF882d0jIMlsT2u69qPnRuoxR7HfKB5bJFIAAAABQVQY3Xyr/31MxeBgdzzPkojjwe0rvQk9Tis1qgA6UjV45GMXmr7agtZB/f/a8EeEx2h6juqsS/JzZpTo+zmioC5DEB1qmYJJGLtEPpMwFF1Eh02P98U8ZlB9fIxWpOHwAvLUZ1GArG9UJ/Ppo61wIhaMCFbSE3qnWSNh+vq1e/EAAAACXIr3jRS+rPLp4EqoIgYThwnAGgO/YHvqczgPL44q4Fpdz5eUYa8uMGvyGssMAc2dsL26PoJlEv804gA5Vc7OW</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACWn0xei1noSid/b3teOnrAb6kURJzZUbCEa5I2T6io6gAAAAAOgAAAAAIAACAAAAB5BmnIh4w69PANw9MqAlySPi5p1BPUA/sF2jVlAWJN4IAAAADYR5IHQkv1LLkIoUfBW2GYp+UrLL3abOMt87+5Rsp2MDkTwAs9aEKi3gE0wrV7aOJTk0vKL7rmBAfRkLZr345GwEhYCSNhxQ02Sknk5HVDIjunN35/zerPa/8JzlRMUu0dz/tyZxY8HKQxYVGSCoKyphcvWunwQSht6LEU8YW9r0AAAABQO8dJ+eyppSRZEeYY+EkbvyWo7XTf+wxUiURdr8Q4I5Mw8RpXkTCvwv8aQdWzTgtEiYSbVec+RUEglux6xO24</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

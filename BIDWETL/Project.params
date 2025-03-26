@@ -59,29 +59,7 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAAAyxOhTpz0kwd2gkeAAHXtMXpi7uEk0LkV/9wTgI9WtegAAAAAOgAAAAAIAACAAAACvlMVUp4z31eZQ81oto4k4MOxNnTUgAlFeWIphrUKjgoAAAADwlk22I9XCSfrTgh7xnsQr3NKfV8f0+hPqExWrPXsie6aEiUuTKextaY7QOn8acPSCqbiNdyDrnyjYq80LZbjjad4aRP4i8bc9ndCPH+YQhrpGWw+Jhl3bUBX6Hm2wWrG7rzxT3jCJ8wpXls3mbM/rLhSr0n7US6H8TpjJ37JTlUAAAADBAGzRiY/8jwih4P0YYBhMa0ztFuQ3RnmiBFjwjRMt83hZHvsEkcQuGodSPiTPkzKCxEvQJFXdjaKWACpLIGd8</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="SQLAW_Password">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{c81e630f-f9a1-4fc1-93bb-38ef6e558f01}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAABp9ic26kGZ1m+XcN2QlML+aVV39BoaTqzf+bnFGKIxMAAAAAAOgAAAAAIAACAAAACsF0sz7CkWYwwIUnf34GocA3+vzK3Uzgh+vQxtEcnh8YAAAADxFjqAJA9NwqSwvF8X1DeqIViDYCVwZPUuS/cCEkhuY8a1CZ8y5YzW2VGVrBmGqo7G8fWEvoZLusspS0YzssS605xe2NTl/NKc3Ptg3mp4W7LKhHR7MJXSsqocDnLc/SdNIKuKFrF6+GV5RJTeJPT2dhx1DNwX+MMRDNCObQkr00AAAADXCsNBt16gziBhA3Ne/+T2Vf0M5tKYBGx+PqPEFRaI69Wt0l4Yd+seSzEZ6htXSs+UvDaKiCQGAyRc/w/a2Xxb</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACEzYz/nca1jNsElTCNx20DxCMEn0/9PyE1E4W9frJUDQAAAAAOgAAAAAIAACAAAADLBkpBD/8TWDKLq+aP7BdRaoUGWXzEgaScvp2Ne2SOEYAAAAA9M36JLulrNMk2WXC2cIg7D59TNE9y4llTy+ElQxGZClxRyOW3W0qCC2jhekkXC0M47ELDpazC4lpqF4SGDm5xGZBufK57YCGvkzgmWodGXT3sbJnL+5SZa5wSq/G1NaKjXwPBcweOTm80HJfd9qAgUKzLl3g+qabGp5t0xqMh80AAAACy9UPi5d9YbrAdZYGneemAsuYLzN/InX5DbUwe8p/fTq5CWkEH+VOyWdYhI0RwYzDKKaffZitNRYycpcyJQC0W</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
