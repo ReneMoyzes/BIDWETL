@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VSBMOYLEN"
   DTS:CreatorName="VSBMOYLEN\MOY001"
-  DTS:DTSID="{7171C687-174F-4B46-84B2-0994C94B42F4}"
+  DTS:DTSID="{F82F22C9-5CFC-470D-9FD2-F2827663C45F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="ODS_DF_AWSalesOrderDetails"
+  DTS:ObjectName="ODS_DF_AWSalesOrderDetails_DELTA"
   DTS:PackageType="5"
-  DTS:VersionBuild="135"
-  DTS:VersionGUID="{C2D43535-F0C3-4C39-B58F-9CCD10D8A277}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{4A1700EC-5347-4FD9-8950-28051895D482}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{1816AECE-B063-49CE-895A-37DA0562BAC7}"
+      DTS:DTSID="{6B90227B-F024-48C6-903D-7765D2FA4A74}"
       DTS:ObjectName="BATCH_ID">
       <DTS:Property
         DTS:DataType="3"
@@ -28,7 +28,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{1EA86232-EF89-47BC-91DB-C28E7F59FA84}"
+      DTS:DTSID="{2FB17C43-AECE-4FF1-A8D9-42C10903FFEF}"
       DTS:ObjectName="SOURCE_SYTEM">
       <DTS:Property
         DTS:DataType="8"
@@ -37,7 +37,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{70C73D6C-3DC6-4D35-96ED-379F200DF891}"
+      DTS:DTSID="{739E036A-2265-46B9-B910-F4CE4AB0E25F}"
       DTS:ObjectName="TRUNCATE_STAGE">
       <DTS:Property
         DTS:DataType="11"
@@ -47,7 +47,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{44169934-9461-453C-9950-F83B75073E91}"
+      DTS:DTSID="{27106270-E74E-4DB9-81A3-C44D3B436EDD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DELTA_COLUMNS_MAPPING">
@@ -57,7 +57,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8D5AF69F-C032-42D4-99DB-4FBDBA41D682}"
+      DTS:DTSID="{B93A3282-F735-4AAC-ACAD-E88731E5E534}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;_Delta]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -68,7 +68,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B2927142-C1F4-4A20-9E53-4D03174FB485}"
+      DTS:DTSID="{23147CC2-857B-4012-A729-39DC4A27BF99}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_DELETED">
@@ -77,7 +77,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7CEAA437-747F-489F-9891-BF201BBEA00B}"
+      DTS:DTSID="{CEDEBBFA-024B-468E-BAFA-CEFDFC51CD6B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_INSERTED">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C23C9DDE-EDF2-4E63-9B74-71E431C1DA33}"
+      DTS:DTSID="{5B9DE40A-7697-4BB0-B6DD-8299638E824C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::DEST_INSERTED]+ @[User::DEST_DELETED]+ @[User::DEST_UPDATED]"
       DTS:IncludeInDebugDump="2345"
@@ -97,7 +97,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B3C90EB5-0172-48FC-ACD8-05B5BB3EB6E9}"
+      DTS:DTSID="{1BDAF0F4-1C11-44FB-9464-AFC7C5476A15}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_SCHEMA">
@@ -106,7 +106,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{24B9C8F3-4177-412F-9B47-7CF53E61CC34}"
+      DTS:DTSID="{62281A6E-CD3E-4D19-823D-97BE34D86902}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_TABLE">
@@ -115,7 +115,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6BD6FE25-6FC9-49F6-A932-2DED1BBE1616}"
+      DTS:DTSID="{534BEC05-9DB8-46A0-A3B1-3DE7E48AC091}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::DEST_SCHEMA]+&quot;].[&quot;+ @[User::DEST_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -126,7 +126,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D67FBF8-AD79-4438-A146-C532F280E2C2}"
+      DTS:DTSID="{DF252AE0-6AE2-46C3-8EE5-C798EF03A055}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_UPDATED">
@@ -135,7 +135,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1DCEED8-87D0-4DBD-90CE-F3AE18CEA9FF}"
+      DTS:DTSID="{108ECAAB-6904-4E12-8B93-745A4281F34A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ETL_STATUS">
@@ -145,18 +145,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{30882411-BA01-4CFB-BCD2-8B96B4D86542}"
+      DTS:DTSID="{0B21DFF8-791B-471C-A327-F0F4C6296434}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::StartTime]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_DATE">
       <DTS:VariableValue
-        DTS:DataType="7">3/19/2025 1:16:31 PM</DTS:VariableValue>
+        DTS:DataType="7">3/26/2025 1:19:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1B0C25FF-0A29-4E8B-9F7C-7C5C2F90608B}"
+      DTS:DTSID="{4C51327A-7A6D-4081-BEC8-603190F1E9E9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_ID">
@@ -165,7 +165,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1398F86-E39A-423E-A4A8-79CBFD145B2D}"
+      DTS:DTSID="{A3A4ED49-3118-41A0-BCD8-1ACE5701DE2F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_SCHEMA">
@@ -174,7 +174,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AB336A2E-E415-4228-BD2E-89D4A959A9CF}"
+      DTS:DTSID="{9DD52979-39B0-41FD-87C4-CCCE8CA08FD3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_TABLE">
@@ -183,7 +183,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E9DD939-70FD-4DE7-A826-42084BE5F251}"
+      DTS:DTSID="{6AE6A603-69D9-42BE-BE0B-0EE1ECB379E5}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -194,7 +194,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{525DD1A4-ADC5-496D-BB99-02237339E53F}"
+      DTS:DTSID="{D9CEB8E2-B010-4B80-A978-2A2FBCF89008}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PRIMARY_KEY">
@@ -203,7 +203,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EC8E0F17-4848-4307-B293-A0653C9BB8A0}"
+      DTS:DTSID="{ED677616-1F05-4268-BF4A-73A9CA4549B2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_COLUMNS">
@@ -212,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6DCC61A7-A99D-42DF-9739-0C5E319BC45D}"
+      DTS:DTSID="{26DF9C1A-5055-43DD-90C6-F090D7A3E0D6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_FILTER">
@@ -221,7 +221,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{811D3DD9-6F81-47A9-862A-B33D0D66B9C0}"
+      DTS:DTSID="{1AA2717C-DCA1-4D95-8F2D-B589BB982361}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_SCHEMA">
@@ -230,7 +230,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{05115DD4-E38F-4018-BF1E-0FB9620286DE}"
+      DTS:DTSID="{6D271593-9918-4179-A79A-74DA2F4F5E04}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_TABLE">
@@ -239,7 +239,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{55C4DFEB-C802-44DD-B2E2-77EFE71FCBD7}"
+      DTS:DTSID="{B129AE48-335A-461C-8F35-07752AA3ABA3}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::SOURCE_SCHEMA]+&quot;].[&quot;+ @[User::SOURCE_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -250,7 +250,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9D49FCFD-40CE-40D7-8257-4134F61A3D51}"
+      DTS:DTSID="{BC1A7F13-C985-4E76-AA9C-A0DAD3EB74A2}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'DELETE' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
@@ -261,7 +261,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D7E8B4A8-5C13-4CD6-9468-914521AF1B54}"
+      DTS:DTSID="{FBC372A0-B6ED-42E8-88D2-F4E2B5288DFD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'INSERT' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
@@ -272,7 +272,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4240F263-A163-4CFD-8D4B-80CCE7CCF653}"
+      DTS:DTSID="{7D69B43E-DBF5-4A3F-BDF9-FC85667CC132}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'UPDATE' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
@@ -283,7 +283,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D0F9EBE-91B9-4022-B0BB-4843B607135D}"
+      DTS:DTSID="{47E15522-0482-4D94-A6DB-EB7464761D31}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DECLARE  @ActionLoadID int=?;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN MATCHED AND target.[Hash] &lt;&gt; source.[Hash] THEN &#xA;    UPDATE SET &#xA;    &quot; + @[User::DELTA_COLUMNS_MAPPING] +&quot;,LOAD_ID=source.LOAD_ID, LOAD_DATE=source.LOAD_DATE, HASH=source.HASH&#xA;WHEN NOT MATCHED BY TARGET THEN &quot; +&#xA;&quot;    INSERT (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;     VALUES (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;OUTPUT &#xA;    $action AS Operation, &#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    source.* &#xA;    INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&#xA;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN NOT MATCHED BY SOURCE THEN &#xA;    DELETE &#xA;OUTPUT &#xA;    $action AS Operation,&#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    deleted.*&#xA;INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -320,7 +320,19 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FC896D13-26FA-43A8-9AC4-48D18084F972}"
+      DTS:DTSID="{708CC8BE-C7E0-44DD-B5BA-CD2606545153}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT &quot; + @[User::PRIMARY_KEY] + &quot;,HASH FROM &quot; +  @[User::ODS_TABLE_FULL_NAME]+&quot;&#xA; ORDER BY 1&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_ODS_SELECT_ROWS">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT SalesOrderDetailId,HASH FROM [ODS].[AWSalesOrderDetail]
+ ORDER BY 1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5BC842B-1A6C-4B04-A5F3-E30B113D2F45}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot;+ @[User::SOURCE_COLUMNS]+ &quot; FROM &quot; +  @[User::SOURCE_TABLE_FULL_NAME] + &quot; &quot;+ @[User::SOURCE_FILTER]"
       DTS:IncludeInDebugDump="2345"
@@ -331,7 +343,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26848C7A-A34D-46DD-8EDF-1BE0BF8B6CE5}"
+      DTS:DTSID="{BE6F0CD6-2F37-4AF0-B9FE-07F82E09844D}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -342,7 +354,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B01D522F-CD0E-4E6C-9C98-BB8B02EDB45B}"
+      DTS:DTSID="{73FD66F8-6DAF-424E-83CF-D7F18BBBA3EE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
@@ -353,7 +365,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7488C245-2B07-4D9B-8F1F-28603B60522D}"
+      DTS:DTSID="{ED17EE12-44FE-4C47-A7DD-19D736069FDF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SRC_RC">
@@ -362,7 +374,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{280F9B31-D080-4D73-B706-09FA54208188}"
+      DTS:DTSID="{A40C87CD-7BB2-4486-873C-64DB16E002F1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="STATUS">
@@ -371,7 +383,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10D5485A-77CD-4C9E-B692-CB3EFCABC13B}"
+      DTS:DTSID="{79B89C57-C4F7-4F3E-893D-C109ED872C17}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;A&#xA;&#xA;B&#xA;&#xA;C&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -390,12 +402,12 @@ C</DTS:VariableValue>
       DTS:refId="Package\EXP_Completed"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{3153BCF7-984E-464B-B2FA-1A5BBC287064}"
+      DTS:DTSID="{E7535A81-A99F-4883-9547-7D9962ECD0F5}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_Completed"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -406,12 +418,12 @@ C</DTS:VariableValue>
       DTS:refId="Package\EXP_Failed"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{54F3FCF5-2926-40DE-B6C3-7E7AF86C38FF}"
+      DTS:DTSID="{99461EAB-C752-4AAD-95FF-B1193BFFDDEE}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_Failed"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -422,7 +434,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\SQC ETL"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3A7CA609-E2AA-43EE-B84A-D58127CB9FFD}"
+      DTS:DTSID="{01099D8F-9659-4741-A56D-B054D9084251}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQC ETL">
@@ -432,7 +444,7 @@ C</DTS:VariableValue>
           DTS:refId="Package\SQC ETL\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7868D4D3-51D2-4A9D-AC82-CF76EDF36D87}"
+          DTS:DTSID="{D0690A3D-572D-4690-A2B8-6CE53E4FCE9E}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -442,6 +454,88 @@ C</DTS:VariableValue>
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\SQC ETL\Data Flow Task\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SQC ETL\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Test]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Test"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\SQC ETL\Data Flow Task\DC_ETLCOL"
                   componentClassID="Microsoft.DerivedColumn"
@@ -561,6 +655,55 @@ C</DTS:VariableValue>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SQC ETL\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SQC ETL\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SQC ETL\Data Flow Task\DST_STG"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -637,37 +780,38 @@ C</DTS:VariableValue>
                           cachedDataType="i4"
                           cachedName="SalesOrderID"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderID]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[SalesOrderDetailID]"
                           cachedDataType="i4"
                           cachedName="SalesOrderDetailID"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderDetailID]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[OrderQty]"
                           cachedDataType="i2"
                           cachedName="OrderQty"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[OrderQty]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[ProductID]"
                           cachedDataType="i4"
                           cachedName="ProductID"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ProductID]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
                           cachedDataType="cy"
                           cachedName="UnitPrice"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPrice]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[UnitPriceDiscount]"
                           cachedDataType="cy"
                           cachedName="UnitPriceDiscount"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPriceDiscount]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[LineTotal]"
                           cachedDataType="numeric"
@@ -675,45 +819,45 @@ C</DTS:VariableValue>
                           cachedPrecision="38"
                           cachedScale="6"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LineTotal]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[rowguid]"
                           cachedDataType="guid"
                           cachedName="rowguid"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[rowguid]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[rowguid]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="ModifiedDate"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ModifiedDate]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM]"
                           cachedDataType="wstr"
                           cachedLength="4"
                           cachedName="SOURCE_SYSTEM"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM]"
-                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SOURCE_SYSTEM]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[LOAD_DATE]"
                           cachedDataType="dbTimeStamp"
                           cachedName="LOAD_DATE"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[LOAD_DATE]"
-                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_DATE]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_DATE]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[LOAD_ID]"
                           cachedDataType="i4"
                           cachedName="LOAD_ID"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[LOAD_ID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_ID]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_ID]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[HASH]"
                           cachedDataType="wstr"
                           cachedLength="32"
                           cachedName="HASH"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[HASH]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SCR_HASH.Outputs[Output 0].Columns[HASH]" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[HASH]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -802,6 +946,37 @@ C</DTS:VariableValue>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SQC ETL\Data Flow Task\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\SQC ETL\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\Multicast.Outputs[Multicast Output 2]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SQC ETL\Data Flow Task\RC"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -826,6 +1001,35 @@ C</DTS:VariableValue>
                       refId="Package\SQC ETL\Data Flow Task\RC.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
                       synchronousInputId="Package\SQC ETL\Data Flow Task\RC.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="RC_DEST_ROWS">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::DEST_ROWS</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -1967,6 +2171,430 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SQC ETL\Data Flow Task\SORT_SRC"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="SORT_SRC"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[SalesOrderID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderID"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[SalesOrderDetailID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderDetailID"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[OrderQty]"
+                          cachedDataType="i2"
+                          cachedName="OrderQty"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[ProductID]"
+                          cachedDataType="i4"
+                          cachedName="ProductID"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[UnitPrice]"
+                          cachedDataType="cy"
+                          cachedName="UnitPrice"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[UnitPriceDiscount]"
+                          cachedDataType="cy"
+                          cachedName="UnitPriceDiscount"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[LineTotal]"
+                          cachedDataType="numeric"
+                          cachedName="LineTotal"
+                          cachedPrecision="38"
+                          cachedScale="6"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[rowguid]"
+                          cachedDataType="guid"
+                          cachedName="rowguid"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[rowguid]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[ModifiedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ModifiedDate"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ModifiedDate]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[SOURCE_SYSTEM]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="SOURCE_SYSTEM"
+                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[LOAD_DATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="LOAD_DATE"
+                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_DATE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[LOAD_ID]"
+                          cachedDataType="i4"
+                          cachedName="LOAD_ID"
+                          lineageId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input].Columns[HASH]"
+                          cachedDataType="wstr"
+                          cachedLength="32"
+                          cachedName="HASH"
+                          lineageId="Package\SQC ETL\Data Flow Task\SCR_HASH.Outputs[Output 0].Columns[HASH]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderID]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderID]"
+                          name="SalesOrderID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderDetailID]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SalesOrderDetailID]"
+                          name="SalesOrderDetailID"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[OrderQty]"
+                          dataType="i2"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[OrderQty]"
+                          name="OrderQty">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ProductID]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ProductID]"
+                          name="ProductID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPrice]"
+                          dataType="cy"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPrice]"
+                          name="UnitPrice">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPriceDiscount]"
+                          dataType="cy"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[UnitPriceDiscount]"
+                          name="UnitPriceDiscount">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LineTotal]"
+                          dataType="numeric"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LineTotal]"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[rowguid]"
+                          dataType="guid"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[rowguid]"
+                          name="rowguid">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[rowguid]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[ModifiedDate]"
+                          name="ModifiedDate">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ModifiedDate]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SOURCE_SYSTEM]"
+                          dataType="wstr"
+                          length="4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[SOURCE_SYSTEM]"
+                          name="SOURCE_SYSTEM">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[SOURCE_SYSTEM]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_DATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_DATE]"
+                          name="LOAD_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_DATE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_ID]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[LOAD_ID]"
+                          name="LOAD_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output].Columns[LOAD_ID]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[HASH]"
+                          dataType="wstr"
+                          length="32"
+                          lineageId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output].Columns[HASH]"
+                          name="HASH">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\SQC ETL\Data Flow Task\SCR_HASH.Outputs[Output 0].Columns[HASH]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SQC ETL\Data Flow Task\SRC_AW"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -2222,18 +2850,162 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\SQC ETL\Data Flow Task\SRC_ODS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SRC_ODS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable">User::SQL_ODS_SELECT_ROWS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Connections[OleDbConnection]"
+                      connectionManagerID="{C58068DD-1191-4144-AD65-979852696497}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SQLDW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output]"
+                      isSorted="true"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].Columns[SalesOrderDetailId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailId]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].Columns[SalesOrderDetailId]"
+                          name="SalesOrderDetailId"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].Columns[HASH]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].ExternalColumns[HASH]"
+                          length="32"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].Columns[HASH]"
+                          name="HASH"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailId]"
+                          dataType="i4"
+                          name="SalesOrderDetailId" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output].ExternalColumns[HASH]"
+                          dataType="wstr"
+                          length="32"
+                          name="HASH" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailId]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailId]"
+                          name="SalesOrderDetailId" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[HASH]"
+                          dataType="wstr"
+                          length="32"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[HASH]"
+                          name="HASH" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
+                <path
+                  refId="Package\SQC ETL\Data Flow Task.Paths[Conditional Split Default Output]"
+                  endId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input]"
+                  name="Conditional Split Default Output"
+                  startId="Package\SQC ETL\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
                 <path
                   refId="Package\SQC ETL\Data Flow Task.Paths[Derived Column Output]"
                   endId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0]"
                   name="Derived Column Output"
                   startId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Outputs[Derived Column Output]" />
                 <path
+                  refId="Package\SQC ETL\Data Flow Task.Paths[Multicast Output 1]"
+                  endId="Package\SQC ETL\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Multicast Output 1"
+                  startId="Package\SQC ETL\Data Flow Task\Multicast.Outputs[Multicast Output 1]" />
+                <path
                   refId="Package\SQC ETL\Data Flow Task.Paths[OLE DB Source Output]"
                   endId="Package\SQC ETL\Data Flow Task\DC_ETLCOL.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\SQC ETL\Data Flow Task.Paths[OLE DB Source Output1]"
+                  endId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\SQC ETL\Data Flow Task\SRC_ODS.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\SQC ETL\Data Flow Task.Paths[Output 0]"
                   endId="Package\SQC ETL\Data Flow Task\RC.Inputs[Row Count Input 1]"
@@ -2241,9 +3013,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   startId="Package\SQC ETL\Data Flow Task\SCR_HASH.Outputs[Output 0]" />
                 <path
                   refId="Package\SQC ETL\Data Flow Task.Paths[Row Count Output 1]"
-                  endId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input]"
+                  endId="Package\SQC ETL\Data Flow Task\SORT_SRC.Inputs[Sort Input]"
                   name="Row Count Output 1"
                   startId="Package\SQC ETL\Data Flow Task\RC.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\SQC ETL\Data Flow Task.Paths[Row Count Output 11]"
+                  endId="Package\SQC ETL\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Row Count Output 1"
+                  startId="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\SQC ETL\Data Flow Task.Paths[Sort Output]"
+                  endId="Package\SQC ETL\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="Sort Output"
+                  startId="Package\SQC ETL\Data Flow Task\SORT_SRC.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2252,7 +3034,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{27E224AA-2E5A-43EE-9C2A-F9B3BC782B7F}"
+          DTS:DTSID="{578F991D-0E9C-4CF9-9302-ECB05A2DA643}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR_CreateDeltaMapping"
@@ -2267,14 +3049,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               ReadOnlyVariables="User::SOURCE_COLUMNS"
               ReadWriteVariables="User::DELTA_COLUMNS_MAPPING">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2394,35 +3197,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
-    "ings")]
-
-namespace ST_4730307f83e847428af09071876d36d3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -2557,38 +3331,6 @@ namespace ST_4730307f83e847428af09071876d36d3
 	}
 }]]></ProjectItem>
               <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
-    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ScriptMain.cs" />
-    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
-      <msb:FileName>ScriptMain.cs</msb:FileName>
-      <msb:ColumnNumber>13</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>94</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
                 Name="ST_4730307f83e847428af09071876d36d3.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2675,35 +3417,75 @@ namespace ST_4730307f83e847428af09071876d36d3
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
+    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
+      <msb:FileName>ScriptMain.cs</msb:FileName>
+      <msb:ColumnNumber>13</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:LineNumber>94</msb:LineNumber>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyCopyright("Copyright @  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_4730307f83e847428af09071876d36d3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2902,7 +3684,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Merge"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{69B31AFD-EC81-458E-81A1-8E2EC3CAA28D}"
+          DTS:DTSID="{140E2CC6-A1E1-4DD0-92AE-55FF52C345BB}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Merge"
@@ -2927,7 +3709,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Truncate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9358AA15-36B2-4E99-9F26-9F8BAC9EB67D}"
+          DTS:DTSID="{B0793E76-07AE-48ED-A80A-59F382F3B0C1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Truncate"
@@ -2945,7 +3727,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_TruncateStg"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5589B164-0444-4143-BB3E-CDB46C156F4B}"
+          DTS:DTSID="{A877CAB1-9AE6-4046-9047-8F53DB99D54A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_TruncateStg"
@@ -2966,7 +3748,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C1E39DC2-553C-4E5B-948C-3523C17E494C}"
+          DTS:DTSID="{919A11C7-5D74-466F-AFEC-005F15593007}"
           DTS:From="Package\SQC ETL\SQL_Truncate"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2974,7 +3756,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{86E2478A-A1CC-40E5-B0BC-48EC382DFEA5}"
+          DTS:DTSID="{AD353D18-7D9D-4DEC-A1DD-DAE0F33D4E6A}"
           DTS:From="Package\SQC ETL\Data Flow Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2982,7 +3764,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{D0246DE5-3FD6-42A6-88D0-A0521A81CDAD}"
+          DTS:DTSID="{0DB18710-FB79-460D-84B1-6C8DBF6CBC81}"
           DTS:From="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2990,7 +3772,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{997FD778-528E-44DF-B63A-B45450F3458F}"
+          DTS:DTSID="{7B739AA2-0A1D-4C9B-8D60-A2B7199775C4}"
           DTS:From="Package\SQC ETL\SQL_Merge"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -3002,7 +3784,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="SQL_GetLoadID"
       DTS:Disabled="True"
-      DTS:DTSID="{61FCB8EC-0446-4790-AD18-FC02858F91D2}"
+      DTS:DTSID="{87055DD4-8D6D-412C-B3AB-C9A202062FB7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetLoadID"
@@ -3024,7 +3806,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_GetRowCounts"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{4D5C6A9B-877D-4358-A4F9-9CF79F458592}"
+      DTS:DTSID="{7AD6F6D9-1DBA-4F82-A006-6437752008A1}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetRowCounts">
@@ -3034,12 +3816,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetDeleted"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{c1331be9-4f70-4527-b7eb-691a90295d6f}"
+          DTS:DTSID="{BEC61ECB-86E2-4B96-84B9-C2D9D0E6B2E5}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetDeleted"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3057,12 +3839,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetInserted"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4F55DC17-E982-47D0-89EB-05F36A3CC5EE}"
+          DTS:DTSID="{AA3FD474-704F-437A-A98E-C3AD34F55159}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetInserted"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3080,12 +3862,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetUpdated"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0e68786d-e438-405c-a807-51dfd16da84c}"
+          DTS:DTSID="{0CABBA26-2525-4F06-AD95-EEDBFB10A9BA}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetUpdated"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3105,7 +3887,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_RegisterPackage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1858169A-7E27-49D5-ABDE-F30CDD035518}"
+      DTS:DTSID="{C965E137-DC13-49D1-ADED-CBC4D6462C15}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_RegisterPackage"
@@ -3142,7 +3924,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_UpdateStatusCompleted"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6AA55665-B589-4FED-80DE-9C7B3937330F}"
+      DTS:DTSID="{913428EB-E501-4D31-B4F9-9544C1283617}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_UpdateStatusCompleted"
@@ -3209,7 +3991,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8805988F-F05E-4BB5-BD1B-A9B9B80A4331}"
+      DTS:DTSID="{8B263EC8-BFE8-430C-BA73-307E8EDA8667}"
       DTS:From="Package\SQL_GetLoadID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3217,7 +3999,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{513E28C2-C8E6-4796-82A1-1D13ECE92153}"
+      DTS:DTSID="{423753E2-6A3A-4E2F-82EC-35218CD8EBED}"
       DTS:From="Package\SQL_RegisterPackage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3225,7 +4007,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{498F6736-B365-4FC1-87AB-9E3DD07208CB}"
+      DTS:DTSID="{B91A331E-D0D8-42E0-9CA6-FA3CE258405E}"
       DTS:From="Package\SQC ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3233,7 +4015,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{63BD6B3A-6D88-4325-BE03-5B97F7B3EC19}"
+      DTS:DTSID="{473C6480-50BC-44A5-A752-45FD422C8013}"
       DTS:From="Package\SQL_GetRowCounts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3242,7 +4024,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{93FB9EA8-E4B4-4084-B79E-EB3FEB3AE8C4}"
+      DTS:DTSID="{19E9B155-9E68-43D2-8969-2A5925EFF84F}"
       DTS:From="Package\SQC ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3251,7 +4033,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{24418FB8-30D3-4C2B-B9EF-0865D58AC9E9}"
+      DTS:DTSID="{753BC238-35D9-402F-B3E6-18D165066665}"
       DTS:From="Package\EXP_Completed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -3259,7 +4041,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{90527355-D267-4FEF-943D-BF2FA394D3CA}"
+      DTS:DTSID="{08AEA21B-02D2-424A-A1F5-1DC2AFBEA4DE}"
       DTS:From="Package\EXP_Failed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -3277,6 +4059,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\EXP_Completed"
+          TopLeft="146.874993434176,240.63157639312" />
+        <NodeLayout
+          Size="136,42.6666666666667"
+          Id="Package\EXP_Failed"
+          TopLeft="347.041666471089,288.52631270935" />
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task"
@@ -3316,7 +4106,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3338,7 +4130,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3360,7 +4154,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3394,7 +4190,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -3409,9 +4207,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\SQL_GetLoadID"
           TopLeft="384.249989885838,108.210524227316" />
         <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetDeleted"
+          TopLeft="32.6249972898514,155.596488260634" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetInserted"
+          TopLeft="33.2499972619117,40.5789434093355" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetUpdated"
+          TopLeft="33.874997233972,97.4035053161816" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="238,298"
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\SQL_GetRowCounts"
+          TopLeft="28.1249987427146,383.157890529844" />
+        <NodeLayout
           Size="190.666666666667,42"
           Id="Package\SQL_RegisterPackage"
           TopLeft="23,39" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\SQL_UpdateStatusCompleted"
+          TopLeft="21.2499990500512,461.15788967342" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="463.583323219171,150.877190893982">
@@ -3480,61 +4301,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222.666666666667,42.6666666666667"
-          Id="Package\SQL_UpdateStatusCompleted"
-          TopLeft="21.2499990500512,461.15788967342" />
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetInserted"
-          TopLeft="33.2499972619117,40.5789434093355" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetUpdated"
-          TopLeft="33.874997233972,97.4035053161816" />
-        <NodeLayout
-          Size="161.333333333334,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetDeleted"
-          TopLeft="32.6249972898514,155.596488260634" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="238,298"
-          Size="200.666666666667,42.6666666666667"
-          Id="Package\SQL_GetRowCounts"
-          TopLeft="28.1249987427146,383.157890529844" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="130.520832229716,425.824557196511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.333332476909"
-              Start="0,0"
-              End="0,27.833332476909">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.833332476909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,8.11197873845452,50.60890625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\EXP_Completed"
-          TopLeft="146.874993434176,240.63157639312" />
-        <NodeLayout
-          Size="136,42.6666666666667"
-          Id="Package\EXP_Failed"
-          TopLeft="347.041666471089,288.52631270935" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="388.499993406236,239.59649125812">
@@ -3567,6 +4333,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="130.520832229716,425.824557196511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.333332476909"
+              Start="0,0"
+              End="0,27.833332476909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.833332476909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,8.11197873845452,50.60890625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3680,41 +4470,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\SQC ETL\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task\SCR_HASH"
-          TopLeft="309.99999076128,312.999990671873" />
+          TopLeft="123.571424888713,236.57142152105" />
         <NodeLayout
           Size="94.6666666666667,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task\RC"
-          TopLeft="327.999990165234,433.999987214804" />
+          TopLeft="140.857138599669,321.142847721066" />
         <NodeLayout
           Size="142.666666666667,49.3333333333334"
           Id="Package\SQC ETL\Data Flow Task\DC_ETLCOL"
-          TopLeft="308.99999076128,163.999995112419" />
+          TopLeft="115.428567958729,143.285710015467" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task\SRC_AW"
-          TopLeft="288.999990582466,25.9999989867211" />
+          TopLeft="96.9999963045118,58.9999980032445" />
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task\DST_STG"
           TopLeft="313.999990642071,562.666656593482" />
         <EdgeLayout
-          Id="Package\SQC ETL\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="376.999990403653,476.999987214804">
+          Id="Package\SQC ETL\Data Flow Task.Paths[Output 0]"
+          TopLeft="190.214281744191,279.238088187717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,85.666669378678"
+              EndConnector="0,41.904759533349"
               Start="0,0"
-              End="0,78.166669378678">
+              End="0,34.404759533349">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.166669378678" />
+                    End="0,34.404759533349" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3724,43 +4514,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SQC ETL\Data Flow Task.Paths[Output 0]"
-          TopLeft="376.999990463257,355.999990671873">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.999996542931"
-              Start="0,0"
-              End="0,70.499996542931">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.499996542931" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,27.2499982714655,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\SQC ETL\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="378.999990671873,68.9999989867211">
+          TopLeft="186.214282131621,101.666664669911">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,94.9999961256979"
+              EndConnector="0,41.619045345556"
               Start="0,0"
-              End="0,87.4999961256979">
+              End="0,34.119045345556">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.4999961256979" />
+                    End="0,34.119045345556" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3771,18 +4537,200 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SQC ETL\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="379.49999076128,212.999995112419">
+          TopLeft="189.499996423721,192.6190433488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,99.999995559454"
+              EndConnector="0,43.9523781722499"
               Start="0,0"
-              End="0,92.499995559454">
+              End="0,36.4523781722499">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.499995559454" />
+                    End="0,36.4523781722499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\SRC_ODS"
+          TopLeft="444.285701044969,66.6666660706202" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\RC_DEST_ROWS"
+          TopLeft="432.857129956995,175.714280477592" />
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\SORT_SRC"
+          TopLeft="130.714281818697,396.428563871554" />
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="189.452376875849,363.809514387733">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.6190494838215"
+              Start="0,0"
+              End="0,25.1190494838215">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1190494838215" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\Conditional Split"
+          TopLeft="327.142847393241,472.85713089364" />
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="502.571415500982,109.333332737287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.3809477403052"
+              Start="0,0"
+              End="0,58.8809477403052">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.8809477403052" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\Derived Column"
+          TopLeft="411.428559167045,298.095230133761" />
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[Row Count Output 11]"
+          TopLeft="503.523796623662,218.380947144259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.0952374566168,79.714282989502"
+              Start="0,0"
+              End="-26.0952374566168,72.214282989502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.857141494751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.857141494751"
+                    Point2="0,39.857141494751"
+                    Point3="-4,39.857141494751" />
+                  <mssgle:LineSegment
+                    End="-22.0952374566168,39.857141494751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.0952374566168,39.857141494751"
+                    Point2="-26.0952374566168,39.857141494751"
+                    Point3="-26.0952374566168,43.857141494751" />
+                  <mssgle:LineSegment
+                    End="-26.0952374566168,72.214282989502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="393.809514059907,515.523797560306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.1428567511695,47.1428590331758"
+              Start="0,0"
+              End="-15.1428567511695,39.6428590331758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5714295165879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5714295165879"
+                    Point2="0,23.5714295165879"
+                    Point3="-4,23.5714295165879" />
+                  <mssgle:LineSegment
+                    End="-11.1428567511695,23.5714295165879" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.1428567511695,23.5714295165879"
+                    Point2="-15.1428567511695,23.5714295165879"
+                    Point3="-15.1428567511695,27.5714295165879" />
+                  <mssgle:LineSegment
+                    End="-15.1428567511695,39.6428590331758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.1853346255848,28.5714295165879,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
+          Id="Package\SQC ETL\Data Flow Task\Multicast"
+          TopLeft="139.999995827675,469.523800114791" />
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[Sort Output]"
+          TopLeft="192.690472156519,439.095230538221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4285695765701"
+              Start="0,0"
+              End="0,22.9285695765701">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9285695765701" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SQC ETL\Data Flow Task.Paths[Multicast Output 1]"
+          TopLeft="249.333329161008,492.523798837548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.8095182322323,0"
+              Start="0,0"
+              End="70.3095182322323,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="70.3095182322323,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3817,6 +4765,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SQC ETL\Data Flow Task\SRC_ODS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
