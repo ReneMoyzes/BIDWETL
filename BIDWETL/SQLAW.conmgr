@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=dbsys.cs.vsb.cz\sqldb;User ID=AdventureWorksDataReader;Initial Catalog=AdventureWorksLT2017;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-BIDWETL-{13C0A877-1A65-49CD-A9FA-077F312649D4}dbsys.cs.vsb.cz\sqldb.AdventureWorksLT2017.AdventureWorksDataReader;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAACWn0xei1noSid/b3teOnrAb6kURJzZUbCEa5I2T6io6gAAAAAOgAAAAAIAACAAAAB5BmnIh4w69PANw9MqAlySPi5p1BPUA/sF2jVlAWJN4IAAAADYR5IHQkv1LLkIoUfBW2GYp+UrLL3abOMt87+5Rsp2MDkTwAs9aEKi3gE0wrV7aOJTk0vKL7rmBAfRkLZr345GwEhYCSNhxQ02Sknk5HVDIjunN35/zerPa/8JzlRMUu0dz/tyZxY8HKQxYVGSCoKyphcvWunwQSht6LEU8YW9r0AAAABQO8dJ+eyppSRZEeYY+EkbvyWo7XTf+wxUiURdr8Q4I5Mw8RpXkTCvwv8aQdWzTgtEiYSbVec+RUEglux6xO24</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbtrtgizUJEi57J852l8YCgAAAAACAAAAAAAQZgAAAAEAACAAAAAe1OQoWmnUf/a3+ceR5kxqdNR4b+TzOeG0CMXQidPeBAAAAAAOgAAAAAIAACAAAADHt3q+davc4csle4Z8AEpNJErejcwzJBCOA7nO8mg9YIAAAABbV7U5/HINd602KChWqvWF5sjK5DAzxcaUCqqRmrVtxvPes7ppc0Ck22gnELaBNDOKCjZvJZs2IW0tCjDS1/8Rkv3ZmgDn/y8vU3VSrGIU0XHlhvYVxZixkw+7ZN4TYbxwB7q7pq1nzPQnVsZ8bW+mYHczAjbg7HTetAKFvp5QDEAAAACMKh1JZZYKXssLOi7tDodtmVujHHn/gfvUk4mJ+XnHvQhDCyaGG0XwYVurSnM+kd/2Lwx92IFR171ClUXH6edR</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
