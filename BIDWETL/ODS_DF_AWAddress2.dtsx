@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VSBMOYLEN"
   DTS:CreatorName="VSBMOYLEN\MOY001"
-  DTS:DTSID="{7171C687-174F-4B46-84B2-0994C94B42F4}"
+  DTS:DTSID="{FA9129D8-EEC9-436B-A8BF-7BB06DFA4ABF}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="ODS_DF_AWSalesOrderDetails"
+  DTS:ObjectName="ODS_DF_AWAddress2"
   DTS:PackageType="5"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{4210EE91-1649-4257-BD0D-468E467B5F5C}">
+  DTS:VersionBuild="139"
+  DTS:VersionGUID="{4382DFDE-2538-4662-9B4A-F9226A4DDFB9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
-      DTS:DTSID="{1816AECE-B063-49CE-895A-37DA0562BAC7}"
+      DTS:DTSID="{1A330207-DEC8-4306-AB4F-C24FFBE21256}"
       DTS:ObjectName="BATCH_ID">
       <DTS:Property
         DTS:DataType="3"
@@ -28,7 +28,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{1EA86232-EF89-47BC-91DB-C28E7F59FA84}"
+      DTS:DTSID="{C27A218C-DB82-4EE4-B3E0-3ABFA2C3247C}"
       DTS:ObjectName="SOURCE_SYTEM">
       <DTS:Property
         DTS:DataType="8"
@@ -37,7 +37,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
-      DTS:DTSID="{70C73D6C-3DC6-4D35-96ED-379F200DF891}"
+      DTS:DTSID="{469B1F5D-5045-420C-AE91-03CCAC84F605}"
       DTS:ObjectName="TRUNCATE_STAGE">
       <DTS:Property
         DTS:DataType="11"
@@ -47,7 +47,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{44169934-9461-453C-9950-F83B75073E91}"
+      DTS:DTSID="{E1DBB09B-EAA0-4B3D-A9CE-CBF69C02B480}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DELTA_COLUMNS_MAPPING">
@@ -57,18 +57,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8D5AF69F-C032-42D4-99DB-4FBDBA41D682}"
+      DTS:DTSID="{0AA6417E-F691-42CB-A715-8A349E3C962D}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;_Delta]&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DELTA_TABLE_FULL_NAME">
       <DTS:VariableValue
-        DTS:DataType="8">[ODS].[AWSalesOrderDetail_Delta]</DTS:VariableValue>
+        DTS:DataType="8">[ODS].[AWAddress_Delta]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B2927142-C1F4-4A20-9E53-4D03174FB485}"
+      DTS:DTSID="{25E5CA36-419C-4030-923A-B0AE88B47B41}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_DELETED">
@@ -77,7 +77,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7CEAA437-747F-489F-9891-BF201BBEA00B}"
+      DTS:DTSID="{39CCDF78-12C0-409B-8BDD-0F6C9BD62B10}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_INSERTED">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C23C9DDE-EDF2-4E63-9B74-71E431C1DA33}"
+      DTS:DTSID="{78E48BF2-41D7-45CE-845C-7E645A4360C6}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::DEST_INSERTED]+ @[User::DEST_DELETED]+ @[User::DEST_UPDATED]"
       DTS:IncludeInDebugDump="2345"
@@ -97,7 +97,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B3C90EB5-0172-48FC-ACD8-05B5BB3EB6E9}"
+      DTS:DTSID="{6F526B08-F8D7-46F8-A1DB-7628A7384A85}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_SCHEMA">
@@ -106,27 +106,27 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{24B9C8F3-4177-412F-9B47-7CF53E61CC34}"
+      DTS:DTSID="{F0D6265A-48FA-41F9-9FB0-D6323B0A76DE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_TABLE">
       <DTS:VariableValue
-        DTS:DataType="8">AWSalesOrderDetail</DTS:VariableValue>
+        DTS:DataType="8">AWAddress</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6BD6FE25-6FC9-49F6-A932-2DED1BBE1616}"
+      DTS:DTSID="{E479DC49-DA5D-456C-BBA2-48452820DDD5}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::DEST_SCHEMA]+&quot;].[&quot;+ @[User::DEST_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_TABLE_FULL_NAME">
       <DTS:VariableValue
-        DTS:DataType="8">[Stage].[AWSalesOrderDetail]</DTS:VariableValue>
+        DTS:DataType="8">[Stage].[AWAddress]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3D67FBF8-AD79-4438-A146-C532F280E2C2}"
+      DTS:DTSID="{37015B21-F741-4F50-BCE3-CA2A31762A33}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_UPDATED">
@@ -135,7 +135,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1DCEED8-87D0-4DBD-90CE-F3AE18CEA9FF}"
+      DTS:DTSID="{7A23BEFE-4C7E-4646-977E-22C9D33DEDFA}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ETL_STATUS">
@@ -145,18 +145,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{30882411-BA01-4CFB-BCD2-8B96B4D86542}"
+      DTS:DTSID="{D2511B4E-A9AB-45AD-87B5-56C626C8B07E}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::StartTime]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_DATE">
       <DTS:VariableValue
-        DTS:DataType="7">3/19/2025 1:16:31 PM</DTS:VariableValue>
+        DTS:DataType="7">3/28/2025 10:37:10 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1B0C25FF-0A29-4E8B-9F7C-7C5C2F90608B}"
+      DTS:DTSID="{6D76CC2A-A3E1-44CB-A886-F88526BE3D60}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LOAD_ID">
@@ -165,7 +165,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D1398F86-E39A-423E-A4A8-79CBFD145B2D}"
+      DTS:DTSID="{92CC3699-6BDC-4D17-BC37-CA1F3C0BDA30}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_SCHEMA">
@@ -174,54 +174,54 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AB336A2E-E415-4228-BD2E-89D4A959A9CF}"
+      DTS:DTSID="{04C230BB-FE7C-4318-8150-4A63048871D6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_TABLE">
       <DTS:VariableValue
-        DTS:DataType="8">AWSalesOrderDetail</DTS:VariableValue>
+        DTS:DataType="8">AWAddress</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E9DD939-70FD-4DE7-A826-42084BE5F251}"
+      DTS:DTSID="{12E77CFD-82DB-4FC7-9706-E7C530A322B8}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::ODS_SCHEMA]+&quot;].[&quot;+ @[User::ODS_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ODS_TABLE_FULL_NAME">
       <DTS:VariableValue
-        DTS:DataType="8">[ODS].[AWSalesOrderDetail]</DTS:VariableValue>
+        DTS:DataType="8">[ODS].[AWAddress]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{525DD1A4-ADC5-496D-BB99-02237339E53F}"
+      DTS:DTSID="{2ECA9CFE-667A-4781-9516-AD17DEDC0A9F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PRIMARY_KEY">
       <DTS:VariableValue
-        DTS:DataType="8">SalesOrderDetailId</DTS:VariableValue>
+        DTS:DataType="8">AddressID</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EC8E0F17-4848-4307-B293-A0653C9BB8A0}"
+      DTS:DTSID="{43D4F935-A1C2-42C5-8A8D-73B080E64095}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_COLUMNS">
       <DTS:VariableValue
-        DTS:DataType="8">[SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate]</DTS:VariableValue>
+        DTS:DataType="8">[AddressID],[AddressLine1], [AddressLine2], [City], [StateProvince], [CountryRegion], [PostalCode], [rowguid], [ModifiedDate]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6DCC61A7-A99D-42DF-9739-0C5E319BC45D}"
+      DTS:DTSID="{8500F0BD-7CD5-4855-902E-508D5A0D2C29}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_FILTER">
       <DTS:VariableValue
-        DTS:DataType="8">WHERE OrderQty&gt;1</DTS:VariableValue>
+        DTS:DataType="8">WHERE 1=1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{811D3DD9-6F81-47A9-862A-B33D0D66B9C0}"
+      DTS:DTSID="{0E5386CB-2B72-4071-8FA0-3DFAFCBF3DAF}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_SCHEMA">
@@ -230,60 +230,60 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{05115DD4-E38F-4018-BF1E-0FB9620286DE}"
+      DTS:DTSID="{8768271B-C730-4728-B398-E6AEE13AC92B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_TABLE">
       <DTS:VariableValue
-        DTS:DataType="8">SalesOrderDetail</DTS:VariableValue>
+        DTS:DataType="8">Address</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{55C4DFEB-C802-44DD-B2E2-77EFE71FCBD7}"
+      DTS:DTSID="{B1C22D56-2BED-4E65-826A-730E1945228A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;[&quot;+ @[User::SOURCE_SCHEMA]+&quot;].[&quot;+ @[User::SOURCE_TABLE]+&quot;]&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SOURCE_TABLE_FULL_NAME">
       <DTS:VariableValue
-        DTS:DataType="8">[SalesLT].[SalesOrderDetail]</DTS:VariableValue>
+        DTS:DataType="8">[SalesLT].[Address]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9D49FCFD-40CE-40D7-8257-4134F61A3D51}"
+      DTS:DTSID="{BA9F1346-CE7C-4F0B-B9A7-90F234D485E5}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'DELETE' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_COUNT_DELETED">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWSalesOrderDetail_Delta] WHERE Action = 'DELETE' AND [LOAD_ID] = 1</DTS:VariableValue>
+        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWAddress_Delta] WHERE Action = 'DELETE' AND [LOAD_ID] = 1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D7E8B4A8-5C13-4CD6-9468-914521AF1B54}"
+      DTS:DTSID="{1DAD32DC-B0ED-4134-9F95-916099796EF8}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'INSERT' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_COUNT_INSERTED">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWSalesOrderDetail_Delta] WHERE Action = 'INSERT' AND [LOAD_ID] = 1</DTS:VariableValue>
+        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWAddress_Delta] WHERE Action = 'INSERT' AND [LOAD_ID] = 1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4240F263-A163-4CFD-8D4B-80CCE7CCF653}"
+      DTS:DTSID="{4949D872-6C0B-4FC5-8EE1-CB321B098E5C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(1) As CNT FROM&quot; + @[User::DELTA_TABLE_FULL_NAME]  + &quot; WHERE Action = 'UPDATE' AND [LOAD_ID] = &quot; + ( (DT_WSTR, 8) @[User::LOAD_ID])"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_COUNT_UPDATED">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWSalesOrderDetail_Delta] WHERE Action = 'UPDATE' AND [LOAD_ID] = 1</DTS:VariableValue>
+        DTS:DataType="8">SELECT COUNT(1) As CNT FROM[ODS].[AWAddress_Delta] WHERE Action = 'UPDATE' AND [LOAD_ID] = 1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6D0F9EBE-91B9-4022-B0BB-4843B607135D}"
+      DTS:DTSID="{B9AEF1F6-C7DD-4B8D-8F94-CD8EDEEEFD9B}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DECLARE  @ActionLoadID int=?;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN MATCHED AND target.[Hash] &lt;&gt; source.[Hash] THEN &#xA;    UPDATE SET &#xA;    &quot; + @[User::DELTA_COLUMNS_MAPPING] +&quot;,LOAD_ID=source.LOAD_ID, LOAD_DATE=source.LOAD_DATE, HASH=source.HASH&#xA;WHEN NOT MATCHED BY TARGET THEN &quot; +&#xA;&quot;    INSERT (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;     VALUES (&quot;+ @[User::SOURCE_COLUMNS] + &quot;, LOAD_ID, LOAD_DATE, [Hash]) &#xA;OUTPUT &#xA;    $action AS Operation, &#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    source.* &#xA;    INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&#xA;&#xA;&#xA;MERGE &quot; + @[User::ODS_TABLE_FULL_NAME] + &quot; AS target &#xA;USING &quot; + @[User::DEST_TABLE_FULL_NAME] + &quot; AS source&#xA;ON target.&quot; + @[User::PRIMARY_KEY] + &quot; = source.&quot; + @[User::PRIMARY_KEY] + &quot;&#xA;WHEN NOT MATCHED BY SOURCE THEN &#xA;    DELETE &#xA;OUTPUT &#xA;    $action AS Operation,&#xA;    @ActionLoadID AS Action_LOAD_ID,&#xA;    deleted.*&#xA;INTO &quot; + @[User::DELTA_TABLE_FULL_NAME] + &quot;;&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -292,68 +292,68 @@
       <DTS:VariableValue
         DTS:DataType="8">DECLARE  @ActionLoadID int=?;
 
-MERGE [ODS].[AWSalesOrderDetail] AS target 
-USING [Stage].[AWSalesOrderDetail] AS source
-ON target.SalesOrderDetailId = source.SalesOrderDetailId
+MERGE [ODS].[AWAddress] AS target 
+USING [Stage].[AWAddress] AS source
+ON target.AddressID = source.AddressID
 WHEN MATCHED AND target.[Hash] &lt;&gt; source.[Hash] THEN 
     UPDATE SET 
     ,LOAD_ID=source.LOAD_ID, LOAD_DATE=source.LOAD_DATE, HASH=source.HASH
-WHEN NOT MATCHED BY TARGET THEN     INSERT ([SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate], LOAD_ID, LOAD_DATE, [Hash]) 
-     VALUES ([SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate], LOAD_ID, LOAD_DATE, [Hash]) 
+WHEN NOT MATCHED BY TARGET THEN     INSERT ([AddressID],[AddressLine1], [AddressLine2], [City], [StateProvince], [CountryRegion], [PostalCode], [rowguid], [ModifiedDate], LOAD_ID, LOAD_DATE, [Hash]) 
+     VALUES ([AddressID],[AddressLine1], [AddressLine2], [City], [StateProvince], [CountryRegion], [PostalCode], [rowguid], [ModifiedDate], LOAD_ID, LOAD_DATE, [Hash]) 
 OUTPUT 
     $action AS Operation, 
     @ActionLoadID AS Action_LOAD_ID,
     source.* 
-    INTO [ODS].[AWSalesOrderDetail_Delta];
+    INTO [ODS].[AWAddress_Delta];
 
 
-MERGE [ODS].[AWSalesOrderDetail] AS target 
-USING [Stage].[AWSalesOrderDetail] AS source
-ON target.SalesOrderDetailId = source.SalesOrderDetailId
+MERGE [ODS].[AWAddress] AS target 
+USING [Stage].[AWAddress] AS source
+ON target.AddressID = source.AddressID
 WHEN NOT MATCHED BY SOURCE THEN 
     DELETE 
 OUTPUT 
     $action AS Operation,
     @ActionLoadID AS Action_LOAD_ID,
     deleted.*
-INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
+INTO [ODS].[AWAddress_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FC896D13-26FA-43A8-9AC4-48D18084F972}"
+      DTS:DTSID="{E0CE9932-18B5-4E52-9B4D-046C3DDAC18A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot;+ @[User::SOURCE_COLUMNS]+ &quot; FROM &quot; +  @[User::SOURCE_TABLE_FULL_NAME] + &quot; &quot;+ @[User::SOURCE_FILTER]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_SOURCE_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT [SalesOrderID], [SalesOrderDetailID], [OrderQty], [ProductID], [UnitPrice], [UnitPriceDiscount], [LineTotal], [rowguid], [ModifiedDate] FROM [SalesLT].[SalesOrderDetail] WHERE OrderQty&gt;1</DTS:VariableValue>
+        DTS:DataType="8">SELECT [AddressID],[AddressLine1], [AddressLine2], [City], [StateProvince], [CountryRegion], [PostalCode], [rowguid], [ModifiedDate] FROM [SalesLT].[Address] WHERE 1=1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26848C7A-A34D-46DD-8EDF-1BE0BF8B6CE5}"
+      DTS:DTSID="{302E3229-570D-4F0D-845A-E23A55B0F8AB}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_TRUNCATE_DEST">
       <DTS:VariableValue
-        DTS:DataType="8">TRUNCATE TABLE [Stage].[AWSalesOrderDetail]</DTS:VariableValue>
+        DTS:DataType="8">TRUNCATE TABLE [Stage].[AWAddress]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B01D522F-CD0E-4E6C-9C98-BB8B02EDB45B}"
+      DTS:DTSID="{09E56A1F-6454-42AB-9AF3-EF85266B6B81}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[User::DEST_TABLE_FULL_NAME]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SQL_TRUNCATE_STAGE">
       <DTS:VariableValue
-        DTS:DataType="8">TRUNCATE TABLE [Stage].[AWSalesOrderDetail]</DTS:VariableValue>
+        DTS:DataType="8">TRUNCATE TABLE [Stage].[AWAddress]</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7488C245-2B07-4D9B-8F1F-28603B60522D}"
+      DTS:DTSID="{7D539761-D69B-4F6E-BBDB-DB2D66BA8194}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SRC_RC">
@@ -362,7 +362,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{280F9B31-D080-4D73-B706-09FA54208188}"
+      DTS:DTSID="{99EEBDC7-610F-4A57-8545-AA00D61FA7FF}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="STATUS">
@@ -371,7 +371,7 @@ INTO [ODS].[AWSalesOrderDetail_Delta];</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10D5485A-77CD-4C9E-B692-CB3EFCABC13B}"
+      DTS:DTSID="{D898F8BD-7813-405E-962B-61CAE9FF9E01}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;A&#xA;&#xA;B&#xA;&#xA;C&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -390,12 +390,12 @@ C</DTS:VariableValue>
       DTS:refId="Package\EXP_Completed"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{3153BCF7-984E-464B-B2FA-1A5BBC287064}"
+      DTS:DTSID="{D5686B09-2972-4305-B90C-77EA96F01DB2}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_Completed"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -406,12 +406,12 @@ C</DTS:VariableValue>
       DTS:refId="Package\EXP_Failed"
       DTS:CreationName="Microsoft.ExpressionTask"
       DTS:Description="Expression Task"
-      DTS:DTSID="{54F3FCF5-2926-40DE-B6C3-7E7AF86C38FF}"
+      DTS:DTSID="{71F3FC4A-6C04-473F-8F77-AB9A4753C065}"
       DTS:ExecutableType="Microsoft.ExpressionTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="EXP_Failed"
       DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExpressionTask
@@ -422,7 +422,7 @@ C</DTS:VariableValue>
       DTS:refId="Package\SQC ETL"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{3A7CA609-E2AA-43EE-B84A-D58127CB9FFD}"
+      DTS:DTSID="{BD21AC91-CDB0-4F64-9997-BB5B32C9FE4E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQC ETL">
@@ -432,7 +432,7 @@ C</DTS:VariableValue>
           DTS:refId="Package\SQC ETL\Data Flow Task"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7868D4D3-51D2-4A9D-AC82-CF76EDF36D87}"
+          DTS:DTSID="{CC6B5028-3754-408D-906C-D3A9BD29F1DA}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Data Flow Task"
@@ -580,7 +580,7 @@ C</DTS:VariableValue>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
+                      name="OpenRowsetVariable">User::DEST_TABLE_FULL_NAME</property>
                     <property
                       dataType="System.String"
                       description="The SQL command to be executed."
@@ -598,11 +598,11 @@ C</DTS:VariableValue>
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">4</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
+                      name="FastLoadKeepIdentity">true</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
@@ -632,50 +632,6 @@ C</DTS:VariableValue>
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
-                          cachedDataType="i4"
-                          cachedName="SalesOrderID"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[SalesOrderDetailID]"
-                          cachedDataType="i4"
-                          cachedName="SalesOrderDetailID"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[OrderQty]"
-                          cachedDataType="i2"
-                          cachedName="OrderQty"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[ProductID]"
-                          cachedDataType="i4"
-                          cachedName="ProductID"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
-                          cachedDataType="cy"
-                          cachedName="UnitPrice"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[UnitPriceDiscount]"
-                          cachedDataType="cy"
-                          cachedName="UnitPriceDiscount"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[LineTotal]"
-                          cachedDataType="numeric"
-                          cachedName="LineTotal"
-                          cachedPrecision="38"
-                          cachedScale="6"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]" />
                         <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[rowguid]"
                           cachedDataType="guid"
@@ -714,39 +670,57 @@ C</DTS:VariableValue>
                           cachedName="HASH"
                           externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[HASH]"
                           lineageId="Package\SQC ETL\Data Flow Task\SCR_HASH.Outputs[Output 0].Columns[HASH]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[AddressID]"
+                          cachedDataType="i4"
+                          cachedName="AddressID"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressID]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressID]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[AddressLine1]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="AddressLine1"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine1]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[AddressLine2]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="AddressLine2"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine2]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[StateProvince]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="StateProvince"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[StateProvince]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[StateProvince]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[CountryRegion]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CountryRegion"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegion]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[CountryRegion]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="PostalCode"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[PostalCode]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
-                          dataType="i4"
-                          name="SalesOrderID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
-                          dataType="i4"
-                          name="SalesOrderDetailID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
-                          dataType="i2"
-                          name="OrderQty" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                          dataType="i4"
-                          name="ProductID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
-                          dataType="cy"
-                          name="UnitPrice" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
-                          dataType="cy"
-                          name="UnitPriceDiscount" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
-                          dataType="numeric"
-                          name="LineTotal"
-                          precision="38"
-                          scale="6" />
                         <externalMetadataColumn
                           refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
                           dataType="guid"
@@ -773,6 +747,40 @@ C</DTS:VariableValue>
                           dataType="wstr"
                           length="32"
                           name="HASH" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressID]"
+                          dataType="i4"
+                          name="AddressID" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine2" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="30"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[StateProvince]"
+                          dataType="wstr"
+                          length="50"
+                          name="StateProvince" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegion]"
+                          dataType="wstr"
+                          length="50"
+                          name="CountryRegion" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\DST_STG.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          name="PostalCode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1251,14 +1259,14 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public Int16 OrderQty
+    public Guid rowguid
     {
         get
         {
-            return Buffer.GetInt16(BufferColumnIndexes[0]);
+            return Buffer.GetGuid(BufferColumnIndexes[0]);
         }
     }
-    public bool OrderQty_IsNull
+    public bool rowguid_IsNull
     {
         get
         {
@@ -1266,14 +1274,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 ProductID
+    public DateTime ModifiedDate
     {
         get
         {
-            return Buffer.GetInt32(BufferColumnIndexes[1]);
+            return Buffer.GetDateTime(BufferColumnIndexes[1]);
         }
     }
-    public bool ProductID_IsNull
+    public bool ModifiedDate_IsNull
     {
         get
         {
@@ -1281,14 +1289,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal UnitPrice
+    public String AddressLine1
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[2]);
+            return Buffer.GetString(BufferColumnIndexes[2]);
         }
     }
-    public bool UnitPrice_IsNull
+    public bool AddressLine1_IsNull
     {
         get
         {
@@ -1296,14 +1304,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal UnitPriceDiscount
+    public String AddressLine2
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[3]);
+            return Buffer.GetString(BufferColumnIndexes[3]);
         }
     }
-    public bool UnitPriceDiscount_IsNull
+    public bool AddressLine2_IsNull
     {
         get
         {
@@ -1311,14 +1319,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal LineTotal
+    public String City
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[4]);
+            return Buffer.GetString(BufferColumnIndexes[4]);
         }
     }
-    public bool LineTotal_IsNull
+    public bool City_IsNull
     {
         get
         {
@@ -1326,14 +1334,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Guid rowguid
+    public String StateProvince
     {
         get
         {
-            return Buffer.GetGuid(BufferColumnIndexes[5]);
+            return Buffer.GetString(BufferColumnIndexes[5]);
         }
     }
-    public bool rowguid_IsNull
+    public bool StateProvince_IsNull
     {
         get
         {
@@ -1341,14 +1349,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public DateTime ModifiedDate
+    public String CountryRegion
     {
         get
         {
-            return Buffer.GetDateTime(BufferColumnIndexes[6]);
+            return Buffer.GetString(BufferColumnIndexes[6]);
         }
     }
-    public bool ModifiedDate_IsNull
+    public bool CountryRegion_IsNull
     {
         get
         {
@@ -1356,14 +1364,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 SalesOrderID
+    public String PostalCode
     {
         get
         {
-            return Buffer.GetInt32(BufferColumnIndexes[7]);
+            return Buffer.GetString(BufferColumnIndexes[7]);
         }
     }
-    public bool SalesOrderID_IsNull
+    public bool PostalCode_IsNull
     {
         get
         {
@@ -1371,14 +1379,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 SalesOrderDetailID
+    public Int32 AddressID
     {
         get
         {
             return Buffer.GetInt32(BufferColumnIndexes[8]);
         }
     }
-    public bool SalesOrderDetailID_IsNull
+    public bool AddressID_IsNull
     {
         get
         {
@@ -1536,7 +1544,7 @@ public class Variables
     <msb:CodeName>SC_73390b4073494adf88122a8a1bac33a5</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_73390b4073494adf88122a8a1bac33a5</msb:DisplayName>
-    <msb:ProjectId>{BF60DD12-8FDB-4BA2-9B35-0FBD960C7D58}</msb:ProjectId>
+    <msb:ProjectId>{09AB6537-2C0E-46CB-ABA6-AA89D7418282}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_73390b4073494adf88122a8a1bac33a5.csproj" />
@@ -1683,136 +1691,136 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJD402cAAAAAAAAAAOAAIiALATAAABwAAAAIAAAAAAAASjsA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAANw5mcAAAAAAAAAAOAAIiALATAAABwAAAAIAAAAAAAACjsA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPg6AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALg6AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAUBsAAAAgAAAAHAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAEBsAAAAgAAAAHAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAeAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAs
-OwAAAAAAAEgAAAACAAUAICQAACAWAAABAAAAAAAAAEA6AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADs
+OgAAAAAAAEgAAAACAAUAICQAAOAVAAABAAAAAAAAAAA6AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAQAVQEAAAEAABHQAwAAAigS
 AAAKKBMAAAoKfhQAAAoLBgwWDTigAAAAcykAAAYTBBEECAmafQgAAAQRBHsIAAAEbxUAAApyAQAA
 cG8WAAAKLXMRBHsIAAAEbxcAAAosZQYRBP4GKgAABnMYAAAKKAEAACsTBREFFCgaAAAKLA8RBQNv
-GwAACqUnAAABKwEWEQR7CAAABANvGwAAChMGLQkRBm8cAAAKKwVyEQAAcBMHBxEHKB0AAAoLB3If
+GwAACqUmAAABKwEWEQR7CAAABANvGwAAChMGLQkRBm8cAAAKKwVyEQAAcBMHBxEHKB0AAAoLB3If
 AABwKB0AAAoLCRdYDQkIjmk/V////wdyHwAAcG8WAAAKLBAHFgdvHgAAChhZbx8AAAoLKCAAAAoT
-CCghAAAKB28iAAAKEwkRCBEJbyMAAAoTCnMkAAAKEwsWEwwrIRELEQoRDI8qAAABciUAAHAoJQAA
+CCghAAAKB28iAAAKEwkRCBEJbyMAAAoTCnMkAAAKEwsWEwwrIRELEQoRDI8pAAABciUAAHAoJQAA
 Cm8mAAAKJhEMF1gTDBEMEQqOaTLXAxELbxwAAApvGAAABt4MEQgsBxEIbycAAArcKgAAAAEQAAAC
 AOwAXEgBDAAAAAAeAigcAAAGKioCAwQFKCgAAAoqUgJ7KQAACgJ7KgAAChaUbysAAAoqIgIWKCwA
 AAoqUgJ7KQAACgJ7KgAACheUby0AAAoqIgIXKCwAAAoqUgJ7KQAACgJ7KgAAChiUby4AAAoqIgIY
 KCwAAAoqUgJ7KQAACgJ7KgAAChmUby4AAAoqIgIZKCwAAAoqUgJ7KQAACgJ7KgAAChqUby4AAAoq
-IgIaKCwAAAoqUgJ7KQAACgJ7KgAAChuUby8AAAoqIgIbKCwAAAoqUgJ7KQAACgJ7KgAAChyUbzAA
-AAoqIgIcKCwAAAoqUgJ7KQAACgJ7KgAACh2Uby0AAAoqIgIdKCwAAAoqUgJ7KQAACgJ7KgAACh6U
-by0AAAoqIgIeKCwAAAoqKgIfCQMoMQAACipeAywJAh8JKDIAAAoqcisAAHBzMwAACnoeAig0AAAK
-Kh4CKDUAAAoqfgIoNgAACgICcyAAAAZ9AQAABAICcyEAAAZ9AgAABCqSBHLIAABwGm83AAAKLBUC
-BQIDKDgAAAoOBHMFAAAGbx4AAAYqSisHAgNvHwAABgNvGgAABi3xKgYqOgIoOQAACgIDfQMAAAQq
-OgIoOQAACgIDfQQAAAQqHgIoOQAACiqufgUAAAQtHnLYAABw0AcAAAIoEgAACm86AAAKczsAAAqA
-BQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAig8AAAKKi5zJwAABoAHAAAEKoYDbxUA
-AAoCewgAAARvFQAACnIBAABwKB0AAAooPQAACipCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAA
-AAAFAGwAAABoCAAAI34AANQIAABoCQAAI1N0cmluZ3MAAAAAPBIAAEwBAAAjVVMAiBMAABAAAAAj
-R1VJRAAAAJgTAACIAgAAI0Jsb2IAAAAAAAAAAgAAAVcVogkJCwAAAPoBMwAWAAABAAAALgAAAAkA
-AAAIAAAAKgAAABAAAAA9AAAAEQAAAAEAAAADAAAAFwAAABgAAAABAAAAAQAAAAUAAAABAAAAAQAA
-AAEAAAAAAJQEAQAAAAAABgAyA/wGBgDGA/wGBgB+AukGDwBwBwAABgCrAgwGBgAVAwwGBgD2AgwG
-BgCtAwwGBgBSAwwGBgBrAwwGBgDCAgwGBgDdAhgECgCGA58BBgBgBgwGBgAXCK4FBgBRAAYJBgCR
-BtsIBgBGAvwGCgC7Bp8BDgCsBp8BCgBtBp8BBgBoBK4FBgAPAa4FBgCWAa4FCgBjCJ8BBgBhAukG
-BgDMBhwHBgBJBvcFEgAxAn4EEgCSAn4EEgD5AeIFBgDAAa4FBgBcAa4FBgA0BK4FBgBVBgwGBgBK
-AK4FFgBFAYUGBgAzAOUABgDPBa4FBgAPBNsIBgC1BQYJBgD7A64FBgBQAa4FBgAeBq4FBgA4Bq4F
-BgAnCQwGAAAAAIIAAAAAAAEAAQABABAA1wUAABAAAQABAAEAEACfBgAATQABAAUAAQAQAEUIAABl
-AAEAHAABABAABAgAAD0AAwAgAAEAEAC8BwAAPQAEACEAAAAQACMHfwc9AAUAIgAAARAA9Ad/B30A
-BwAmAAMBEAABAAAAPQAIACkABgAECCoBBgC8By4BAQBTCDIBAQBTCDIBEQDDBTYBEQDpAToBEQA1
-AT4BBgBdCUIBUCAAAAAAxgDkAwYAAQBYIAAAAADGAO8DBgABAGAgAAAAAMYA5whGAQEA1CEAAAAA
-hhjcBgYAAgDcIQAAAACGGNwGvQACAOchAAAAAIYIMAlMAQUA/CEAAAAAhgiJBVAABQAFIgAAAACG
-CLMAkAAFABoiAAAAAIYI8gRQAAUAIyIAAAAAhggnAVABBQA4IgAAAACGCCoFUAAFAEEiAAAAAIYI
-cwhQAQUAViIAAAAAhghsBVAABQBfIgAAAACGCHAEUAEFAHQiAAAAAIYIVwVQAAUAfSIAAAAAhggU
-AVUBBQCSIgAAAACGCBcFUAAFAJsiAAAAAIYIGQJaAQUAsCIAAAAAhgg/BVAABQC5IgAAAACGCKIA
-kAAFAM4iAAAAAIYI2gRQAAUA1yIAAAAAhgiLAJAABQDsIgAAAACGCLwEUAAFAPUiAAAAAIYIyQAQ
-AAUAACMAAAAAhggHBV8BBgAYIwAAAACGAP4IUAAHACAjAAAAAIYAHghQAAcAKCMAAAAAhhjcBgYA
-BwBIIwAAAADGAM4IZAEHAG0jAAAAAMYBxwhGAQsAgCMAAAAAxgHnCEYBDACCIwAAAACGGNwGbgEN
-AJEjAAAAAIYY3AZuAQ4AoCMAAAAAgxjcBgYADwCoIwAAAACTCMgGdAEPANQjAAAAAJMI0QF5AQ8A
-2yMAAAAAkwjdAX4BDwDjIwAAAACWCCoIhAEQAOojAAAAAIYY3AYGABAA8iMAAAAAkRjiBokBEACg
-IwAAAACGGNwGBgAQAP4jAAAAAIMAFgCNARAAAAABAAIJAAABAMEGAAACAM8HAAADAHsGAAABAAkE
-AAABAAkEAAABAMEAAAACAIkBAAADAMEGAAAEAHsGAAABAMEGAAABAAIJAAABAGkIAAABAGkIAAAB
-AAkEAAABAIMGCQDcBgEAEQDcBgYAGQDcBgoAKQDcBhAAMQDcBhAAOQDcBhAAQQDcBhAASQDcBhAA
-UQDcBhAAWQDcBhAAYQDcBhAAaQDcBgYAkQDcBgYA0QDcBgYA8QDcBhUAyQDkAwYAyQDvAwYAAQFu
-ATUAAQGuBz4AEQFXCUQAGQGAAUcAEQFcBEsAcQAAAVAADADcBl0AKQE2CGMAcQBJCX0AcQAABIUA
-eQAyBEcAEQEQCIoAEQFRBJAAEQE7BJQAgQAqApoAQQHSAJ8AQQHGB6UASQFFBKsAiQDcBgYAUQEy
-BLIAiQAgAbcAWQERAgYAmQDcBr0AmQDBBscAmQDPB8sAoQB5AM8AmQCWBdQAoQBBANkAoQBlBN4A
-oQAMAeQAoQCTAeoAmQClBfAAmQCdBQEAYQHcBhAAmQD+CFAAmQAeCFAAyQDcBgYAEQH9B/YAyQDj
-B/4AeQDcBgYAAQEjCQQB2QDcBgoB+QDcBgYAEQE9CRIBLgALAMEBLgATAMoBLgAbAOkBLgAjAPIB
-LgArABsCLgAzABsCLgA7ABsCLgBDAPIBLgBLACECLgBTABsCLgBbADgCQwBjAIIC4QBrAIIC4wBz
-AIICIwFrAIICqQJ7AOkByQJ7AOkBGwADAAEABwAVAAgAFwAAADQJkwEAAI0FlwEAALcAmwEAAPYE
-lwEAACsBnwEAAC4FlwEAAHcInwEAAHAFlwEAAHQEnwEAAFsFlwEAABgBpAEAABsFlwEAAB0CqQEA
-AEMFlwEAAKYAmwEAAN4ElwEAAI8AmwEAAMAElwEAAM0ArgEAAAsFlwEAAMwGsgEAAPEBtwEAAD0I
-vAECAAYAAwACAAcABQACAAgABwACAAkACQACAAoACwACAAsADQACAAwADwACAA0AEQACAA4AEwAC
-AA8AFQACABAAFwACABEAGQACABIAGwACABMAHQACABQAHwACABUAIQACABYAIwACABcAJQABABgA
-JwABABkAKQACACMAKwACACQALQABACUALQACACYALwBUAASAAAABAAAAAAAAAAAAAAAAAFUAAAAE
-AAAAAAAAAAAAAAAYAdwAAAAAABAAAAAAAAAAAAAAACEBiQgAAAAAEAAAAAAAAAAAAAAAIQGmCAAA
-AAAEAAAAAAAAAAAAAAAYAa4FAAAAAAQAAAAAAAAAAAAAABgBxQEAAAAAAAAAAAEAAAAtBwAACQAC
-ADMAeAAAAAAAADw+Y19fRGlzcGxheUNsYXNzMl8wADxJbnB1dDBfUHJvY2Vzc0lucHV0Um93PmJf
-XzAASUVudW1lcmFibGVgMQBHZXRJbnQzMgBGdW5jYDIATUQ1AFNDXzczMzkwYjQwNzM0OTRhZGY4
-ODEyMmE4YTFiYWMzM2E1AEdldEludDE2ADxNb2R1bGU+AGdldF9TYWxlc09yZGVyRGV0YWlsSUQA
-Z2V0X1NhbGVzT3JkZXJJRABnZXRfUHJvZHVjdElEAElucHV0SUQAc2V0X0hBU0gAZ2V0X0FTQ0lJ
-AG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljAGdldF9DYW5SZWFkAEdldEd1aWQA
-Z2V0X3Jvd2d1aWQAQXBwZW5kAGdldF9Vbml0UHJpY2UAZGVmYXVsdEluc3RhbmNlAEVudW1lcmFi
-bGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAZ2V0X05h
-bWUASW5wdXROYW1lAEdldERhdGVUaW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5l
-AFR5cGUAU3lzdGVtLkNvcmUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJl
-AEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UAZ2V0X01vZGlmaWVkRGF0ZQBDcmVhdGUA
-RWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJO
-b25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0
-dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRl
-AFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUA
-QXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmli
-dXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBT
-U0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRy
-aWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0
-ZQBCeXRlAEdldFZhbHVlAHZhbHVlAEVuY29kaW5nAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcA
-VG9TdHJpbmcAU3Vic3RyaW5nAENvbXB1dGVIYXNoAGdldF9MZW5ndGgARW5kc1dpdGgAR2V0RGVj
-aW1hbABnZXRfTGluZVRvdGFsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ183MzM5MGI0MDczNDk0
-YWRmODgxMjJhOGExYmFjMzNhNS5kbGwAZ2V0X1NhbGVzT3JkZXJEZXRhaWxJRF9Jc051bGwAZ2V0
-X1NhbGVzT3JkZXJJRF9Jc051bGwAZ2V0X1Byb2R1Y3RJRF9Jc051bGwAc2V0X0hBU0hfSXNOdWxs
-AGdldF9yb3dndWlkX0lzTnVsbABnZXRfVW5pdFByaWNlX0lzTnVsbABnZXRfTW9kaWZpZWREYXRl
-X0lzTnVsbABnZXRfTGluZVRvdGFsX0lzTnVsbABnZXRfVW5pdFByaWNlRGlzY291bnRfSXNOdWxs
-AGdldF9PcmRlclF0eV9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRo
-bQByZXNvdXJjZU1hbgBCb29sZWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lz
-dGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2Vw
-dGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE1lbWJlckluZm8AUHJvcGVydHlJbmZv
-AE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAFN5c3RlbS5MaW5xAFN0cmluZ0J1aWxkZXIASW5wdXQw
-QnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5j
-dG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2
-aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDXzczMzkwYjQwNzM0OTRhZGY4ODEyMmE4YTFiYWMzM2E1
-LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ183MzM5MGI0
-MDczNDk0YWRmODgxMjJhOGExYmFjMzNhNS5Qcm9wZXJ0aWVzAEdldFByb3BlcnRpZXMAVmFyaWFi
-bGVzAEdldEJ5dGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5n
-cwBFcXVhbHMAQ29ubmVjdGlvbnMAQ29uY2F0AE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVs
-dABGaXJzdE9yRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21w
-b25lbnQAZ2V0X1VuaXRQcmljZURpc2NvdW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQA
-TWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABTeXN0
-ZW0uVGV4dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAU3lzdGVtLlNlY3VyaXR5LkNy
-eXB0b2dyYXBoeQBnZXRfQXNzZW1ibHkAZ2V0X09yZGVyUXR5AG9wX0VxdWFsaXR5AG9wX0luZXF1
-YWxpdHkARW1wdHkAcHJvcGVydHkAAAAAD18ASQBzAE4AdQBsAGwAAA0hAE4AVQBMAEwAIQAABXwA
-fAAABVgAMgAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAA
-YgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBs
-AHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4A
-cAB1AHQAIAAwAABxUwBDAF8ANwAzADMAOQAwAGIANAAwADcAMwA0ADkANABhAGQAZgA4ADgAMQAy
-ADIAYQA4AGEAMQBiAGEAYwAzADMAYQA1AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8A
-dQByAGMAZQBzAAAAAAF3mkM+o7FBokSGdgcZiJYABCABAQgDIAABBSABARERBCABAQ4FIAEBEXUZ
-Bw0dEjkOHRI5CBIkEjkcDhJBHQUdBRJFCAgAARKAgRGAhQUgAB0SOQIGDgMgAA4EIAECDgMgAAII
-FRKAkQISOQIFIAIBHBgUEAECHgAVEoCZAR4AFRKAkQIeAAIECgESOQcAAgISORI5BCABHBwFAAIO
-Dg4DIAAIBSACDggIBAAAEkEFAAASgKEFIAEdBQ4GIAEdBR0FBCABDg4FIAESRQ4JIAMBElEdCBJV
-AwYSUQMGHQgEIAEGCAQgAQIIBCABCAgFIAERWQgFIAERXQgFIAERYQgFIAIBCBwHIAICDhGAtQUg
-AR0ICAUgABKAuQcgAgEOEoC5BQACAg4OCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJlAwYS
-bQMGEnEDBhIgAwYSOQUgAQESDAMgAAYEIAARWQQgABFdBCAAEWEEIAEBAgkgBAEIDhJRElUFIAEB
-EmUEAAASbQQAABJxBQABARJxBAAAEiADAAABBSABAhI5AygABgMoAAIDKAAIBCgAEVkEKAARXQQo
-ABFhAygADgQIABJtBAgAEnEECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRo
-cm93cwEIAQACAAAAAAAoAQAjU0NfNzMzOTBiNDA3MzQ5NGFkZjg4MTIyYThhMWJhYzMzYTUAAAUB
-AAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNQAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43
-AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAAAC0AAAAzsrv
-vgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJz
-aW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0
-ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBB
-RFC0AAAAIDsAAAAAAAAAAAAAOjsAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AAAAAAAAAAAA
-AAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA
+IgIaKCwAAAoqUgJ7KQAACgJ7KgAAChuUby4AAAoqIgIbKCwAAAoqUgJ7KQAACgJ7KgAAChyUby4A
+AAoqIgIcKCwAAAoqUgJ7KQAACgJ7KgAACh2Uby4AAAoqIgIdKCwAAAoqUgJ7KQAACgJ7KgAACh6U
+by8AAAoqIgIeKCwAAAoqKgIfCQMoMAAACipeAywJAh8JKDEAAAoqcisAAHBzMgAACnoeAigzAAAK
+Kh4CKDQAAAoqfgIoNQAACgICcyAAAAZ9AQAABAICcyEAAAZ9AgAABCqSBHLIAABwGm82AAAKLBUC
+BQIDKDcAAAoOBHMFAAAGbx4AAAYqSisHAgNvHwAABgNvGgAABi3xKgYqOgIoOAAACgIDfQMAAAQq
+OgIoOAAACgIDfQQAAAQqHgIoOAAACiqufgUAAAQtHnLYAABw0AcAAAIoEgAACm85AAAKczoAAAqA
+BQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAig7AAAKKi5zJwAABoAHAAAEKoYDbxUA
+AAoCewgAAARvFQAACnIBAABwKB0AAAooPAAACipCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAA
+AAAFAGwAAABcCAAAI34AAMgIAABMCQAAI1N0cmluZ3MAAAAAFBIAAEwBAAAjVVMAYBMAABAAAAAj
+R1VJRAAAAHATAABwAgAAI0Jsb2IAAAAAAAAAAgAAAVcVogkJCwAAAPoBMwAWAAABAAAALQAAAAkA
+AAAIAAAAKgAAABAAAAA8AAAAEQAAAAEAAAADAAAAFwAAABgAAAABAAAAAQAAAAUAAAABAAAAAQAA
+AAEAAAAAAIkEAQAAAAAABgA2A/oGBgDKA/oGBgCCAucGDwBuBwAABgCvAgoGBgAZAwoGBgD6AgoG
+BgCxAwoGBgBWAwoGBgBvAwoGBgDGAgoGBgDhAhwECgCKA6MBBgBeBgoGBgAVCJoFBgBzAO4IBgCP
+BsMIBgBKAvoGCgC5BqMBDgCqBqMBCgBrBqMBBgAAAZoFBgCaAZoFCgBhCKMBBgBlAucGBgDKBhoH
+BgBHBvUFEgA1AnMEEgCWAnMEEgD9AeAFBgDEAZoFBgBgAZoFBgBCBJoFBgBTBgoGBgBbAJoFFgBJ
+AYMGBgAzANYABgC7BZoFBgATBMMIBgChBe4IBgD/A5oFBgBUAZoFBgAcBpoFBgA2BpoFBgAPCQoG
+AAAAAJsAAAAAAAEAAQABABAAwwUAABAAAQABAAEAEACdBgAATQABAAUAAQAQAEMIAABhAAEAHAAB
+ABAAAggAAD0AAwAgAAEAEAC6BwAAPQAEACEAAAAQACEHfQc9AAUAIgAAARAA8gd9B3kABwAmAAMB
+EAABAAAAPQAIACkABgACCCMBBgC6BycBAQBRCCsBAQBRCCsBEQCvBS8BEQDtATMBEQAYATcBBgBB
+CTsBUCAAAAAAxgDoAwYAAQBYIAAAAADGAPMDBgABAGAgAAAAAMYAzwg/AQEA1CEAAAAAhhjaBgYA
+AgDcIQAAAACGGNoGvAACAOchAAAAAIYIBQFFAQUA/CEAAAAAhggGBU8ABQAFIgAAAACGCB0CSgEF
+ABoiAAAAAIYISAVPAAUAIyIAAAAAhghBAEYABQA4IgAAAACGCLEETwAFAEEiAAAAAIYIYgBGAAUA
+ViIAAAAAhgjJBE8ABQBfIgAAAACGCBgJRgAFAHQiAAAAAIYIeQVPAAUAfSIAAAAAhggoAUYABQCS
+IgAAAACGCBkFTwAFAJsiAAAAAIYIzgVGAAUAsCIAAAAAhghgBU8ABQC5IgAAAACGCDoBRgAFAM4i
+AAAAAIYIMgVPAAUA1yIAAAAAhgikAI8ABQDsIgAAAACGCOEETwAFAPUiAAAAAIYIugAQAAUAACMA
+AAAAhgj2BE8BBgAYIwAAAACGAOYITwAHACAjAAAAAIYAHAhPAAcAKCMAAAAAhhjaBgYABwBIIwAA
+AADGALYIVAEHAG0jAAAAAMYBrwg/AQsAgCMAAAAAxgHPCD8BDACCIwAAAACGGNoGXgENAJEjAAAA
+AIYY2gZeAQ4AoCMAAAAAgxjaBgYADwCoIwAAAACTCMYGZAEPANQjAAAAAJMI1QFpAQ8A2yMAAAAA
+kwjhAW4BDwDjIwAAAACWCCgIdAEQAOojAAAAAIYY2gYGABAA8iMAAAAAkRjgBnkBEACgIwAAAACG
+GNoGBgAQAP4jAAAAAIMAFgB9ARAAAAABAOoIAAABAL8GAAACAM0HAAADAHkGAAABAA0EAAABAA0E
+AAABALIAAAACAI0BAAADAL8GAAAEAHkGAAABAL8GAAABAOoIAAABAGcIAAABAGcIAAABAA0EAAAB
+AIEGCQDaBgEAEQDaBgYAGQDaBgoAKQDaBhAAMQDaBhAAOQDaBhAAQQDaBhAASQDaBhAAUQDaBhAA
+WQDaBhAAYQDaBhAAaQDaBgYAkQDaBgYAyQDaBgYA6QDaBhUAwQDoAwYAwQDzAwYA+QByATUA+QCs
+Bz0ACQE7CUMAEQGEAUYACQFqBEoAcQDxAE8ADADaBlwAIQE0CGIAcQAtCXwAcQAEBIQAeQA2BEYA
+CQEOCIkACQFfBI8ACQFJBJMAgQAuApkAOQHDAJ4AOQHEB6QAQQFTBKoAiQDaBgYASQE2BLEAiQAR
+AbYAUQEVAgYAmQDaBrwAmQC/BsYAmQDNB8oAoQD9AM4AmQCCBdQAoQCXAdkAoQA/BN8AoQBSAOQA
+mQCRBekAmQCJBQEAWQHaBhAAmQDmCE8AmQAcCE8AwQDaBgYACQH7B+8AwQDhB/cAeQDaBgYA+QAL
+Cf0A0QDaBgMB8QDaBgYACQEhCQsBLgALAKgBLgATALEBLgAbANABLgAjANkBLgArAAICLgAzAAIC
+LgA7AAICLgBDANkBLgBLAAgCLgBTAAICLgBbAB8CQwBjAGkC4QBrAGkC4wBzAGkCIwFrAGkCqQJ7
+ANAByQJ7ANABGwADAAEABwAVAAgAFwAAAAkBgwEAAAoFiAEAACECjAEAAEwFiAEAAEUAkQEAALUE
+iAEAAGYAkQEAAM0EiAEAABwJkQEAAH0FiAEAACwBkQEAAB0FiAEAANIFkQEAAGQFiAEAAD4BkQEA
+ADYFiAEAAKgAlQEAAOUEiAEAAL4AkQEAAPoEiAEAAMoGmQEAAPUBngEAADsIowECAAYAAwACAAcA
+BQACAAgABwACAAkACQACAAoACwACAAsADQACAAwADwACAA0AEQACAA4AEwACAA8AFQACABAAFwAC
+ABEAGQACABIAGwACABMAHQACABQAHwACABUAIQACABYAIwACABcAJQABABgAJwABABkAKQACACMA
+KwACACQALQABACUALQACACYALwBTAASAAAABAAAAAAAAAAAAAAAAAHcAAAAEAAAAAAAAAAAAAAAR
+Ac0AAAAAABAAAAAAAAAAAAAAABoBcQgAAAAAEAAAAAAAAAAAAAAAGgGOCAAAAAAEAAAAAAAAAAAA
+AAARAZoFAAAAAAQAAAAAAAAAAAAAABEByQEAAAAAAAAAAAEAAAArBwAACQACADMAdwAAAAAAADw+
+Y19fRGlzcGxheUNsYXNzMl8wADxJbnB1dDBfUHJvY2Vzc0lucHV0Um93PmJfXzAASUVudW1lcmFi
+bGVgMQBnZXRfQWRkcmVzc0xpbmUxAEdldEludDMyAEZ1bmNgMgBnZXRfQWRkcmVzc0xpbmUyAE1E
+NQBTQ183MzM5MGI0MDczNDk0YWRmODgxMjJhOGExYmFjMzNhNQA8TW9kdWxlPgBnZXRfQWRkcmVz
+c0lEAElucHV0SUQAc2V0X0hBU0gAZ2V0X0FTQ0lJAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9u
+cy5HZW5lcmljAGdldF9DYW5SZWFkAEdldEd1aWQAZ2V0X3Jvd2d1aWQAQXBwZW5kAGRlZmF1bHRJ
+bnN0YW5jZQBnZXRfU3RhdGVQcm92aW5jZQBnZXRfUG9zdGFsQ29kZQBFbnVtZXJhYmxlAElEaXNw
+b3NhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAGdldF9OYW1lAElucHV0
+TmFtZQBHZXREYXRlVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAFN5
+c3RlbS5Db3JlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNh
+dGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAGdldF9Nb2RpZmllZERhdGUAQ3JlYXRlAEVkaXRvckJy
+b3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNv
+ZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUA
+QXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRG
+cmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5
+RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3Nl
+bWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1Njcmlw
+dENvbXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1
+bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAQnl0ZQBH
+ZXRWYWx1ZQB2YWx1ZQBFbmNvZGluZwBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5n
+AEdldFN0cmluZwBTdWJzdHJpbmcAQ29tcHV0ZUhhc2gAZ2V0X0xlbmd0aABFbmRzV2l0aABTeXN0
+ZW0uQ29tcG9uZW50TW9kZWwAU0NfNzMzOTBiNDA3MzQ5NGFkZjg4MTIyYThhMWJhYzMzYTUuZGxs
+AGdldF9BZGRyZXNzTGluZTFfSXNOdWxsAGdldF9BZGRyZXNzTGluZTJfSXNOdWxsAGdldF9BZGRy
+ZXNzSURfSXNOdWxsAHNldF9IQVNIX0lzTnVsbABnZXRfcm93Z3VpZF9Jc051bGwAZ2V0X1N0YXRl
+UHJvdmluY2VfSXNOdWxsAGdldF9Qb3N0YWxDb2RlX0lzTnVsbABnZXRfTW9kaWZpZWREYXRlX0lz
+TnVsbABnZXRfQ291bnRyeVJlZ2lvbl9Jc051bGwAZ2V0X0NpdHlfSXNOdWxsAFNldE51bGwAc2V0
+X0l0ZW0AU3lzdGVtAEhhc2hBbGdvcml0aG0AcmVzb3VyY2VNYW4AQm9vbGVhbgBTY3JpcHRNYWlu
+AGdldF9Db3VudHJ5UmVnaW9uAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0
+aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29t
+cGFyaXNvbgBDdWx0dXJlSW5mbwBNZW1iZXJJbmZvAFByb3BlcnR5SW5mbwBPdXRwdXROYW1lTWFw
+AE91dHB1dE1hcABTeXN0ZW0uTGlucQBTdHJpbmdCdWlsZGVyAElucHV0MEJ1ZmZlcgBQaXBlbGlu
+ZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAU3lz
+dGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJl
+c291cmNlcwBTQ183MzM5MGI0MDczNDk0YWRmODgxMjJhOGExYmFjMzNhNS5Qcm9wZXJ0aWVzLlJl
+c291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfNzMzOTBiNDA3MzQ5NGFkZjg4MTIy
+YThhMWJhYzMzYTUuUHJvcGVydGllcwBHZXRQcm9wZXJ0aWVzAFZhcmlhYmxlcwBHZXRCeXRlcwBC
+dWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5l
+Y3Rpb25zAENvbmNhdABPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQARmlyc3RPckRlZmF1
+bHQAVXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5w
+dXQwX1Byb2Nlc3NJbnB1dABTeXN0ZW0uVGV4dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93AE5leHRS
+b3cAU3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBoeQBnZXRfQXNzZW1ibHkAZ2V0X0NpdHkAb3Bf
+RXF1YWxpdHkAb3BfSW5lcXVhbGl0eQBFbXB0eQBwcm9wZXJ0eQAAAAAPXwBJAHMATgB1AGwAbAAA
+DSEATgBVAEwATAAhAAAFfAB8AAAFWAAyAACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5
+ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMA
+aQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBz
+AHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwA3ADMAMwA5ADAAYgA0ADAANwAzADQA
+OQA0AGEAZABmADgAOAAxADIAMgBhADgAYQAxAGIAYQBjADMAMwBhADUALgBQAHIAbwBwAGUAcgB0
+AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAAAvpvt+WjGZkSHj71T0YmRZgAEIAEBCAMgAAEF
+IAEBEREEIAEBDgUgAQERcRkHDR0SOQ4dEjkIEiQSORwOEkEdBR0FEkUIBwABEn0RgIEFIAAdEjkC
+Bg4DIAAOBCABAg4DIAACCBUSgI0CEjkCBSACARwYFBABAh4AFRKAlQEeABUSgI0CHgACBAoBEjkH
+AAICEjkSOQQgARwcBQACDg4OAyAACAUgAg4ICAQAABJBBQAAEoCdBSABHQUOBiABHQUdBQQgAQ4O
+BSABEkUOCSADARJRHQgSVQMGElEDBh0IBSABEVkIBCABAggFIAERXQgEIAEOCAQgAQgIBSACAQgc
+ByACAg4RgLEFIAEdCAgFIAASgLUHIAIBDhKAtQUAAgIODgi3elxWGTTgiQiJhF3NgIDMkQMGEhQD
+BhIYAwYSYQMGEmkDBhJtAwYSIAMGEjkFIAEBEgwEIAARWQQgABFdBCABAQIJIAQBCA4SURJVBSAB
+ARJhBAAAEmkEAAASbQUAAQESbQQAABIgAwAAAQUgAQISOQQoABFZAygAAgQoABFdAygADgMoAAgE
+CAASaQQIABJtBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEA
+AgAAAAAAKAEAI1NDXzczMzkwYjQwNzM0OTRhZGY4ODEyMmE4YTFiYWMzM2E1AAAFAQAAAAAWAQAR
+Q29weXJpZ2h0IEAgIDIwMjUAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJh
+bWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43BAEAAAAAALQAAADOyu++AQAAAJEA
+AABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4w
+LjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5
+c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADg
+OgAAAAAAAAAAAAD6OgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7DoAAAAAAAAAAAAAAABfQ29y
+RGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
@@ -1842,7 +1850,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAABMOwAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAAMOwAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1887,7 +1895,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataChecksum140"
-                      typeConverter="NOTBROWSABLE">87</property>
+                      typeConverter="NOTBROWSABLE">07</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -1899,33 +1907,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="Input 0">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[OrderQty]"
-                          cachedDataType="i2"
-                          cachedName="OrderQty"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[ProductID]"
-                          cachedDataType="i4"
-                          cachedName="ProductID"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[UnitPrice]"
-                          cachedDataType="cy"
-                          cachedName="UnitPrice"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[UnitPriceDiscount]"
-                          cachedDataType="cy"
-                          cachedName="UnitPriceDiscount"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]" />
-                        <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[LineTotal]"
-                          cachedDataType="numeric"
-                          cachedName="LineTotal"
-                          cachedPrecision="38"
-                          cachedScale="6"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]" />
-                        <inputColumn
                           refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[rowguid]"
                           cachedDataType="guid"
                           cachedName="rowguid"
@@ -1936,15 +1917,46 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           cachedName="ModifiedDate"
                           lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
                         <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[SalesOrderID]"
-                          cachedDataType="i4"
-                          cachedName="SalesOrderID"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[AddressLine1]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="AddressLine1"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine1]" />
                         <inputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[SalesOrderDetailID]"
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[AddressLine2]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="AddressLine2"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine2]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="City"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[StateProvince]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="StateProvince"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[StateProvince]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[CountryRegion]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CountryRegion"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[CountryRegion]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[PostalCode]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="PostalCode"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                        <inputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SCR_HASH.Inputs[Input 0].Columns[AddressID]"
                           cachedDataType="i4"
-                          cachedName="SalesOrderDetailID"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]" />
+                          cachedName="AddressID"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2028,71 +2040,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
-                          name="SalesOrderID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]"
-                          name="SalesOrderDetailID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]"
-                          dataType="i2"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[OrderQty]"
-                          name="OrderQty"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ProductID]"
-                          name="ProductID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]"
-                          dataType="cy"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPrice]"
-                          name="UnitPrice"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]"
-                          dataType="cy"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[UnitPriceDiscount]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]"
-                          name="UnitPriceDiscount"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[LineTotal]"
-                          name="LineTotal"
-                          precision="38"
-                          scale="6"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[rowguid]"
                           dataType="guid"
                           errorOrTruncationOperation="Conversion"
@@ -2110,39 +2057,78 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
                           name="ModifiedDate"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                          length="60"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                          name="AddressLine1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                          length="60"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                          name="AddressLine2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          length="30"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                          length="50"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                          name="StateProvince"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[CountryRegion]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[CountryRegion]"
+                          length="50"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[CountryRegion]"
+                          name="CountryRegion"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                          length="15"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                          name="PostalCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].Columns[AddressID]"
+                          name="AddressID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
-                          dataType="i4"
-                          name="SalesOrderID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailID]"
-                          dataType="i4"
-                          name="SalesOrderDetailID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
-                          dataType="i2"
-                          name="OrderQty" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
-                          dataType="i4"
-                          name="ProductID" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                          dataType="cy"
-                          name="UnitPrice" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[UnitPriceDiscount]"
-                          dataType="cy"
-                          name="UnitPriceDiscount" />
-                        <externalMetadataColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
-                          dataType="numeric"
-                          name="LineTotal"
-                          precision="38"
-                          scale="6" />
                         <externalMetadataColumn
                           refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
                           dataType="guid"
@@ -2151,6 +2137,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
                           dataType="dbTimeStamp"
                           name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                          dataType="wstr"
+                          length="60"
+                          name="AddressLine2" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="30"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                          dataType="wstr"
+                          length="50"
+                          name="StateProvince" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[CountryRegion]"
+                          dataType="wstr"
+                          length="50"
+                          name="CountryRegion" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          name="PostalCode" />
+                        <externalMetadataColumn
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                          dataType="i4"
+                          name="AddressID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2159,42 +2179,46 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressID]"
                           dataType="i4"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
-                          name="SalesOrderID" />
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressID]"
+                          name="AddressID" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailID]"
-                          dataType="i4"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailID]"
-                          name="SalesOrderDetailID" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                          name="AddressLine1" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
-                          dataType="i2"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
-                          name="OrderQty" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                          name="AddressLine2" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[ProductID]"
-                          dataType="i4"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[ProductID]"
-                          name="ProductID" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[City]"
+                          name="City" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
-                          dataType="cy"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
-                          name="UnitPrice" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                          name="StateProvince" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[UnitPriceDiscount]"
-                          dataType="cy"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[UnitPriceDiscount]"
-                          name="UnitPriceDiscount" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[CountryRegion]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[CountryRegion]"
+                          name="CountryRegion" />
                         <outputColumn
-                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
-                          dataType="numeric"
-                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
-                          name="LineTotal"
-                          precision="38"
-                          scale="6" />
+                          refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                          name="PostalCode" />
                         <outputColumn
                           refId="Package\SQC ETL\Data Flow Task\SRC_AW.Outputs[OLE DB Source Error Output].Columns[rowguid]"
                           dataType="guid"
@@ -2252,7 +2276,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{27E224AA-2E5A-43EE-9C2A-F9B3BC782B7F}"
+          DTS:DTSID="{3ABAA4EB-1CE2-4089-8AFB-CA92CA85AA35}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR_CreateDeltaMapping"
@@ -2267,14 +2291,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               ReadOnlyVariables="User::SOURCE_COLUMNS"
               ReadWriteVariables="User::DELTA_COLUMNS_MAPPING">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2394,35 +2439,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
-    "ings")]
-
-namespace ST_4730307f83e847428af09071876d36d3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -2557,38 +2573,6 @@ namespace ST_4730307f83e847428af09071876d36d3
 	}
 }]]></ProjectItem>
               <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-  <msb:PropertyGroup>
-    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
-    <msb:Language>msBuild</msb:Language>
-    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
-    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
-  </msb:PropertyGroup>
-  <msb:ItemGroup>
-    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
-    <msb:File Include="Properties\Settings.settings" />
-    <msb:File Include="Properties\AssemblyInfo.cs" />
-    <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ScriptMain.cs" />
-    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
-      <msb:FileName>ScriptMain.cs</msb:FileName>
-      <msb:ColumnNumber>13</msb:ColumnNumber>
-      <msb:Enabled>True</msb:Enabled>
-      <msb:LineNumber>94</msb:LineNumber>
-      <msb:Condition>
-      </msb:Condition>
-      <msb:ConditionType>1</msb:ConditionType>
-      <msb:Language>C#</msb:Language>
-      <msb:HitCountType>1</msb:HitCountType>
-      <msb:HitCountTarget>1</msb:HitCountTarget>
-    </msb:Breakpoint>
-  </msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
                 Name="ST_4730307f83e847428af09071876d36d3.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2675,35 +2659,75 @@ namespace ST_4730307f83e847428af09071876d36d3
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_4730307f83e847428af09071876d36d3</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_4730307f83e847428af09071876d36d3</msb:DisplayName>
+    <msb:ProjectId>{8E0AF87E-01F8-4027-B902-EA38A4A132CE}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_4730307f83e847428af09071876d36d3.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+    <msb:Breakpoint Include="8645002f810846e1aa7b8b0a7fbf3283">
+      <msb:FileName>ScriptMain.cs</msb:FileName>
+      <msb:ColumnNumber>13</msb:ColumnNumber>
+      <msb:Enabled>True</msb:Enabled>
+      <msb:LineNumber>94</msb:LineNumber>
+      <msb:Condition>
+      </msb:Condition>
+      <msb:ConditionType>1</msb:ConditionType>
+      <msb:Language>C#</msb:Language>
+      <msb:HitCountType>1</msb:HitCountType>
+      <msb:HitCountTarget>1</msb:HitCountTarget>
+    </msb:Breakpoint>
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4730307f83e847428af09071876d36d3")]
-[assembly: AssemblyCopyright("Copyright @  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4730307f83e847428af09071876d36d3.Properties.Settings.get_Default():ST_4730307f83e847428af09071876d36d3.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_4730307f83e847428af09071876d36d3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2902,7 +2926,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Merge"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{69B31AFD-EC81-458E-81A1-8E2EC3CAA28D}"
+          DTS:DTSID="{EE5219AF-9E74-47AD-9AD4-4DF491B04260}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Merge"
@@ -2927,7 +2951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_Truncate"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9358AA15-36B2-4E99-9F26-9F8BAC9EB67D}"
+          DTS:DTSID="{B5210BC7-30E3-4E0F-A39D-5113AFA6AA5B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_Truncate"
@@ -2945,7 +2969,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQC ETL\SQL_TruncateStg"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5589B164-0444-4143-BB3E-CDB46C156F4B}"
+          DTS:DTSID="{FCCD75E1-942D-4D27-BB4A-7FF5B5D25EC4}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_TruncateStg"
@@ -2966,7 +2990,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{C1E39DC2-553C-4E5B-948C-3523C17E494C}"
+          DTS:DTSID="{7464FF07-589E-4D1C-B192-CFABB2D7676C}"
           DTS:From="Package\SQC ETL\SQL_Truncate"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2974,7 +2998,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{86E2478A-A1CC-40E5-B0BC-48EC382DFEA5}"
+          DTS:DTSID="{DFC0D126-5FD6-40C1-B402-E2884A114AC9}"
           DTS:From="Package\SQC ETL\Data Flow Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -2982,7 +3006,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{D0246DE5-3FD6-42A6-88D0-A0521A81CDAD}"
+          DTS:DTSID="{ABB68FC8-6649-4800-B984-40C29017A4A1}"
           DTS:From="Package\SQC ETL\SCR_CreateDeltaMapping"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2990,7 +3014,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SQC ETL.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{997FD778-528E-44DF-B63A-B45450F3458F}"
+          DTS:DTSID="{3A8B9687-7B27-4E23-9E9A-18C0672C4BB0}"
           DTS:From="Package\SQC ETL\SQL_Merge"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -3002,7 +3026,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="SQL_GetLoadID"
       DTS:Disabled="True"
-      DTS:DTSID="{61FCB8EC-0446-4790-AD18-FC02858F91D2}"
+      DTS:DTSID="{C3D5148F-9BA8-45FD-8949-3FFDEE5BED42}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetLoadID"
@@ -3024,7 +3048,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_GetRowCounts"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{4D5C6A9B-877D-4358-A4F9-9CF79F458592}"
+      DTS:DTSID="{BAADB313-6E02-436B-9824-FAE211FF55CC}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_GetRowCounts">
@@ -3034,12 +3058,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetDeleted"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{c1331be9-4f70-4527-b7eb-691a90295d6f}"
+          DTS:DTSID="{28B2F72A-C9ED-454F-8C29-30D8C8654B0C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetDeleted"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3057,12 +3081,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetInserted"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{4F55DC17-E982-47D0-89EB-05F36A3CC5EE}"
+          DTS:DTSID="{D6FD2770-4A36-45A8-9940-32B40E76EF25}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetInserted"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3080,12 +3104,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\SQL_GetRowCounts\SQL_GetUpdated"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0e68786d-e438-405c-a807-51dfd16da84c}"
+          DTS:DTSID="{1BA15859-2FAE-492D-A57F-A570728FB91C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL_GetUpdated"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -3105,7 +3129,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_RegisterPackage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1858169A-7E27-49D5-ABDE-F30CDD035518}"
+      DTS:DTSID="{52B7D0AB-4C9F-441B-B648-B13B8B473D9D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_RegisterPackage"
@@ -3142,7 +3166,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\SQL_UpdateStatusCompleted"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6AA55665-B589-4FED-80DE-9C7B3937330F}"
+      DTS:DTSID="{8C7811FE-6F33-4515-88E6-B9242D088445}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="SQL_UpdateStatusCompleted"
@@ -3209,7 +3233,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8805988F-F05E-4BB5-BD1B-A9B9B80A4331}"
+      DTS:DTSID="{45E5EBFE-C1FF-4A65-8B50-B7F19D2D8A33}"
       DTS:From="Package\SQL_GetLoadID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3217,7 +3241,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{513E28C2-C8E6-4796-82A1-1D13ECE92153}"
+      DTS:DTSID="{774F4367-26AD-47A7-8C22-8C34725E869D}"
       DTS:From="Package\SQL_RegisterPackage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3225,7 +3249,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{498F6736-B365-4FC1-87AB-9E3DD07208CB}"
+      DTS:DTSID="{2C238CDE-2D8E-4550-9B5E-CEEB94F1F2E8}"
       DTS:From="Package\SQC ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3233,7 +3257,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{63BD6B3A-6D88-4325-BE03-5B97F7B3EC19}"
+      DTS:DTSID="{C29116A2-A9F8-431F-9B08-0442B21B0032}"
       DTS:From="Package\SQL_GetRowCounts"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3242,7 +3266,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{93FB9EA8-E4B4-4084-B79E-EB3FEB3AE8C4}"
+      DTS:DTSID="{57E23E05-0C52-43B5-ABF3-E15DDB9A5A67}"
       DTS:From="Package\SQC ETL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3251,7 +3275,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{24418FB8-30D3-4C2B-B9EF-0865D58AC9E9}"
+      DTS:DTSID="{D2A4D0A3-B116-4794-B7D8-021B29540569}"
       DTS:From="Package\EXP_Completed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -3259,7 +3283,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{90527355-D267-4FEF-943D-BF2FA394D3CA}"
+      DTS:DTSID="{EEF2AC84-FE9C-4D98-8D55-B06CFC9A14E3}"
       DTS:From="Package\EXP_Failed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -3277,6 +3301,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\EXP_Completed"
+          TopLeft="146.874993434176,240.63157639312" />
+        <NodeLayout
+          Size="136,42.6666666666667"
+          Id="Package\EXP_Failed"
+          TopLeft="347.041666471089,288.52631270935" />
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\SQC ETL\Data Flow Task"
@@ -3316,7 +3348,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3338,7 +3372,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3360,7 +3396,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3394,14 +3432,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="529.333333333334,558.666666666667"
-          Size="529.333333333334,42.6666666666667"
+          Size="132.666666666667,42.6666666666667"
           Id="Package\SQC ETL"
           TopLeft="388.499993406236,218.263157924787" />
         <NodeLayout
@@ -3409,18 +3449,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\SQL_GetLoadID"
           TopLeft="384.249989885838,108.210524227316" />
         <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetDeleted"
+          TopLeft="32.6249972898514,155.596488260634" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetInserted"
+          TopLeft="33.2499972619117,40.5789434093355" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\SQL_GetRowCounts\SQL_GetUpdated"
+          TopLeft="33.874997233972,97.4035053161816" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="238,298"
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\SQL_GetRowCounts"
+          TopLeft="28.1249987427146,383.157890529844" />
+        <NodeLayout
           Size="190.666666666667,42"
           Id="Package\SQL_RegisterPackage"
           TopLeft="23,39" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\SQL_UpdateStatusCompleted"
+          TopLeft="21.2499990500512,461.15788967342" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="463.583323219171,150.877190893982">
+          TopLeft="463.583323219171,150.877190893983">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="189.583336853732,67.3859670308044"
+              EndConnector="-8.74999647960198,67.3859670308043"
               Start="0,0"
-              End="189.583336853732,59.8859670308044">
+              End="-8.74999647960198,59.8859670308043">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3429,15 +3492,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   <mssgle:CubicBezierSegment
                     Point1="0,29.6929835154022"
                     Point2="0,33.6929835154022"
-                    Point3="4,33.6929835154022" />
+                    Point3="-4,33.6929835154022" />
                   <mssgle:LineSegment
-                    End="185.583336853732,33.6929835154022" />
+                    End="-4.74999647960198,33.6929835154022" />
                   <mssgle:CubicBezierSegment
-                    Point1="185.583336853732,33.6929835154022"
-                    Point2="189.583336853732,33.6929835154022"
-                    Point3="189.583336853732,37.6929835154022" />
+                    Point1="-4.74999647960198,33.6929835154022"
+                    Point2="-8.74999647960198,33.6929835154022"
+                    Point3="-8.74999647960198,37.6929835154022" />
                   <mssgle:LineSegment
-                    End="189.583336853732,59.8859670308044" />
+                    End="-8.74999647960198,59.8859670308043" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3480,99 +3543,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222.666666666667,42.6666666666667"
-          Id="Package\SQL_UpdateStatusCompleted"
-          TopLeft="21.2499990500512,461.15788967342" />
-        <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetInserted"
-          TopLeft="33.2499972619117,40.5789434093355" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetUpdated"
-          TopLeft="33.874997233972,97.4035053161816" />
-        <NodeLayout
-          Size="161.333333333334,42.6666666666667"
-          Id="Package\SQL_GetRowCounts\SQL_GetDeleted"
-          TopLeft="32.6249972898514,155.596488260634" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="238,298"
-          Size="238,42.6666666666667"
-          Id="Package\SQL_GetRowCounts"
-          TopLeft="28.1249987427146,383.157890529844" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="147.124998742715,425.824557196511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-50.3194441371079,35.333332476909"
-              Start="0,0"
-              End="-50.3194441371079,27.833332476909">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.0487509761373" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.0487509761373"
-                    Point2="0,21.0487509761373"
-                    Point3="-4,21.0487509761373" />
-                  <mssgle:LineSegment
-                    End="-46.3194441371079,21.0487509761373" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-46.3194441371079,21.0487509761373"
-                    Point2="-50.3194441371079,21.0487509761373"
-                    Point3="-50.3194441371079,25.0487509761373" />
-                  <mssgle:LineSegment
-                    End="-50.3194441371079,27.833332476909" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-50.4641751935539,26.0487509761373,50.60890625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\EXP_Completed"
-          TopLeft="146.874993434176,240.63157639312" />
-        <NodeLayout
-          Size="136,42.6666666666667"
-          Id="Package\EXP_Failed"
-          TopLeft="347.041666471089,288.52631270935" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="388.499993406236,239.59649125812">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-82.9583333053938,22.3684184683329"
+              EndConnector="-82.9583333053933,22.368418468333"
               Start="0,0"
-              End="-75.4583333053938,22.3684184683329">
+              End="-75.4583333053933,22.368418468333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-37.4791666526969,0" />
+                    End="-37.4791666526966,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-37.4791666526969,0"
-                    Point2="-41.4791666526969,0"
-                    Point3="-41.4791666526969,4" />
+                    Point1="-37.4791666526966,0"
+                    Point2="-41.4791666526966,0"
+                    Point3="-41.4791666526966,4" />
                   <mssgle:LineSegment
-                    End="-41.4791666526969,18.3684184683329" />
+                    End="-41.4791666526966,18.368418468333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-41.4791666526969,18.3684184683329"
-                    Point2="-41.4791666526969,22.3684184683329"
-                    Point3="-45.4791666526969,22.3684184683329" />
+                    Point1="-41.4791666526966,18.368418468333"
+                    Point2="-41.4791666526966,22.368418468333"
+                    Point3="-45.4791666526966,22.368418468333" />
                   <mssgle:LineSegment
-                    End="-75.4583333053938,22.3684184683329" />
+                    End="-75.4583333053933,22.368418468333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3582,38 +3578,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="653.166660072903,260.929824591453">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="130.520832229716,425.824557196511">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-238.124993601814,27.5964881178967"
+              EndConnector="0,35.333332476909"
               Start="0,0"
-              End="-238.124993601814,20.0964881178967">
+              End="0,27.833332476909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.79824405894834" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.79824405894834"
-                    Point2="0,13.7982440589483"
-                    Point3="-4,13.7982440589483" />
-                  <mssgle:LineSegment
-                    End="-234.124993601814,13.7982440589483" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-234.124993601814,13.7982440589483"
-                    Point2="-238.124993601814,13.7982440589483"
-                    Point3="-238.124993601814,17.7982440589483" />
-                  <mssgle:LineSegment
-                    End="-238.124993601814,20.0964881178967" />
+                    End="0,27.833332476909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-134.303844457157,18.7982440589483,30.4826953125,9.7490234375"
+              BoundingBox="-25.304453125,8.11197873845452,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="454.833326739569,260.929824591454">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39.7916602684803,27.5964881178963"
+              Start="0,0"
+              End="-39.7916602684803,20.0964881178963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.79824405894817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.79824405894817"
+                    Point2="0,13.7982440589482"
+                    Point3="-4,13.7982440589482" />
+                  <mssgle:LineSegment
+                    End="-35.7916602684803,13.7982440589482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.7916602684803,13.7982440589482"
+                    Point2="-39.7916602684803,13.7982440589482"
+                    Point3="-39.7916602684803,17.7982440589482" />
+                  <mssgle:LineSegment
+                    End="-39.7916602684803,20.0964881178963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.1371777904902,18.7982440589482,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3623,9 +3643,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-79.0833280247948,99.8596474700576"
+              EndConnector="-97.7499946914615,99.8596474700576"
               Start="0,0"
-              End="-79.0833280247948,92.3596474700576">
+              End="-97.7499946914615,92.3596474700576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3636,13 +3656,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point2="0,49.9298237350288"
                     Point3="-4,49.9298237350288" />
                   <mssgle:LineSegment
-                    End="-75.0833280247948,49.9298237350288" />
+                    End="-93.7499946914615,49.9298237350288" />
                   <mssgle:CubicBezierSegment
-                    Point1="-75.0833280247948,49.9298237350288"
-                    Point2="-79.0833280247948,49.9298237350288"
-                    Point3="-79.0833280247948,53.9298237350288" />
+                    Point1="-93.7499946914615,49.9298237350288"
+                    Point2="-97.7499946914615,49.9298237350288"
+                    Point3="-97.7499946914615,53.9298237350288" />
                   <mssgle:LineSegment
-                    End="-79.0833280247948,92.3596474700576" />
+                    End="-97.7499946914615,92.3596474700576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
