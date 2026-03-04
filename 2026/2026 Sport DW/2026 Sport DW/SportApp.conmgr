@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="bayer.cs.vsb.cz_sqldb.BusinessIntelligenceSports.AdventureWorks"
+  DTS:ObjectName="SportApp"
   DTS:DTSID="{F2D36757-E2D8-4942-AA23-F306A0B6264B}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=bayer.cs.vsb.cz\sqldb;User ID=AdventureWorks;Initial Catalog=BusinessIntelligenceSports;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-2026 Sport DW-{F2D36757-E2D8-4942-AA23-F306A0B6264B}bayer.cs.vsb.cz\sqldb.BusinessIntelligenceSports.AdventureWorks;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAACUV7lX3BM9kwJZdDLPKNqtGrPb4QyhtOBvwMz5uDnM1AAAAAAOgAAAAAIAACAAAAClFNohSbBN4oP9oLvwMl2UT8Or4BHG5wpewDjnt96AEoAAAAD0UXq8aaMxqyoMeg8E1OQ7ScXo+sKNnDEouf3noa5ZsZ2SH8s1Yrt/0X85v4tvYd6k3+0LHtxUORg0+7JS7LlrKCIMhHlEDBLWYVDzkz+G3Cz/xHRkM96cLWzeecREMy0o7NAepXLyrpMQOpvqjO8Js/jTnRT8N03z1ZCDtFfWXUAAAADZmX9b48hWDHZNzGJBXakcYdadIJHxh2UgLopINbYjIwRLnw/lL20EhBUrpPrScbsc9seOmu4xFp2X/wVcreyU</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAAB2VBasnBBRfzLw9PxlyFdVp9CGezupuwoBgcRNBrZ8HgAAAAAOgAAAAAIAACAAAADzwdg8UQbxchqPZPcwT8v5PiGJntbw7WP6wcJw9LtrooAAAAAXYImekalQErzsahEZkYI2CHlrNCvBydP4SNPqdnhPBLAwh4HssicogFskmNJ7gOVC2i6dM91VW1V73FVypp+heLteccZ7meYa++04qy6tnvFvC964OSzonIBrGLe4sjH5gVyAmrqGARgbzUXomt6Gv0EaA/CG5CxY7rK8k+IhwkAAAACLCbhlodoAVpvfDqci2NP1r4Pi+uIaCIKH3SRX98SgW2FUoDK3Ohp68MNawK8UikypAZ2zkZf2B8zcRraCvQyS</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
