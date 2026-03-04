@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{608EAB83-1EBB-48C9-80E0-9458FD8B79DA}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{4BEC00CF-B28A-4CA5-99FB-A1F23103A85C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -50,7 +50,7 @@
       DTS:ObjectName="SRC_FILTER">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">WHERE Id&gt;1</DTS:Property>
+        DTS:Name="ParameterValue">WHERE Id &gt; 17594182000</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -65,6 +65,26 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{88B6AC71-9E84-4DED-B97D-0AE98C010BB7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::DST_SCHEMA] + &quot;.&quot;+ @[$Package::DST_TABLE]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEST_TABLE_FN">
+      <DTS:VariableValue
+        DTS:DataType="8">ODS.StravaActivity</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6209FCD0-933B-4D6E-A3BE-893620CA852F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_SRC_SELECT">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{A2962365-06AC-49A0-BA20-910788A88664}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT&quot; +  @[$Package::SRC_COLUMNS] +  &quot; FROM &quot; + @[$Package::SRC_TABLE_NAME] + &quot; &quot; &#xA;+  @[$Package::SRC_FILTER]"
@@ -72,7 +92,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SRC_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE Id&gt;1</DTS:VariableValue>
+        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE Id &gt; 17594182000</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -99,7 +119,651 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\DF_AppToODS\DEST_ODS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DEST_ODS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable">User::DEST_TABLE_FN</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\DEST_ODS.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      dataType="i8"
+                      name="StravaId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      dataType="dbTimeStamp2"
+                      name="DateTimeStart"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      dataType="i4"
+                      name="ElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      name="YbaracupWebUserId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="CreatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="UpdatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      dataType="i4"
+                      name="DistanceDown" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      dataType="i4"
+                      name="DistanceUp" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      dataType="i4"
+                      name="ElevationGain" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="_LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      dataType="i4"
+                      name="_LoadId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      name="_HASH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RC_SRC_SELECT</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\SRC_APP"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC_APP"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::SRC_SELECT</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\SRC_APP.Connections[OleDbConnection]"
+                  connectionManagerID="{F2D36757-E2D8-4942-AA23-F306A0B6264B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SportApp]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[StravaId]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]"
+                      name="StravaId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DateTimeStart]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]"
+                      name="DateTimeStart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[ElapsedTime]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]"
+                      name="ElapsedTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Distance]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]"
+                      name="Distance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      length="64"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]"
+                      name="LoadDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[YbaracupWebUserId]"
+                      length="36"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]"
+                      name="YbaracupWebUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DistanceDown]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]"
+                      name="DistanceDown"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DistanceUp]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]"
+                      name="DistanceUp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[ElevationGain]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]"
+                      name="ElevationGain"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[StravaId]"
+                      dataType="i8"
+                      name="StravaId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DateTimeStart]"
+                      dataType="wstr"
+                      length="27"
+                      name="DateTimeStart" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[ElapsedTime]"
+                      dataType="i4"
+                      name="ElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[LoadDate]"
+                      dataType="wstr"
+                      length="27"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      name="YbaracupWebUserId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DistanceDown]"
+                      dataType="i4"
+                      name="DistanceDown" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DistanceUp]"
+                      dataType="i4"
+                      name="DistanceUp" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[ElevationGain]"
+                      dataType="i4"
+                      name="ElevationGain" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[StravaId]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[StravaId]"
+                      name="StravaId" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DateTimeStart]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DateTimeStart]"
+                      name="DateTimeStart" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ElapsedTime]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ElapsedTime]"
+                      name="ElapsedTime" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Distance]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Distance]"
+                      name="Distance" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[LoadDate]"
+                      name="LoadDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[YbaracupWebUserId]"
+                      name="YbaracupWebUserId" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DistanceDown]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DistanceDown]"
+                      name="DistanceDown" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DistanceUp]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[DistanceUp]"
+                      name="DistanceUp" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ElevationGain]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ElevationGain]"
+                      name="ElevationGain" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF_AppToODS.Paths[OLE DB Source Output]"
+              endId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Row Count Output 1]"
+              endId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -176,5 +840,87 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DF_AppToODS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\SRC_APP"
+          TopLeft="213.749990444631,35.5789469777713" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DF_AppToODS\Row Count"
+          TopLeft="213.12499047257,112.894735602543" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[OLE DB Source Output]"
+          TopLeft="278.770823791934,78.2456136444379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6491219581055"
+              Start="0,0"
+              End="0,27.1491219581055">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1491219581055" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,5.57456097905273,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\DEST_ODS"
+          TopLeft="209.374990640208,188.999998429888" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
+          TopLeft="278.583323889723,155.56140226921">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.4385961606782"
+              Start="0,0"
+              End="0,25.9385961606782">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9385961606782" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_AppToODS\SRC_APP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_AppToODS\DEST_ODS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
