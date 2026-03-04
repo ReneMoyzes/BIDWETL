@@ -3,10 +3,18 @@
   DTS:ObjectName="bayer.cs.vsb.cz_sqldb.MOY001"
   DTS:DTSID="{A249356E-F663-4B34-B62F-B3059FAD66ED}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::DW_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::DW_UserName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=bayer.cs.vsb.cz\sqldb;Initial Catalog=MOY001;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-2026 Sport DW-{A249356E-F663-4B34-B62F-B3059FAD66ED}bayer.cs.vsb.cz\sqldb.MOY001;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=bayer.cs.vsb.cz\sqldb;User ID=MOY001;Initial Catalog=MOY001;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-2026 Sport DW-{A249356E-F663-4B34-B62F-B3059FAD66ED}bayer.cs.vsb.cz\sqldb.MOY001;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAACKz2A9tni0unjspSYQr4jGvkf9ov9gwmrs2IeLwa5vtwAAAAAOgAAAAAIAACAAAABe+hTS0mOpzCB+I761NYt5tEWmQRFaVJZ2A9SKaw3YwoAAAAAyq3TkT0XUtc08Ftc1PP3WNwDSD/YvWS4k5PMCL6lYP9KBQel5R5ZTqS6N8Pr0b1jagEy6ObF1Wy/3A6hE72nG295uZSEzSJGvIlsGLqX8yrNp2PR9K+dWitIDcWACnldC4H/3z7N5Wr5Hsw9j3WF+ZSDFZHx/CdDxG/7g1yG4kUAAAAABNwOo4vZUH0ad6dnrVh55TRqKXbZtilHJs+fQ1ggtHnt/y0c4tC4TkawBa4Q7ase+aX9TMHj+ALum07qptCpc</DTS:Password>
+    </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
