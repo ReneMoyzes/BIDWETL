@@ -17,7 +17,7 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAADt+cByaOayUDWUJmqXrJegBUtT5UR3pBWanrnPpv/qMAAAAAAOgAAAAAIAACAAAAAasdlFh4xIDg8RkO2+bUJzbk4RSetwUR+M6boJhFnBoIAAAADbIfPVRNuRGrVMCOiNv3u9ALuvQdBFr7JUaoFBjE0k9po3wE9UcfXjuWcAx1RYWB27K9aiKGdd5ndhMKY2lk+oWItl/29iHihSwZh9QsBlDN9dD2vElrpnf3Tl4xCYoyON/MlY3DVjbTGrh3ZL/VgckNOWbFUaQ4ZQR1WI+iPSeUAAAAC1qTkzKXJ+3bmRBnGBV1oWGi/Xsp5FoFLYQGbwhL50WMyWtf7V5O5bDMkEVYDeIaOw8jEaQt6o/YuaP9IpJ1yx</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAACGMSla9OE2S8h5dxyzX7nv3XVtBaHAhIF8KZNi+aI0OAAAAAAOgAAAAAIAACAAAABabdO/FylDy4cRj0yNWedJfcaOivgt3+jg6Z0G6mRppoAAAAC03FELJI0PT5+wqnSxx2TWQVWtTshydnLK+eldW/RVw2+3xQeqIYnGZOzhTbmA0ykJwauLXIQEuWlO+teNlQUQTSx8fEC3teAqYM5u0DAA/+foWxirZkJaLiAtqFY69HywfGHx6PT7fDSZlAV14jW2TnAnux+tAKi4E4o8DaNfeUAAAAC8j8wBLtasJ191h7f9KJqJoC3+fONqV71Lv9WJ/BPKOCnNWPb0L+mxei905vahsyIHv248mArjuKRtBY9HMedb</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -60,7 +60,49 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAACtrhPps6vitx3+v+hSaLC+v5jz9Wy/vX3H/x5lH/GnugAAAAAOgAAAAAIAACAAAAAMZO3FVKeAyi+aV2LMD7zWEgEArWWeuVRH2eM07lubiIAAAACfXiKhCMLAOIEli1O/E+b+A7mk7hR8kKk7QU9QusfWuJbLfbgvWDQ5JJtB1wjav+9jOXA3jukOcmfm5BJ7QvOxO/NjYshmoWAssPlflyJxOm7g9Tpm54W0LD0MUhz/9hdcpLUVYNZ5CQ5K/kD/BaFO7YbPQd1BntlUVFjn+36zdEAAAACihfY/LvNeAKggOINyturd8vBm0nXfSaLEYrk63zTTB+inhNxDi1IRZJ9PGxeoZTRSgFnvSCBWMEwaYgC9kK3t</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAADQGmEQIN6WM2AwaGl1CFMJ05V6b4jzv8AsM2xNwrkGswAAAAAOgAAAAAIAACAAAACMQqT4XUu+PvzqSGQkKSP7ujoQJvDfqO/IfZy04lGoSYAAAACIGOT5fxFwCeAT6WS8G5YX3GV2zbc8orG8s2BIytBIsZ4P8cKDbLtZ+FAtRvY045T2KvRVG8UNWHzU3xp2WoVfXcgHIEUj1MBgu03YGfznvBS1Q8ziYpy6vHNeYf28/NrwolyN+a+60DgkcM/24Y/evM5aKwpmPYkEdboCKQKiOEAAAAAO6STjB9Y1Jf8cjg/criDmdhTO3Tl81V6Lu9NpvXfl0TTtHEMcF9IYZygz0tVRdwFjD4fuM+vlyvbo4Pkj3wAW</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="BayerCsVsbCz_sqldbMOY001_InitialCatalog">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{11d769c5-1195-4d63-8b31-ae82fa0ef875}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">MOY001</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="DW_ServerName">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{d0794c50-3055-4609-bd6c-42742ab40680}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">bayer.cs.vsb.cz\sqldb</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

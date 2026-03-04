@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{4BEC00CF-B28A-4CA5-99FB-A1F23103A85C}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{018567EC-359C-4DDB-B8B9-6A589F04B108}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -50,7 +50,7 @@
       DTS:ObjectName="SRC_FILTER">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">WHERE Id &gt; 17594182000</DTS:Property>
+        DTS:Name="ParameterValue">WHERE 1=1</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -92,7 +92,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SRC_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE Id &gt; 17594182000</DTS:VariableValue>
+        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE 1=1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -122,11 +122,11 @@
           version="1">
           <components>
             <component
-              refId="Package\DF_AppToODS\DEST_ODS"
+              refId="Package\DF_AppToODS\DST_ODS"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="DEST_ODS"
+              name="DST_ODS"
               usesDispositions="true"
               version="4">
               <properties>
@@ -179,7 +179,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DF_AppToODS\DEST_ODS.Connections[OleDbConnection]"
+                  refId="Package\DF_AppToODS\DST_ODS.Connections[OleDbConnection]"
                   connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
                   connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
                   description="The OLE DB runtime connection used to access the database."
@@ -187,193 +187,193 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]"
+                  refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Id]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Id]"
                       cachedDataType="i8"
                       cachedName="Id"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[StravaId]"
-                      cachedDataType="i8"
-                      cachedName="StravaId"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="DateTimeStart"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
-                      cachedDataType="i4"
-                      cachedName="ElapsedTime"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Distance]"
-                      cachedDataType="i4"
-                      cachedName="Distance"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[Type]"
-                      cachedDataType="wstr"
-                      cachedLength="64"
-                      cachedName="Type"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[LoadDate]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="YbaracupWebUserId"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="wstr"
                       cachedLength="27"
                       cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
                       cachedDataType="wstr"
                       cachedLength="27"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
                       cachedDataType="i4"
                       cachedName="DistanceDown"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
                       cachedDataType="i4"
                       cachedName="DistanceUp"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
                       cachedDataType="i4"
                       cachedName="ElevationGain"
-                      externalMetadataColumnId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i8"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
-                      dataType="i8"
-                      name="StravaId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
-                      dataType="dbTimeStamp2"
-                      name="DateTimeStart"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
-                      dataType="i4"
-                      name="ElapsedTime" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
-                      dataType="i4"
-                      name="Distance" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      dataType="wstr"
-                      length="64"
-                      name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp2"
-                      name="LoadDate"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
-                      dataType="wstr"
-                      length="36"
-                      name="YbaracupWebUserId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp2"
                       name="CreatedDate"
                       scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp2"
                       name="UpdatedDate"
                       scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
-                      dataType="i4"
-                      name="DistanceDown" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
-                      dataType="i4"
-                      name="DistanceUp" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
-                      dataType="i4"
-                      name="ElevationGain" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
                       dataType="dbTimeStamp2"
                       name="_LoadDate"
                       scale="7" />
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
                       dataType="i4"
                       name="_LoadId" />
                     <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
                       codePage="1250"
                       dataType="str"
                       length="32"
                       name="_HASH" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      dataType="i8"
+                      name="StravaId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      dataType="dbTimeStamp2"
+                      name="DateTimeStart"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      dataType="i4"
+                      name="ElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      name="YbaracupWebUserId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      dataType="i4"
+                      name="DistanceDown" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      dataType="i4"
+                      name="DistanceUp" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      dataType="i4"
+                      name="ElevationGain" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DF_AppToODS\DEST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -481,6 +481,26 @@
                       name="Id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
@@ -548,26 +568,6 @@
                       name="YbaracupWebUserId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      length="27"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]"
-                      name="CreatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      length="27"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
-                      name="UpdatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -602,6 +602,16 @@
                       dataType="i8"
                       name="Id" />
                     <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[StravaId]"
                       dataType="i8"
                       name="StravaId" />
@@ -633,16 +643,6 @@
                       dataType="wstr"
                       length="36"
                       name="YbaracupWebUserId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      dataType="wstr"
-                      length="27"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      dataType="wstr"
-                      length="27"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[DistanceDown]"
                       dataType="i4"
@@ -759,7 +759,7 @@
               startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\DF_AppToODS.Paths[Row Count Output 1]"
-              endId="Package\DF_AppToODS\DEST_ODS.Inputs[OLE DB Destination Input]"
+              endId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
               startId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]" />
           </paths>
@@ -808,27 +808,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS"
+          TopLeft="121.874994551763,114.947367158953" />
+        <NodeLayout
           Size="178.666666666667,42.6666666666667"
           Id="Package\SQL_TRUNC_DEST"
           TopLeft="113.749994914979,40.3684206093943" />
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\DF_AppToODS"
-          TopLeft="121.249994579703,116.999998715363" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="200.833328080674,83.0350872760609">
+          TopLeft="201.145828066704,83.035087276061">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.9649114393022"
+              EndConnector="0,31.9122798828922"
               Start="0,0"
-              End="0,26.4649114393022">
+              End="0,24.4122798828922">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.4649114393022" />
+                    End="0,24.4122798828922" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -846,13 +846,39 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DF_AppToODS\Row Count"
+          TopLeft="213.12499047257,112.894735602543" />
+        <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SRC_APP"
           TopLeft="213.749990444631,35.5789469777713" />
         <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\DF_AppToODS\Row Count"
-          TopLeft="213.12499047257,112.894735602543" />
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\DST_ODS"
+          TopLeft="211.249990556389,183.526314279462" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
+          TopLeft="277.854157181146,155.56140226921">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9649120102519"
+              Start="0,0"
+              End="0,20.4649120102519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4649120102519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[OLE DB Source Output]"
           TopLeft="278.770823791934,78.2456136444379">
@@ -877,32 +903,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\DF_AppToODS\DEST_ODS"
-          TopLeft="209.374990640208,188.999998429888" />
-        <EdgeLayout
-          Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
-          TopLeft="278.583323889723,155.56140226921">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.4385961606782"
-              Start="0,0"
-              End="0,25.9385961606782">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.9385961606782" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -915,7 +915,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF_AppToODS\DEST_ODS">
+    design-time-name="Package\DF_AppToODS\DST_ODS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

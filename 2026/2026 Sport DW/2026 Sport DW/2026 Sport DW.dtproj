@@ -26,11 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">PCFEIB207-66</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAAC7mkpf/L86DIknE1wvHPPqjAREVIe14XzXsAgdp3798wAAAAAOgAAAAAIAACAAAABF9LTcPVK6yDJXduTVjITyodR4L8LVjoVeZvHzo9o2WpAAAADjgcbLbuHMubo7subcKXCFaAKAm8svIOQCAYfIzQV09iIUjlOtR1eX5tBbAawoQKLfr3y1xrnAYqGi1IXcbiBoBbjpuQHpl58VN32nGxbIYXAOf9P9Jdd1kKQS6fuMb3jiiyR/DNwOCfNDqW6wsO+2sJ/8+CMdM/O0wbNqUNsSOozf/Gz3ifc68srfG/jlTIZAAAAAkOZbWVTDEKLCE5rhSAHtm/IvbpaMkX1UCRpRE8MuJC12jh9+jGM8M1M+5SWID3wzfjfN3R0O/Z+4MjVFMCLTnw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAABWjTtx5gRbuBvdfWs0n6ndGwNYyYTQskA5N+hJsUqaBgAAAAAOgAAAAAIAACAAAAD6wuckbXDPW9D/Bt/aMhRE7mtqQNDXK+GQMYUb+JZWp5AAAABTspcLcJ5K+yRe391Korv3mEvXY7mbJNZX2NZvY3bM+JV2uQx5A3PC10renCpaSyg5xI5l/Xv1e+E/gQJ/APZ1UbZt2YDRxSvdnKrX4/z4PnNivkUEcgb/ctmtgLnXw3akh1ArIpH6d9fmQsh+G0WFOcTB/YFfj5QHjX6w/d9hKUatMlv+nsXrjaJaS0439GNAAAAA6qggt2qfy1Jd257Qc8BAAqyiayQ+1ePhd9HGum65drVVRrw66s6k05wWYH7vqzI2C6uUOcUaMeE2edwSKzjS4Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="DF_App2DW_Activity.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DF_App2DW_AspNetUsers.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="CF_App2ODS.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SportApp.conmgr" />
@@ -248,21 +250,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.bayer.cs.vsb.cz_sqldb.MOY001.InitialCatalog">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">MOY001</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.bayer.cs.vsb.cz_sqldb.MOY001.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -278,21 +265,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.bayer.cs.vsb.cz_sqldb.MOY001.ServerName">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">bayer.cs.vsb.cz\sqldb</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="DF_App2DW_Activity.dtsx">
@@ -301,10 +273,10 @@
                 <SSIS:Property SSIS:Name="Name">DF_App2DW_Activity</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">11</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4BEC00CF-B28A-4CA5-99FB-A1F23103A85C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{018567EC-359C-4DDB-B8B9-6A589F04B108}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -363,7 +335,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">WHERE Id &gt; 17594182000</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">WHERE 1=1</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -382,6 +354,111 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DF_App2DW_AspNetUsers.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{505D273F-A324-4C35-9699-61E6848335F4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DF_App2DW_Activity</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{63BAF451-F91E-4DBC-9615-35659B4348C6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="DST_SCHEMA">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{B6095F1A-368D-4E89-9C52-8F6E6A620802}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">ODS</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="DST_TABLE">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{C226D5C2-2756-4B65-BC6E-71F245E0BF9D}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">AspNetUsers</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_COLUMNS">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{4A1A1FA1-A9E9-4F3B-8F89-B7474D852FBE}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">[Id]       ,[FirstName]       ,[LastName]       ,[NickName]       ,[EldomondoName]       ,[TeamId]       ,[UserName]       ,[NormalizedUserName]       ,[Email]       ,[NormalizedEmail]       ,[EmailConfirmed]       ,[PasswordHash]       ,[SecurityStamp]       ,[ConcurrencyStamp]       ,[PhoneNumber]       ,[PhoneNumberConfirmed]       ,[TwoFactorEnabled]       ,[LockoutEnd]       ,[LockoutEnabled]       ,[AccessFailedCount]       ,[LastLoad]       ,[CreatedDate]       ,[UpdatedDate]       ,[DeactivatedOn]       ,[ProfileImageUrl]</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_FILTER">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{78CDE651-821D-43E3-ABD8-8BA3F8E2FFE0}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property xml:space="preserve" SSIS:Name="Value"> </SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_TABLE_NAME">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{B5CADF60-C38A-44B2-BE7D-ECD0D35797C0}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">AspNetUsers</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="CF_App2ODS.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4FF34B69-4007-44BF-A628-A9CBEB888FE0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1A8E1EAD-CAE9-4B34-918E-6A13FF0181AD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
