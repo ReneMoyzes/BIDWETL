@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="bayer.cs.vsb.cz_sqldb.MOY001"
+  DTS:DTSID="{A249356E-F663-4B34-B62F-B3059FAD66ED}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=bayer.cs.vsb.cz\sqldb;Initial Catalog=MOY001;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-2026 Sport DW-{A249356E-F663-4B34-B62F-B3059FAD66ED}bayer.cs.vsb.cz\sqldb.MOY001;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
