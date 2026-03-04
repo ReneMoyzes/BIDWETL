@@ -1,0 +1,180 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/4/2026 9:29:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PCFEIB207-66"
+  DTS:CreatorName="VSB\MOY001"
+  DTS:DTSID="{6A5B8C1C-27E4-4D61-8FAA-5B66D5825E1C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DF_App2DW_Activity"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{608EAB83-1EBB-48C9-80E0-9458FD8B79DA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5683FCC7-97C8-441C-9201-1A68759C3B43}"
+      DTS:ObjectName="DST_SCHEMA">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ODS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{FB5035C3-7251-49C1-89F8-C1A8A9516C75}"
+      DTS:ObjectName="DST_TABLE">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">StravaActivity</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5BC3F9F1-22E9-42FB-AFAE-1408CB2AE4A1}"
+      DTS:ObjectName="SRC_COLUMNS">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain]</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{9C63E1D9-F6D6-4E18-8EA4-C21CE00B8AE8}"
+      DTS:ObjectName="SRC_FILTER">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">WHERE Id&gt;1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{652647E2-6319-4FA9-BD5F-429147B82F4F}"
+      DTS:ObjectName="SRC_TABLE_NAME">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">StravaActivity</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A2962365-06AC-49A0-BA20-910788A88664}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT&quot; +  @[$Package::SRC_COLUMNS] +  &quot; FROM &quot; + @[$Package::SRC_TABLE_NAME] + &quot; &quot; &#xA;+  @[$Package::SRC_FILTER]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SRC_SELECT">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE Id&gt;1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FEFC227E-D1B6-4CEB-B4A4-3168B0B6AF74}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;TRUNCATE TABLE &quot; +  @[$Package::DST_SCHEMA] + &quot;.&quot; +  @[$Package::DST_TABLE]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SRC_TRUNCATE">
+      <DTS:VariableValue
+        DTS:DataType="8">TRUNCATE TABLE ODS.StravaActivity</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF_AppToODS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0CB6BDA9-4AD8-4B58-8074-96172276613B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF_AppToODS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_TRUNC_DEST"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0CD6064B-96FB-43F5-A0FC-CAC236C48708}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_TRUNC_DEST"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A249356E-F663-4B34-B62F-B3059FAD66ED}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::SRC_TRUNCATE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EF987433-4DF3-415C-9FD9-6B774C2D6CDE}"
+      DTS:From="Package\SQL_TRUNC_DEST"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF_AppToODS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\SQL_TRUNC_DEST"
+          TopLeft="113.749994914979,40.3684206093943" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS"
+          TopLeft="121.249994579703,116.999998715363" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="200.833328080674,83.0350872760609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9649114393022"
+              Start="0,0"
+              End="0,26.4649114393022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4649114393022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
