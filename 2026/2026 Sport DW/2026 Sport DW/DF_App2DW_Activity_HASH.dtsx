@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity_HASH"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{51BDF35D-F4D7-4837-9D4C-017C92FA4136}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{627CBD7A-47A7-41CA-9D04-C15368E866C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -65,6 +65,15 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{2D8F0AB5-1296-4816-8CFB-47A494AF1F60}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEST_SELECT_IDHASH">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT ID ,[_HASH]   FROM [ODS].[StravaActivity] ORDER BY ID</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{6A8C5C2A-95FD-4646-9F3B-8671D23FFEF4}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Package::DST_SCHEMA] + &quot;.&quot;+ @[$Package::DST_TABLE]"
@@ -76,10 +85,55 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{069B2DBB-ADB0-44BA-953A-7C55EA34BE89}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOAD_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9D421BB6-0C67-416B-9D97-7A611D2E92BA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_DELETE">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51D8ECC5-0641-400C-AD39-E85FB5CB1E65}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_INSERT">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AC9586D4-7048-440C-92AD-8420C0902EC6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_NOCHANGE">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{BCF2C448-F319-4097-86EB-71E94F4D5592}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RC_SRC_SELECT">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52A714F3-3907-4C8E-8D86-E553604E9349}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RC_UPDATE">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -121,6 +175,1150 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\DF_AppToODS\DER_ETL"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER_ETL"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="HASH"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]"
+                      name="_HASH"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">_HASH</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadID]"
+                      name="_LoadID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::LOAD_ID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::LOAD_ID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadDate]"
+                      name="_LoadDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DER_OP_D"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER_OP_D"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DER_OP_D.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_D.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Output].Columns[OPERATION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Output].Columns[OPERATION]"
+                      name="OPERATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"U"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"U"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_D.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DER_OP_I"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER_OP_I"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DER_OP_I.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_I.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Output].Columns[OPERATION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Output].Columns[OPERATION]"
+                      name="OPERATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"I"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"I"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_I.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DER_OP_U"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER_OP_U"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[OPERATION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[OPERATION]"
+                      name="OPERATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"U"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"U"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DEST_INSERTS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DEST_INSERTS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ODS].[StravaActivity]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\DEST_INSERTS.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      dataType="i8"
+                      name="StravaId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      dataType="dbTimeStamp2"
+                      name="DateTimeStart"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      dataType="i4"
+                      name="ElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      name="YbaracupWebUserId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="CreatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="UpdatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      dataType="i4"
+                      name="DistanceDown" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      dataType="i4"
+                      name="DistanceUp" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      dataType="i4"
+                      name="ElevationGain" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="_LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      dataType="i4"
+                      name="_LoadId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      name="_HASH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceUp]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElevationGain]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_HASH]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input].Columns[ID]"
+                      cachedDataType="i8"
+                      cachedName="ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[_HASH]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      name="Id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]"
+                      name="StravaId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[StravaId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]"
+                      name="DateTimeStart">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DateTimeStart]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]"
+                      name="ElapsedTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[ElapsedTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]"
+                      name="Distance">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Distance]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]"
+                      name="Type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[Type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]"
+                      name="LoadDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[LoadDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]"
+                      name="YbaracupWebUserId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[YbaracupWebUserId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]"
+                      name="DistanceDown">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DistanceDown]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]"
+                      name="DistanceUp">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[DistanceUp]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]"
+                      name="ElevationGain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[ElevationGain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]"
+                      name="_LoadID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_LoadID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]"
+                      name="_LoadDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_LoadDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]"
+                      name="DEST_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input].Columns[ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]"
+                      name="DEST_HASH">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input].Columns[_HASH]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]"
+                      name="_HASH">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input].Columns[_HASH]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\RC_DELETE"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RC_DELETE">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RC_UPDATE</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\RC_DELETE.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\RC_DELETE.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF_AppToODS\RC_DELETE.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\RC_INSERT"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RC_INSERT">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RC_INSERT</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\RC_INSERT.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\RC_INSERT.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF_AppToODS\RC_INSERT.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\RC_NOCHANGE"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RC_NOCHANGE">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RC_NOCHANGE</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\RC_NOCHANGE.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\RC_NOCHANGE.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF_AppToODS\RC_NOCHANGE.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\RC_UPDATE"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="RC_UPDATE">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RC_UPDATE</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\RC_UPDATE.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\RC_UPDATE.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\DF_AppToODS\RC_UPDATE.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\DF_AppToODS\Row Count"
               componentClassID="Microsoft.RowCount"
@@ -1370,10 +2568,695 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   <outputColumns>
                     <outputColumn
                       refId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]"
-                      dataType="wstr"
+                      codePage="1250"
+                      dataType="str"
                       length="32"
                       lineageId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]"
                       name="HASH" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="HASH"
+                      lineageId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\Sort.Inputs[Sort Input].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      lineageId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Id]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Id]"
+                      name="Id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[CreatedDate]"
+                      name="CreatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[UpdatedDate]"
+                      name="UpdatedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[StravaId]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[StravaId]"
+                      name="StravaId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DateTimeStart]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DateTimeStart]"
+                      name="DateTimeStart">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElapsedTime]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElapsedTime]"
+                      name="ElapsedTime">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Distance]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Distance]"
+                      name="Distance">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[Type]"
+                      name="Type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[LoadDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[LoadDate]"
+                      name="LoadDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[YbaracupWebUserId]"
+                      name="YbaracupWebUserId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceDown]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceDown]"
+                      name="DistanceDown">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceUp]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[DistanceUp]"
+                      name="DistanceUp">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElevationGain]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[ElevationGain]"
+                      name="ElevationGain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_HASH]"
+                      name="_HASH">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\SCR_HASH.Outputs[Output 0].Columns[HASH]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadID]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadID]"
+                      name="_LoadID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_AppToODS\Sort.Outputs[Sort Output].Columns[_LoadDate]"
+                      name="_LoadDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output].Columns[_LoadDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\SPLIT_OPERATION"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="SPLIT_OPERATION"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input].Columns[DEST_ID]"
+                      cachedDataType="i8"
+                      cachedName="DEST_ID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input].Columns[DEST_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="DEST_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[NEW]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="NEW"
+                  synchronousInputId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(DEST_ID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[DELETED]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="DELETED"
+                  synchronousInputId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Id)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[UPDATED]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="UPDATED"
+                  synchronousInputId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]} != #{Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">_HASH != DEST_HASH</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[NOCHANGE]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="NOCHANGE"
+                  synchronousInputId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1719,18 +3602,215 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\DF_AppToODS\SRC_DEST_HASH_ID"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC_DEST_HASH_ID"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::DEST_SELECT_IDHASH</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].ExternalColumns[_HASH]"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].Columns[_HASH]"
+                      name="_HASH"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="i8"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output].ExternalColumns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      name="_HASH" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[_HASH]"
+                      name="_HASH" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\DF_AppToODS.Paths[DELETED]"
+              endId="Package\DF_AppToODS\DER_OP_D.Inputs[Derived Column Input]"
+              name="DELETED"
+              startId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[DELETED]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Derived Column Output]"
+              endId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF_AppToODS\DER_ETL.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Derived Column Output1]"
+              endId="Package\DF_AppToODS\RC_INSERT.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Derived Column Output2]"
+              endId="Package\DF_AppToODS\RC_UPDATE.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Derived Column Output3]"
+              endId="Package\DF_AppToODS\RC_DELETE.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Merge Join Output]"
+              endId="Package\DF_AppToODS\SPLIT_OPERATION.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[NEW]"
+              endId="Package\DF_AppToODS\DER_OP_I.Inputs[Derived Column Input]"
+              name="NEW"
+              startId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[NEW]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[NOCHANGE]"
+              endId="Package\DF_AppToODS\RC_NOCHANGE.Inputs[Row Count Input 1]"
+              name="NOCHANGE"
+              startId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[NOCHANGE]" />
             <path
               refId="Package\DF_AppToODS.Paths[OLE DB Source Output]"
               endId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0]"
               name="OLE DB Source Output"
               startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DF_AppToODS.Paths[OLE DB Source Output1]"
+              endId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DF_AppToODS.Paths[Output 0]"
-              endId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+              endId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input]"
               name="Output 0"
               startId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Row Count Output 1]"
+              endId="Package\DF_AppToODS\Sort.Inputs[Sort Input]"
+              name="Row Count Output 1"
+              startId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Row Count Output 11]"
+              endId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\DF_AppToODS\RC_INSERT.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Sort Output]"
+              endId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DF_AppToODS\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[UPDATED]"
+              endId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]"
+              name="UPDATED"
+              startId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[UPDATED]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1813,29 +3893,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\DF_AppToODS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SRC_APP"
-          TopLeft="213.749990444631,35.5789469777713" />
+          TopLeft="214.374990416691,15.0526314136725" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SCR_HASH"
-          TopLeft="208.749990668148,120.614035395732" />
+          TopLeft="206.874990751967,95.2982462000099" />
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[OLE DB Source Output]"
-          TopLeft="277.916657223056,78.245613644438">
+          TopLeft="277.291657250996,57.7192980803392">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.3684217512938"
+              EndConnector="0,37.5789481196707"
               Start="0,0"
-              End="0,34.8684217512938">
+              End="0,30.0789481196707">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.8684217512938" />
+                    End="0,30.0789481196707" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1847,29 +3927,433 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\DF_AppToODS\Row Count"
-          TopLeft="216.249990332872,208.684208235004" />
+          TopLeft="213.749990444631,267.526312852088" />
+        <NodeLayout
+          Size="128,42.6666666666667"
+          Id="Package\DF_AppToODS\DER_ETL"
+          TopLeft="214.999990388751,181.438595304254" />
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Output 0]"
-          TopLeft="279.833323833843,163.280702062398">
+          TopLeft="277.270823903692,137.964912866677">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.403506172606"
+              EndConnector="0,43.4736824375771"
               Start="0,0"
-              End="0,37.903506172606">
+              End="0,35.9736824375771">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.903506172606" />
+                    End="0,35.9736824375771" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Derived Column Output]"
+          TopLeft="279.374990416691,224.10526197092">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.4210508811672"
+              Start="0,0"
+              End="0,35.9210508811672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9210508811672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\DF_AppToODS\SRC_DEST_HASH_ID"
+          TopLeft="446.749981727451,16.0701765504459" />
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\Sort"
+          TopLeft="229.083328695347,337.421050310218" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
+          TopLeft="279.083326236655,310.192979518754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.2280707914633"
+              Start="0,0"
+              End="0,19.7280707914633">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7280707914633" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DF_AppToODS\Merge Join"
+          TopLeft="329.874990975484,416.999997573464" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Sort Output]"
+          TopLeft="278.41666202868,380.087716976884">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.7916622801374,36.9122805965794"
+              Start="0,0"
+              End="96.7916622801374,29.4122805965794">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8821304135411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8821304135411"
+                    Point2="0,21.8821304135411"
+                    Point3="4,21.8821304135411" />
+                  <mssgle:LineSegment
+                    End="92.7916622801374,21.8821304135411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.7916622801374,21.8821304135411"
+                    Point2="96.7916622801374,21.8821304135411"
+                    Point3="96.7916622801374,25.8821304135411" />
+                  <mssgle:LineSegment
+                    End="96.7916622801374,29.4122805965794" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[OLE DB Source Output1]"
+          TopLeft="540.749981727451,58.7368432171126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124.833324057361,358.263154356351"
+              Start="0,0"
+              End="-124.833324057361,350.763154356351">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,208.383546594484" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,208.383546594484"
+                    Point2="0,212.383546594484"
+                    Point3="-4,212.383546594484" />
+                  <mssgle:LineSegment
+                    End="-120.833324057361,212.383546594484" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-120.833324057361,212.383546594484"
+                    Point2="-124.833324057361,212.383546594484"
+                    Point3="-124.833324057361,216.383546594484" />
+                  <mssgle:LineSegment
+                    End="-124.833324057361,350.763154356351" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\SPLIT_OPERATION"
+          TopLeft="312.499991841615,492.228067793977" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Merge Join Output]"
+          TopLeft="398.854158075216,459.66666424013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5614035538469"
+              Start="0,0"
+              End="0,25.0614035538469">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0614035538469" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\DF_AppToODS\DER_OP_I"
+          TopLeft="162.499998547137,645.82455833841" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[NEW]"
+          TopLeft="359.166658508281,534.894734460644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130.666659961144,110.929823877767"
+              Start="0,0"
+              End="-130.666659961144,103.429823877767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0641552521748" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0641552521748"
+                    Point2="0,38.0641552521748"
+                    Point3="-4,38.0641552521748" />
+                  <mssgle:LineSegment
+                    End="-126.666659961144,38.0641552521748" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.666659961144,38.0641552521748"
+                    Point2="-130.666659961144,38.0641552521748"
+                    Point3="-130.666659961144,42.0641552521748" />
+                  <mssgle:LineSegment
+                    End="-130.666659961144,103.429823877767" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,10.951753086303,16,16"
+              BoundingBox="-76.5504784180722,43.0641552521748,22.434296875,9.2705078125"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\DER_OP_U"
+          TopLeft="324.083324448516,645.894729750309" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[UPDATED]"
+          TopLeft="401.833325174948,534.894734460644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.08333405976509,110.999995289665"
+              Start="0,0"
+              End="-9.08333405976509,103.499995289665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.4999976448325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.4999976448325"
+                    Point2="0,55.4999976448325"
+                    Point3="-4,55.4999976448325" />
+                  <mssgle:LineSegment
+                    End="-5.08333405976509,55.4999976448325" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.08333405976509,55.4999976448325"
+                    Point2="-9.08333405976509,55.4999976448325"
+                    Point3="-9.08333405976509,59.4999976448325" />
+                  <mssgle:LineSegment
+                    End="-9.08333405976509,103.499995289665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.6018232798825,60.4999976448325,44.1203125,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\DER_OP_D"
+          TopLeft="485.624984102324,644.561397558875" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[DELETED]"
+          TopLeft="444.499991841615,534.894734460644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.791658927376,109.666663098231"
+              Start="0,0"
+              End="109.791658927376,102.166663098231">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6307177297851" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.6307177297851"
+                    Point2="0,37.6307177297851"
+                    Point3="4,37.6307177297851" />
+                  <mssgle:LineSegment
+                    End="105.791658927376,37.6307177297851" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.791658927376,37.6307177297851"
+                    Point2="109.791658927376,37.6307177297851"
+                    Point3="109.791658927376,41.6307177297851" />
+                  <mssgle:LineSegment
+                    End="109.791658927376,102.166663098231" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.8146185261882,42.6307177297851,42.162421875,9.2705078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\DF_AppToODS\RC_INSERT"
+          TopLeft="160.624998630956,731.842102761497" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Derived Column Output1]"
+          TopLeft="229.562498589046,688.491225005077">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3508777564195"
+              Start="0,0"
+              End="0,35.8508777564195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8508777564195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\DF_AppToODS\RC_UPDATE"
+          TopLeft="318.124991590157,735.298244201686" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Derived Column Output2]"
+          TopLeft="391.43749135267,688.561396416976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.7368477847102"
+              Start="0,0"
+              End="0,39.2368477847102">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2368477847102" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\RC_DELETE"
+          TopLeft="486.708319950228,733.964912010252" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Derived Column Output3]"
+          TopLeft="556.166652026276,687.228064225542">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.7368477847104"
+              Start="0,0"
+              End="0,39.2368477847104">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2368477847104" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\RC_NOCHANGE"
+          TopLeft="541.249981615693,496.75438478545" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[NOCHANGE]"
+          TopLeft="491.166658508281,515.824559623047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.0833231074117,0"
+              Start="0,0"
+              End="42.5833231074117,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.5833231074117,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.90628766504414,5,52.3958984375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\DF_AppToODS\DEST_INSERTS"
+          TopLeft="149.999993294478,818.438594019617" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 11]"
+          TopLeft="230.312495962717,774.508769428163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.9298245914534"
+              Start="0,0"
+              End="0,36.4298245914534">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.4298245914534" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1880,6 +4364,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_AppToODS\SRC_DEST_HASH_ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_AppToODS\DEST_INSERTS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
