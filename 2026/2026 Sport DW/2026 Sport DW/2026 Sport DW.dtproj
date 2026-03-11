@@ -26,13 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">PCFEIB207-66</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAABWjTtx5gRbuBvdfWs0n6ndGwNYyYTQskA5N+hJsUqaBgAAAAAOgAAAAAIAACAAAAD6wuckbXDPW9D/Bt/aMhRE7mtqQNDXK+GQMYUb+JZWp5AAAABTspcLcJ5K+yRe391Korv3mEvXY7mbJNZX2NZvY3bM+JV2uQx5A3PC10renCpaSyg5xI5l/Xv1e+E/gQJ/APZ1UbZt2YDRxSvdnKrX4/z4PnNivkUEcgb/ctmtgLnXw3akh1ArIpH6d9fmQsh+G0WFOcTB/YFfj5QHjX6w/d9hKUatMlv+nsXrjaJaS0439GNAAAAA6qggt2qfy1Jd257Qc8BAAqyiayQ+1ePhd9HGum65drVVRrw66s6k05wWYH7vqzI2C6uUOcUaMeE2edwSKzjS4Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPJXAgys+9ES7x1zCZQR94QAAAAACAAAAAAAQZgAAAAEAACAAAABmT6AUkT0QaHWqI3+yGgwhr8SYCP8JuCm8CS4/Qjm6mQAAAAAOgAAAAAIAACAAAAAkG74rQIkbrZthL6ZPtPNA0G/f59VlmsSI72sNb4NSipAAAADJaTL96147ZgwwoS3tE9SvvhvtLIHvqaHKTaBK+mowAnR6FEAO0yO4pdKJGm/rDoCQFUZAlMn0UbeISa1uG6HWzSPW6i2jmKd2IeDQhSx5s5hsHO91wHjqy6/Lh8/HU7niRQSTQuMEQKW8+01LzLewyb2rBuwlA1ooKXkoI1v2c51OB3ySgymKa1kH0vWyczhAAAAA5n9yrVX1b8TNwVP6nuBam6X3fXfAfP74F72hV0om0e0Ju8aMA0xBLQikQDodXw6gR6/Uph1QmIgLW6comeGOxg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="DF_App2DW_Activity.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DF_App2DW_AspNetUsers.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="CF_App2ODS.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DF_App2DW_Activity_HASH.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="SportApp.conmgr" />
@@ -361,10 +362,10 @@
                 <SSIS:Property SSIS:Name="Name">DF_App2DW_Activity</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{63BAF451-F91E-4DBC-9615-35659B4348C6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{00CF222E-E590-4245-8C89-27BFD5CB4C8D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -459,6 +460,94 @@
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DF_App2DW_Activity_HASH.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{CC3F48BF-FFBB-46A9-8CE7-2773BF19E5A9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DF_App2DW_Activity_HASH</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7A0DCF71-3811-4A1F-B8D5-4A5ED5354CF7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="DST_SCHEMA">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{620937EE-2E53-419E-A4EA-4FFA9860337F}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">ODS</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="DST_TABLE">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{8BAC4478-F76B-4D6B-BE45-F15FAF1C8A1B}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">StravaActivity</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_COLUMNS">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{68BCFDB9-DDC3-45B2-A67E-F94DC85F2635}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain]</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_FILTER">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{1A692DFD-70D6-44B8-8BC0-C254DFBEEDC0}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">WHERE 1=1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SRC_TABLE_NAME">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{02A26CE7-4A03-4B27-AA3C-DB805801C7E8}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">StravaActivity</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

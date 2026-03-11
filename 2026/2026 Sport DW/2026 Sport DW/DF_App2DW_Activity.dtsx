@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{018567EC-359C-4DDB-B8B9-6A589F04B108}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{B1B687D1-3DCC-46D3-84BA-BDAD495082B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -876,7 +876,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

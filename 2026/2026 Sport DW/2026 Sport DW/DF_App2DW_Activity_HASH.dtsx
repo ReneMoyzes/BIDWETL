@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity_HASH"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{7A0DCF71-3811-4A1F-B8D5-4A5ED5354CF7}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{51BDF35D-F4D7-4837-9D4C-017C92FA4136}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -121,266 +121,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\DF_AppToODS\DST_ODS"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="DST_ODS"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable">User::DEST_TABLE_FN</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">1</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DF_AppToODS\DST_ODS.Connections[OleDbConnection]"
-                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Id]"
-                      cachedDataType="i8"
-                      cachedName="Id"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[StravaId]"
-                      cachedDataType="i8"
-                      cachedName="StravaId"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="DateTimeStart"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
-                      cachedDataType="i4"
-                      cachedName="ElapsedTime"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Distance]"
-                      cachedDataType="i4"
-                      cachedName="Distance"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[Type]"
-                      cachedDataType="wstr"
-                      cachedLength="64"
-                      cachedName="Type"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[LoadDate]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="YbaracupWebUserId"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
-                      cachedDataType="i4"
-                      cachedName="DistanceDown"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
-                      cachedDataType="i4"
-                      cachedName="DistanceUp"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
-                      cachedDataType="i4"
-                      cachedName="ElevationGain"
-                      externalMetadataColumnId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
-                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                      dataType="i8"
-                      name="Id" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp2"
-                      name="CreatedDate"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp2"
-                      name="UpdatedDate"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
-                      dataType="dbTimeStamp2"
-                      name="_LoadDate"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
-                      dataType="i4"
-                      name="_LoadId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
-                      codePage="1250"
-                      dataType="str"
-                      length="32"
-                      name="_HASH" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
-                      dataType="i8"
-                      name="StravaId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
-                      dataType="dbTimeStamp2"
-                      name="DateTimeStart"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
-                      dataType="i4"
-                      name="ElapsedTime" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
-                      dataType="i4"
-                      name="Distance" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      dataType="wstr"
-                      length="64"
-                      name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp2"
-                      name="LoadDate"
-                      scale="7" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
-                      dataType="wstr"
-                      length="36"
-                      name="YbaracupWebUserId" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
-                      dataType="i4"
-                      name="DistanceDown" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
-                      dataType="i4"
-                      name="DistanceUp" />
-                    <externalMetadataColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
-                      dataType="i4"
-                      name="ElevationGain" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DF_AppToODS\DST_ODS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\DF_AppToODS\Row Count"
               componentClassID="Microsoft.RowCount"
@@ -563,8 +303,8 @@ public class ScriptMain : UserComponent
             var isNullProperty = properties.FirstOrDefault(p => p.Name == property.Name + "_IsNull");
             bool isNull = isNullProperty != null && (bool)isNullProperty.GetValue(Row);
 
-            var propertyValue = property.GetValue(Row);
-            var propertyString = isNull ? "!NULL!" : propertyValue.ToString();
+            //var propertyValue = property.GetValue(Row);
+            var propertyString = isNull ? "!NULL!" : property.GetValue(Row).ToString();
 
             concatenatedString += propertyString;
             concatenatedString += "||";
@@ -597,7 +337,93 @@ public class ScriptMain : UserComponent
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{a34ef7d0-ba7b-46bf-8aa8-1b3ee933032d}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_73390b4073494adf88122a8a1bac33a5</RootNamespace><AssemblyName>SC_B5E3E4D9BE3B41F0B7F62DA89F888E22</AssemblyName><TargetFrameworkVersion>v4.7</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptComponent" GeneratedNamespace="SC_73390b4073494adf88122a8a1bac33a5" IconIndex="0"></Host><ProjectClient><HostIdentifier>SSIS_SC160</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a34ef7d0-ba7b-46bf-8aa8-1b3ee933032d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_73390b4073494adf88122a8a1bac33a5</RootNamespace>
+    <AssemblyName>SC_B5E3E4D9BE3B41F0B7F62DA89F888E22</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_73390b4073494adf88122a8a1bac33a5" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
                     <arrayElement
@@ -745,14 +571,14 @@ public class Input0Buffer: ScriptBuffer
     {
     }
 
-    public Int16 OrderQty
+    public Int64 Id
     {
         get
         {
-            return Buffer.GetInt16(BufferColumnIndexes[0]);
+            return Buffer.GetInt64(BufferColumnIndexes[0]);
         }
     }
-    public bool OrderQty_IsNull
+    public bool Id_IsNull
     {
         get
         {
@@ -760,14 +586,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 ProductID
+    public String CreatedDate
     {
         get
         {
-            return Buffer.GetInt32(BufferColumnIndexes[1]);
+            return Buffer.GetString(BufferColumnIndexes[1]);
         }
     }
-    public bool ProductID_IsNull
+    public bool CreatedDate_IsNull
     {
         get
         {
@@ -775,14 +601,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal UnitPrice
+    public String UpdatedDate
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[2]);
+            return Buffer.GetString(BufferColumnIndexes[2]);
         }
     }
-    public bool UnitPrice_IsNull
+    public bool UpdatedDate_IsNull
     {
         get
         {
@@ -790,14 +616,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal UnitPriceDiscount
+    public Int64 StravaId
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[3]);
+            return Buffer.GetInt64(BufferColumnIndexes[3]);
         }
     }
-    public bool UnitPriceDiscount_IsNull
+    public bool StravaId_IsNull
     {
         get
         {
@@ -805,14 +631,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Decimal LineTotal
+    public String DateTimeStart
     {
         get
         {
-            return Buffer.GetDecimal(BufferColumnIndexes[4]);
+            return Buffer.GetString(BufferColumnIndexes[4]);
         }
     }
-    public bool LineTotal_IsNull
+    public bool DateTimeStart_IsNull
     {
         get
         {
@@ -820,14 +646,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Guid rowguid
+    public Int32 ElapsedTime
     {
         get
         {
-            return Buffer.GetGuid(BufferColumnIndexes[5]);
+            return Buffer.GetInt32(BufferColumnIndexes[5]);
         }
     }
-    public bool rowguid_IsNull
+    public bool ElapsedTime_IsNull
     {
         get
         {
@@ -835,14 +661,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public DateTime ModifiedDate
+    public Int32 Distance
     {
         get
         {
-            return Buffer.GetDateTime(BufferColumnIndexes[6]);
+            return Buffer.GetInt32(BufferColumnIndexes[6]);
         }
     }
-    public bool ModifiedDate_IsNull
+    public bool Distance_IsNull
     {
         get
         {
@@ -850,14 +676,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 SalesOrderID
+    public String Type
     {
         get
         {
-            return Buffer.GetInt32(BufferColumnIndexes[7]);
+            return Buffer.GetString(BufferColumnIndexes[7]);
         }
     }
-    public bool SalesOrderID_IsNull
+    public bool Type_IsNull
     {
         get
         {
@@ -865,14 +691,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Int32 SalesOrderDetailID
+    public String LoadDate
     {
         get
         {
-            return Buffer.GetInt32(BufferColumnIndexes[8]);
+            return Buffer.GetString(BufferColumnIndexes[8]);
         }
     }
-    public bool SalesOrderDetailID_IsNull
+    public bool LoadDate_IsNull
     {
         get
         {
@@ -880,11 +706,71 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
+    public String YbaracupWebUserId
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[9]);
+        }
+    }
+    public bool YbaracupWebUserId_IsNull
+    {
+        get
+        {
+            return IsNull(9);
+        }
+    }
+
+    public Int32 DistanceDown
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[10]);
+        }
+    }
+    public bool DistanceDown_IsNull
+    {
+        get
+        {
+            return IsNull(10);
+        }
+    }
+
+    public Int32 DistanceUp
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[11]);
+        }
+    }
+    public bool DistanceUp_IsNull
+    {
+        get
+        {
+            return IsNull(11);
+        }
+    }
+
+    public Int32 ElevationGain
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[12]);
+        }
+    }
+    public bool ElevationGain_IsNull
+    {
+        get
+        {
+            return IsNull(12);
+        }
+    }
+
     public String HASH
     {
         set
         {
-            this[9] = value;
+            this[13] = value;
         }
     }
     public bool HASH_IsNull
@@ -893,7 +779,7 @@ public class Input0Buffer: ScriptBuffer
         {
             if (value)
             {
-                SetNull(9);
+                SetNull(13);
             }
             else
             {
@@ -1030,7 +916,7 @@ public class Variables
     <msb:CodeName>SC_73390b4073494adf88122a8a1bac33a5</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_73390b4073494adf88122a8a1bac33a5</msb:DisplayName>
-    <msb:ProjectId>{BF60DD12-8FDB-4BA2-9B35-0FBD960C7D58}</msb:ProjectId>
+    <msb:ProjectId>{95A9BFE0-356C-4F89-A173-B45646B3249E}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_73390b4073494adf88122a8a1bac33a5.csproj" />
@@ -1171,7 +1057,191 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
                   name="BinaryCode"
                   state="cdata">
                   <arrayElements
-                    arrayElementCount="0" />
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_B5E3E4D9BE3B41F0B7F62DA89F888E22.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGgosWkAAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAqjwA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFg8AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAsBwAAAAgAAAAHgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAgAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACM
+PAAAAAAAAEgAAAACAAUAnCQAAAQXAAABAAAAAAAAAKA7AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAQAUQEAAAEAABHQAwAAAigS
+AAAKKBMAAAoKfhQAAAoLBgwWDTicAAAAczEAAAYTBBEECAmafQgAAAQRBHsIAAAEbxUAAApyAQAA
+cG8WAAAKLW8RBHsIAAAEbxcAAAosYQYRBP4GMgAABnMYAAAKKAEAACsTBREFFCgaAAAKLA8RBQNv
+GwAACqUkAAABKwEWLRQRBHsIAAAEA28bAAAKbxwAAAorBXIRAABwEwYHEQYoHQAACgsHch8AAHAo
+HQAACgsJF1gNCQiOaT9b////B3IfAABwbxYAAAosEAcWB28eAAAKGFlvHwAACgsoIAAAChMHKCEA
+AAoHbyIAAAoTCBEHEQhvIwAAChMJcyQAAAoTChYTCyshEQoRCRELjycAAAFyJQAAcCglAAAKbyYA
+AAomEQsXWBMLEQsRCY5pMtcDEQpvHAAACm8gAAAG3gwRBywHEQdvJwAACtwqAAAAARAAAAIA6ABc
+RAEMAAAAAB4CKCQAAAYqKgIDBAUoKAAACipSAnspAAAKAnsqAAAKFpRvKwAACioiAhYoLAAACipS
+AnspAAAKAnsqAAAKF5RvLQAACioiAhcoLAAACipSAnspAAAKAnsqAAAKGJRvLQAACioiAhgoLAAA
+CipSAnspAAAKAnsqAAAKGZRvKwAACioiAhkoLAAACipSAnspAAAKAnsqAAAKGpRvLQAACioiAhoo
+LAAACipSAnspAAAKAnsqAAAKG5RvLgAACioiAhsoLAAACipSAnspAAAKAnsqAAAKHJRvLgAACioi
+AhwoLAAACipSAnspAAAKAnsqAAAKHZRvLQAACioiAh0oLAAACipSAnspAAAKAnsqAAAKHpRvLQAA
+CioiAh4oLAAACipWAnspAAAKAnsqAAAKHwmUby0AAAoqJgIfCSgsAAAKKlYCeykAAAoCeyoAAAof
+CpRvLgAACiomAh8KKCwAAAoqVgJ7KQAACgJ7KgAACh8LlG8uAAAKKiYCHwsoLAAACipWAnspAAAK
+AnsqAAAKHwyUby4AAAoqJgIfDCgsAAAKKioCHw0DKC8AAAoqXgMsCQIfDSgwAAAKKnIrAABwczEA
+AAp6HgIoMgAACioeAigzAAAKKn4CKDQAAAoCAnMoAAAGfQEAAAQCAnMpAAAGfQIAAAQqkgRyyAAA
+cBpvNQAACiwVAgUCAyg2AAAKDgRzBQAABm8mAAAGKkorBwIDbycAAAYDbyIAAAYt8SoGKjoCKDcA
+AAoCA30DAAAEKjoCKDcAAAoCA30EAAAEKh4CKDcAAAoqrn4FAAAELR5y2AAAcNAHAAACKBIAAApv
+OAAACnM5AAAKgAUAAAR+BQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqHgIoOgAACioucy8AAAaA
+BwAABCqGA28VAAAKAnsIAAAEbxUAAApyAQAAcCgdAAAKKDsAAAoqQlNKQgEAAQAAAAAADAAAAHY0
+LjAuMzAzMTkAAAAABQBsAAAAGAkAACN+AACECQAAyAkAACNTdHJpbmdzAAAAAEwTAABMAQAAI1VT
+AJgUAAAQAAAAI0dVSUQAAACoFAAAXAIAACNCbG9iAAAAAAAAAAIAAAFXFaIJCQsAAAD6ATMAFgAA
+AQAAACsAAAAJAAAACAAAADIAAAAQAAAAOwAAABEAAAABAAAAAwAAAB8AAAAgAAAAAQAAAAEAAAAF
+AAAAAQAAAAEAAAABAAAAAACIBAEAAAAAAAYANQNtBwYAyQNtBwYAgQJaBw8A4QcAAAYArgJdBgYA
+GANdBgYA+QJdBgYAsANdBgYAVQNdBgYAbgNdBgYAxQJdBgYA4AIbBAoAiQOCAQYAwgZdBgYAfgBz
+CQYAAgdICQYASQJtBwYAiAjtBQoALAeCAQ4AHQeCAQoA3gaCAQoA1AiCAQYAZAJaBwYAPQeNBwYA
+qwZIBhIANAJyBBIAlQJyBBIA4AEzBgYApwHtBQYAOwHtBQYAQQTtBQYAtwZdBgYAbgDtBRYAJAH2
+BgYAMwCvAAYADgbtBQYAEgRICQYA9AVzCQYA/gPtBQYALwHtBQYAbwbtBQYAiQbtBQYAlAldBgAA
+AACCAAAAAAABAAEAAQAQACgGAAAQAAEAAQABABAAEAcAAE0AAQAFAAEAEAC2CAAAWQABACQAAQAQ
+AHUIAABJAAMAKAABABAALQgAAEkABAApAAAAEACUB/AHSQAFACoAAAEQAGUI8AdxAAcALgADARAA
+AQAAAEkACAAxAAYAdQgaAQYALQgeAQEAxAgiAQEAxAgiAREAAgYmAREA0AEqAREAFAEuAQYAvQky
+AVAgAAAAAMYA5wMGAAEAWCAAAAAAxgDyAwYAAQBgIAAAAADGAFQJNgEBANAhAAAAAIYYTQcGAAIA
+2CEAAAAAhhhNB7oAAgDjIQAAAACGCMoAPAEFAPghAAAAAIYIwARNAAUAASIAAAAAhggdAkQABQAW
+IgAAAACGCGUFTQAFAB8iAAAAAIYIDQJEAAUANCIAAAAAhghOBU0ABQA9IgAAAACGCNEAPAEFAFIi
+AAAAAIYIzgRNAAUAWyIAAAAAhggBCUQABQBwIgAAAACGCMMFTQAFAHkiAAAAAIYIcgGNAAUAjiIA
+AAAAhggTBU0ABQCXIgAAAACGCAcBjQAFAKwiAAAAAIYI/wRNAAUAtSIAAAAAhgijAUQABQDKIgAA
+AACGCCoFTQAFANMiAAAAAIYIAAJEAAUA6CIAAAAAhgg6BU0ABQDxIgAAAACGCN4ARAAFAAcjAAAA
+AIYI4gRNAAUAESMAAAAAhgiaBo0ABQAnIwAAAACGCJUFTQAFADEjAAAAAIYIzwaNAAUARyMAAAAA
+hgitBU0ABQBRIwAAAACGCBYGjQAFAGcjAAAAAIYIfAVNAAUAcSMAAAAAhgiTABAABQB8IwAAAACG
+CLAEQAEGAJQjAAAAAIYAawlNAAcAnCMAAAAAhgCPCE0ABwCkIwAAAACGGE0HBgAHAMQjAAAAAMYA
+OwlFAQcA6SMAAAAAxgE0CTYBCwD8IwAAAADGAVQJNgEMAP4jAAAAAIYYTQdPAQ0ADSQAAAAAhhhN
+B08BDgAcJAAAAACDGE0HBgAPACQkAAAAAJMIOQdVAQ8AUCQAAAAAkwi4AVoBDwBXJAAAAACTCMQB
+XwEPAF8kAAAAAJYImwhlARAAZiQAAAAAhhhNBwYAEABuJAAAAACRGFMHagEQABwkAAAAAIYYTQcG
+ABAAeiQAAAAAgwAWAG4BEAAAAAEAbwkAAAEAMgcAAAIAQAgAAAMA7AYAAAEADAQAAAEADAQAAAEA
+iwAAAAIAaAEAAAMAMgcAAAQA7AYAAAEAMgcAAAEAbwkAAAEA2ggAAAEA2ggAAAEADAQAAAEA9AYJ
+AE0HAQARAE0HBgAZAE0HCgApAE0HEAAxAE0HEAA5AE0HEABBAE0HEABJAE0HEABRAE0HEABZAE0H
+EABhAE0HEABpAE0HBgCJAE0HBgC5AE0HBgDZAE0HFQCxAOcDBgCxAPIDBgDpAE0BNADpAB8IOwD5
+ALcJQQABAV8BRAD5AGkESABxAPQATQAMAE0HWgARAacIYABxAKkJegBxAAMEggCRADUERAD5AIEI
+hwD5AF4EjQD5AEgEkQB5AC0ClwApAZwAnAApATcIogAxAVIEqACBAE0HBgA5ATUErwCBAAABtABB
+AfgBBgCZAE0HugCZADIHxACZAEAIyAChAHUAzACZANUF0QChAD4E1gChAGUA2wCZAOQF4ACZANwF
+AQBJAU0HEACZAGsJTQCZAI8ITQCxAE0HBgD5AG4I5gCxAFQI7gCRAE0HBgDpAJAJ9ADBAE0H+gDh
+AE0HBgD5AJ0JAgEuAAsAkwEuABMAnAEuABsAuwEuACMAxAEuACsA7QEuADMA7QEuADsA7QEuAEMA
+xAEuAEsA8wEuAFMA7QEuAFsACgJDAGMAVALhAGsAVALjAHMAVAIjAWsAVAKpA3sAuwHJA3sAuwEb
+AAMAAQAHAB0ACAAfAAAA8QB0AQAA9QR4AQAAIQJ8AQAAaQV4AQAAEQJ8AQAAUgV4AQAA1QB0AQAA
+0gR4AQAABQl8AQAAxwV4AQAAdgGAAQAAFwV4AQAACwGAAQAAAwV4AQAApwF8AQAALgV4AQAABAJ8
+AQAAPgV4AQAA4gB8AQAA5gR4AQAAngaAAQAAmQV4AQAA0waAAQAAsQV4AQAAGgaAAQAAgAV4AQAA
+lwB8AQAAtAR4AQAAPQeEAQAA2AGJAQAArgiOAQIABgADAAIABwAFAAIACAAHAAIACQAJAAIACgAL
+AAIACwANAAIADAAPAAIADQARAAIADgATAAIADwAVAAIAEAAXAAIAEQAZAAIAEgAbAAIAEwAdAAIA
+FAAfAAIAFQAhAAIAFgAjAAIAFwAlAAIAGAAnAAIAGQApAAIAGgArAAIAGwAtAAIAHAAvAAIAHQAx
+AAIAHgAzAAIAHwA1AAEAIAA3AAEAIQA5AAIAKwA7AAIALAA9AAEALQA9AAIALgA/AFEABIAAAAEA
+AAAAAAAAAAAAAAAAQQAAAAQAAAAAAAAAAAAAAAgBpgAAAAAAEAAAAAAAAAAAAAAAEQHkCAAAAAAQ
+AAAAAAAAAAAAAAARARMJAAAAAAQAAAAAAAAAAAAAAAgB7QUAAAAABAAAAAAAAAAAAAAACAGsAQAA
+AAAAAAAAAQAAAJ4HAAAJAAIAMwB1AAAAADw+Y19fRGlzcGxheUNsYXNzMl8wADxJbnB1dDBfUHJv
+Y2Vzc0lucHV0Um93PmJfXzAASUVudW1lcmFibGVgMQBTQ19CNUUzRTREOUJFM0I0MUYwQjdGNjJE
+QTg5Rjg4OEUyMgBHZXRJbnQzMgBGdW5jYDIAR2V0SW50NjQATUQ1ADxNb2R1bGU+AElucHV0SUQA
+c2V0X0hBU0gAZ2V0X0FTQ0lJAG1zY29ybGliAFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljAGdl
+dF9JZABnZXRfU3RyYXZhSWQAZ2V0X1liYXJhY3VwV2ViVXNlcklkAGdldF9DYW5SZWFkAEFwcGVu
+ZABnZXRfRGlzdGFuY2UAZGVmYXVsdEluc3RhbmNlAEVudW1lcmFibGUASURpc3Bvc2FibGUAUnVu
+dGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAZ2V0X05hbWUASW5wdXROYW1lAGdldF9F
+bGFwc2VkVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBnZXRfVHlwZQBTeXN0
+ZW0uQ29yZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRp
+b25TZXR0aW5nc0Jhc2UARGlzcG9zZQBnZXRfTG9hZERhdGUAZ2V0X1VwZGF0ZWREYXRlAGdldF9D
+cmVhdGVkRGF0ZQBDcmVhdGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRB
+dHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRl
+AEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5
+VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZp
+Z3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlv
+blJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNv
+cHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBB
+c3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJl
+RXhlY3V0ZQBQb3N0RXhlY3V0ZQBCeXRlAEdldFZhbHVlAHZhbHVlAEVuY29kaW5nAFN5c3RlbS5S
+dW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcAR2V0U3RyaW5nAFN1YnN0cmluZwBDb21wdXRlSGFz
+aABnZXRfTGVuZ3RoAEVuZHNXaXRoAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ19CNUUzRTREOUJF
+M0I0MUYwQjdGNjJEQTg5Rjg4OEUyMi5kbGwAc2V0X0hBU0hfSXNOdWxsAGdldF9JZF9Jc051bGwA
+Z2V0X1N0cmF2YUlkX0lzTnVsbABnZXRfWWJhcmFjdXBXZWJVc2VySWRfSXNOdWxsAGdldF9EaXN0
+YW5jZV9Jc051bGwAZ2V0X0VsYXBzZWRUaW1lX0lzTnVsbABnZXRfVHlwZV9Jc051bGwAZ2V0X0xv
+YWREYXRlX0lzTnVsbABnZXRfVXBkYXRlZERhdGVfSXNOdWxsAGdldF9DcmVhdGVkRGF0ZV9Jc051
+bGwAZ2V0X0VsZXZhdGlvbkdhaW5fSXNOdWxsAGdldF9EaXN0YW5jZURvd25fSXNOdWxsAGdldF9E
+aXN0YW5jZVVwX0lzTnVsbABnZXRfRGF0ZVRpbWVTdGFydF9Jc051bGwAU2V0TnVsbABzZXRfSXRl
+bQBTeXN0ZW0ASGFzaEFsZ29yaXRobQByZXNvdXJjZU1hbgBCb29sZWFuAGdldF9FbGV2YXRpb25H
+YWluAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24A
+U3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJp
+c29uAGdldF9EaXN0YW5jZURvd24AQ3VsdHVyZUluZm8ATWVtYmVySW5mbwBQcm9wZXJ0eUluZm8A
+Z2V0X0Rpc3RhbmNlVXAAT3V0cHV0TmFtZU1hcABPdXRwdXRNYXAAU3lzdGVtLkxpbnEAU3RyaW5n
+QnVpbGRlcgBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNv
+dXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGlt
+ZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0NfNzMzOTBiNDA3MzQ5NGFkZjg4
+MTIyYThhMWJhYzMzYTUuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01v
+ZGVzAFNDXzczMzkwYjQwNzM0OTRhZGY4ODEyMmE4YTFiYWMzM2E1LlByb3BlcnRpZXMAR2V0UHJv
+cGVydGllcwBWYXJpYWJsZXMAR2V0Qnl0ZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5J
+bmRleGVzAFNldHRpbmdzAEVxdWFscwBDb25uZWN0aW9ucwBDb25jYXQAT2JqZWN0AEVuZE9mUm93
+c2V0AGdldF9EZWZhdWx0AEZpcnN0T3JEZWZhdWx0AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9u
+ZW50AFNjcmlwdENvbXBvbmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AGdldF9EYXRl
+VGltZVN0YXJ0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNz
+SW5wdXQAU3lzdGVtLlRleHQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AFN5c3RlbS5T
+ZWN1cml0eS5DcnlwdG9ncmFwaHkAZ2V0X0Fzc2VtYmx5AG9wX0VxdWFsaXR5AG9wX0luZXF1YWxp
+dHkARW1wdHkAcHJvcGVydHkAAAAAD18ASQBzAE4AdQBsAGwAAA0hAE4AVQBMAEwAIQAABXwAfAAA
+BVgAMgAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAAYgBl
+ACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBsAHUA
+ZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1
+AHQAIAAwAABxUwBDAF8ANwAzADMAOQAwAGIANAAwADcAMwA0ADkANABhAGQAZgA4ADgAMQAyADIA
+YQA4AGEAMQBiAGEAYwAzADMAYQA1AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQBy
+AGMAZQBzAAAAAGegVWjgNGdFkqLj7M5TLjQABCABAQgDIAABBSABARERBCABAQ4FIAEBEWkYBwwd
+EjkOHRI5CBIkEjkOEj0dBR0FEkEIBgABEnUReQUgAB0SOQIGDgMgAA4EIAECDgMgAAIIFRKAhQIS
+OQIFIAIBHBgUEAECHgAVEoCNAR4AFRKAhQIeAAIECgESOQcAAgISORI5BCABHBwFAAIODg4DIAAI
+BSACDggIBAAAEj0FAAASgJUFIAEdBQ4GIAEdBR0FBCABDg4FIAESQQ4JIAMBElEdCBJVAwYSUQMG
+HQgEIAEKCAQgAQIIBCABDggEIAEICAUgAgEIHAcgAgIOEYCpBSABHQgIBSAAEoCtByACAQ4SgK0F
+AAICDg4It3pcVhk04IkIiYRdzYCAzJEDBhIUAwYSGAMGElkDBhJhAwYSZQMGEiADBhI5BSABARIM
+AyAACgQgAQECCSAEAQgOElESVQUgAQESWQQAABJhBAAAEmUFAAEBEmUEAAASIAMAAAEFIAECEjkD
+KAAKAygAAgMoAA4DKAAIBAgAEmEECAASZQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhj
+ZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ183MzM5MGI0MDczNDk0YWRmODgxMjJhOGExYmFj
+MzNhNQAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDI1AABJAQAaLk5FVEZyYW1ld29yayxWZXJz
+aW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAA
+AAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2Nv
+cmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3
+N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAA
+AAAAAABQQURQQURQtAAAAIA8AAAAAAAAAAAAAJo8AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACM
+PAAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA
+EAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABY
+QAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E
+7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBW
+AGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAA
+AACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAAMAA0
+AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5AE4A
+YQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBD
+AF8ANwAzADMAOQAwAGIANAAwADcAMwA0ADkANABhAGQAZgA4ADgAMQAyADIAYQA4AGEAMQBiAGEA
+YwAzADMAYQA1AAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAALgAw
+AAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBCADUARQAzAEUANABEADkA
+QgBFADMAQgA0ADEARgAwAEIANwBGADYAMgBEAEEAOAA5AEYAOAA4ADgARQAyADIALgBkAGwAbAAA
+AEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAA
+QAAgACAAMgAwADIANQAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAAAAAA
+AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAEIANQBFADMA
+RQA0AEQAOQBCAEUAMwBCADQAMQBGADAAQgA3AEYANgAyAEQAQQA4ADkARgA4ADgAOABFADIAMgAu
+AGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA3ADMAMwA5ADAA
+YgA0ADAANwAzADQAOQA0AGEAZABmADgAOAAxADIAMgBhADgAYQAxAGIAYQBjADMAMwBhADUAAAA0
+AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEA
+QQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAKw8AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
                 </property>
                 <property
                   dataType="System.String"
@@ -1206,7 +1276,7 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
                   dataType="System.String"
                   description="Checksum to match component metedata against compiled codes."
                   name="MetadataChecksum140"
-                  typeConverter="NOTBROWSABLE">87</property>
+                  typeConverter="NOTBROWSABLE">CE</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -1218,52 +1288,76 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[OrderQty]"
-                      cachedDataType="i2"
-                      cachedName="OrderQty"
-                      lineageId="Package\DF_AppToODS\109:invalid" />
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Id]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[ProductID]"
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[ElapsedTime]"
                       cachedDataType="i4"
-                      cachedName="ProductID"
-                      lineageId="Package\DF_AppToODS\110:invalid" />
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElapsedTime]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[UnitPrice]"
-                      cachedDataType="cy"
-                      cachedName="UnitPrice"
-                      lineageId="Package\DF_AppToODS\111:invalid" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[UnitPriceDiscount]"
-                      cachedDataType="cy"
-                      cachedName="UnitPriceDiscount"
-                      lineageId="Package\DF_AppToODS\112:invalid" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[LineTotal]"
-                      cachedDataType="numeric"
-                      cachedName="LineTotal"
-                      cachedPrecision="38"
-                      cachedScale="6"
-                      lineageId="Package\DF_AppToODS\113:invalid" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[rowguid]"
-                      cachedDataType="guid"
-                      cachedName="rowguid"
-                      lineageId="Package\DF_AppToODS\114:invalid" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[ModifiedDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="ModifiedDate"
-                      lineageId="Package\DF_AppToODS\115:invalid" />
-                    <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[SalesOrderID]"
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[Distance]"
                       cachedDataType="i4"
-                      cachedName="SalesOrderID"
-                      lineageId="Package\DF_AppToODS\116:invalid" />
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Distance]" />
                     <inputColumn
-                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[SalesOrderDetailID]"
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[DistanceDown]"
                       cachedDataType="i4"
-                      cachedName="SalesOrderDetailID"
-                      lineageId="Package\DF_AppToODS\117:invalid" />
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[DistanceUp]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1629,14 +1723,14 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
           <paths>
             <path
               refId="Package\DF_AppToODS.Paths[OLE DB Source Output]"
-              endId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+              endId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0]"
               name="OLE DB Source Output"
               startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\DF_AppToODS.Paths[Row Count Output 1]"
-              endId="Package\DF_AppToODS\DST_ODS.Inputs[OLE DB Destination Input]"
-              name="Row Count Output 1"
-              startId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]" />
+              refId="Package\DF_AppToODS.Paths[Output 0]"
+              endId="Package\DF_AppToODS\Row Count.Inputs[Row Count Input 1]"
+              name="Output 0"
+              startId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1719,55 +1813,29 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
     design-time-name="Package\DF_AppToODS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\DF_AppToODS\Row Count"
-          TopLeft="213.12499047257,112.894735602543" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SRC_APP"
           TopLeft="213.749990444631,35.5789469777713" />
         <NodeLayout
-          Size="130.666666666667,42.6666666666667"
-          Id="Package\DF_AppToODS\DST_ODS"
-          TopLeft="211.249990556389,183.526314279462" />
-        <EdgeLayout
-          Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
-          TopLeft="277.854157181146,155.56140226921">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.9649120102519"
-              Start="0,0"
-              End="0,20.4649120102519">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4649120102519" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\SCR_HASH"
+          TopLeft="208.749990668148,120.614035395732" />
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[OLE DB Source Output]"
-          TopLeft="278.770823791934,78.2456136444379">
+          TopLeft="277.916657223056,78.245613644438">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.6491219581055"
+              EndConnector="0,42.3684217512938"
               Start="0,0"
-              End="0,27.1491219581055">
+              End="0,34.8684217512938">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1491219581055" />
+                    End="0,34.8684217512938" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1777,22 +1845,38 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\DF_AppToODS\SCR_HASH"
-          TopLeft="209.374990640208,258.140349675194" />
+          Size="132,42.6666666666667"
+          Id="Package\DF_AppToODS\Row Count"
+          TopLeft="216.249990332872,208.684208235004" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Output 0]"
+          TopLeft="279.833323833843,163.280702062398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.403506172606"
+              Start="0,0"
+              End="0,37.903506172606">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.903506172606" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,10.951753086303,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\DF_AppToODS\SRC_APP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF_AppToODS\DST_ODS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
