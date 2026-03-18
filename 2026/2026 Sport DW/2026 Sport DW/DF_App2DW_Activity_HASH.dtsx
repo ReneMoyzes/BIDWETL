@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DF_App2DW_Activity_HASH"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{4A88D3B8-E435-427E-BD98-E4E2813EC4C9}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{8FEB2591-CBED-4C84-B334-C854468199DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -50,7 +50,7 @@
       DTS:ObjectName="SRC_FILTER">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">WHERE 1=1</DTS:Property>
+        DTS:Name="ParameterValue">WHERE Type = 'NordicSki' OR 1 = 1</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -65,12 +65,23 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2D8F0AB5-1296-4816-8CFB-47A494AF1F60}"
+      DTS:DTSID="{B5CA93CA-1425-45D2-8D56-724D6F2E9BA5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="DEST_SELECT_IDHASH">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT ID ,[_HASH]   FROM [ODS].[StravaActivity] ORDER BY ID</DTS:VariableValue>
+        DTS:DataType="8">SELECT ID, _HASH FROM ODS.StravaActivity</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{88E0FAA1-995C-4BEA-820E-2BCC8E63D8C5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::DEST_SELECT_IDHASH]+&quot; &quot;+ @[$Package::SRC_FILTER] + &quot; ORDER BY ID&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DEST_SELECT_IDHASH_FILTER">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT ID, _HASH FROM ODS.StravaActivity WHERE Type = 'NordicSki' OR 1 = 1 ORDER BY ID</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -82,6 +93,15 @@
       DTS:ObjectName="DEST_TABLE_FN">
       <DTS:VariableValue
         DTS:DataType="8">ODS.StravaActivity</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FA9431B4-F69E-4BE6-B7E8-0A73F652F494}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOAD_DATE">
+      <DTS:VariableValue
+        DTS:DataType="7">3/18/2026 9:49:16 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -141,12 +161,12 @@
       DTS:CreationName=""
       DTS:DTSID="{FF978906-BBB6-466A-9479-DD0BA2F5899D}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT&quot; +  @[$Package::SRC_COLUMNS] +  &quot; FROM &quot; + @[$Package::SRC_TABLE_NAME] + &quot; &quot; &#xA;+  @[$Package::SRC_FILTER]"
+      DTS:Expression="&quot;SELECT&quot; +  @[$Package::SRC_COLUMNS] +   &quot; , x = 5 FROM &quot; + @[$Package::SRC_TABLE_NAME] + &quot; &quot; &#xA;+  @[$Package::SRC_FILTER]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SRC_SELECT">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] FROM StravaActivity WHERE 1=1</DTS:VariableValue>
+        DTS:DataType="8">SELECT[Id]       ,[StravaId]       ,[DateTimeStart]       ,[ElapsedTime]       ,[Distance]       ,[Type]       ,[LoadDate]       ,[YbaracupWebUserId]       ,[CreatedDate]       ,[UpdatedDate]       ,[DistanceDown]       ,[DistanceUp]       ,[ElevationGain] , x = 5 FROM StravaActivity WHERE Type = 'NordicSki' OR 1 = 1</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -261,13 +281,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
+                          name="Expression">(DT_DBTIMESTAMP)@[System::StartTime]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)@[System::StartTime]</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -335,13 +355,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"U"</property>
+                          name="Expression">"D"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"U"</property>
+                          name="FriendlyExpression">"D"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -458,6 +478,15 @@
                   refId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -492,6 +521,30 @@
                           name="FriendlyExpression">"U"</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[_HASH1252]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[_HASH1252]"
+                      name="_HASH1252"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,32,1252)#{Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,32,1252)_HASH</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -513,6 +566,394 @@
                       refId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DEST_DELETE"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="DEST_DELETE"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE [ODS].[StravaActivity]
+ WHERE [Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\DEST_DELETE.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input].Columns[DEST_ID]"
+                      cachedDataType="i8"
+                      cachedName="DEST_ID"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_DELETE.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DEST_DELTA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DEST_DELTA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ODS].[StravaActivity_Delta]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\DEST_DELTA.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].Columns[OPERATION]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="OPERATION"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_Operation]"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i8"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[StravaId]"
+                      dataType="i8"
+                      name="StravaId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DateTimeStart]"
+                      dataType="dbTimeStamp2"
+                      name="DateTimeStart"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[ElapsedTime]"
+                      dataType="i4"
+                      name="ElapsedTime" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      name="YbaracupWebUserId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="CreatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp2"
+                      name="UpdatedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDown]"
+                      dataType="i4"
+                      name="DistanceDown" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DistanceUp]"
+                      dataType="i4"
+                      name="DistanceUp" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[ElevationGain]"
+                      dataType="i4"
+                      name="ElevationGain" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_LoadDate]"
+                      dataType="dbTimeStamp2"
+                      name="_LoadDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_LoadId]"
+                      dataType="i4"
+                      name="_LoadId" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_Operation]"
+                      dataType="wstr"
+                      length="1"
+                      name="_Operation" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      name="_HASH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DEST_DELTA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -570,7 +1011,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -794,6 +1235,373 @@
                       refId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DF_AppToODS\DEST_INSERTS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\DEST_UPDATE"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="DEST_UPDATE"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [ODS].[StravaActivity]
+   SET 
+       [StravaId] = ?
+      ,[DateTimeStart] =  ?
+      ,[ElapsedTime] =  ?
+      ,[Distance] =  ?
+      ,[Type] =  ?
+      ,[LoadDate] =  ?
+      ,[YbaracupWebUserId] = ?
+      ,[CreatedDate] =  ?
+      ,[UpdatedDate] =  ?
+      ,[DistanceDown] =  ? 
+      ,[ElevationGain] =  ?
+      ,[_LoadDate] =  ?
+      ,[_LoadId] =  ?
+      ,[_HASH] =  ?
+ WHERE [Id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_AppToODS\DEST_UPDATE.Connections[OleDbConnection]"
+                  connectionManagerID="{A249356E-F663-4B34-B62F-B3059FAD66ED}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[bayer.cs.vsb.cz_sqldb.MOY001]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].Columns[_HASH1252]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="_HASH1252"
+                      externalMetadataColumnId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[_HASH1252]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp2"
+                      name="Param_1"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="64"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="dbTimeStamp2"
+                      name="Param_5"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="36"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="dbTimeStamp2"
+                      name="Param_7"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="dbTimeStamp2"
+                      name="Param_8"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i4"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="dbTimeStamp2"
+                      name="Param_11"
+                      scale="7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">1073741889</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      dataType="i4"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="i8"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\DEST_UPDATE.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1199,6 +2007,120 @@
                       </properties>
                     </outputColumn>
                   </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\MLT_DELETE"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT_DELETE">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\MLT_DELETE.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\MLT_DELETE.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DF_AppToODS\MLT_DELETE.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_DELETE.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DF_AppToODS\MLT_DELETE.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_DELETE.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DF_AppToODS\MLT_DELETE.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\MLT_INSERT"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT_INSERT">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\MLT_INSERT.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\MLT_INSERT.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DF_AppToODS\MLT_INSERT.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_INSERT.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DF_AppToODS\MLT_INSERT.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_INSERT.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DF_AppToODS\MLT_INSERT.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_AppToODS\MLT_UPDATE"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="MLT_UPDATE">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\MLT_UPDATE.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\MLT_UPDATE.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\DF_AppToODS\MLT_UPDATE.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_UPDATE.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\DF_AppToODS\MLT_UPDATE.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_AppToODS\MLT_UPDATE.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\DF_AppToODS\MLT_UPDATE.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -2114,7 +3036,7 @@ public class Variables
     <msb:CodeName>SC_73390b4073494adf88122a8a1bac33a5</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_73390b4073494adf88122a8a1bac33a5</msb:DisplayName>
-    <msb:ProjectId>{95A9BFE0-356C-4F89-A173-B45646B3249E}</msb:ProjectId>
+    <msb:ProjectId>{DE4D8156-E896-402B-8D79-849F4E777045}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_73390b4073494adf88122a8a1bac33a5.csproj" />
@@ -2261,7 +3183,7 @@ namespace SC_73390b4073494adf88122a8a1bac33a5.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGgosWkAAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAqjwA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPFgumkAAAAAAAAAAOAAIiALATAAAB4AAAAIAAAAAAAAqjwA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFg8AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2381,7 +3303,7 @@ ACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBsAHUA
 ZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1
 AHQAIAAwAABxUwBDAF8ANwAzADMAOQAwAGIANAAwADcAMwA0ADkANABhAGQAZgA4ADgAMQAyADIA
 YQA4AGEAMQBiAGEAYwAzADMAYQA1AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQBy
-AGMAZQBzAAAAAGegVWjgNGdFkqLj7M5TLjQABCABAQgDIAABBSABARERBCABAQ4FIAEBEWkYBwwd
+AGMAZQBzAAAAAPHVaqMN6nVKgnyCKUaUnzMABCABAQgDIAABBSABARERBCABAQ4FIAEBEWkYBwwd
 EjkOHRI5CBIkEjkOEj0dBR0FEkEIBgABEnUReQUgAB0SOQIGDgMgAA4EIAECDgMgAAIIFRKAhQIS
 OQIFIAIBHBgUEAECHgAVEoCNAR4AFRKAhQIeAAIECgESOQcAAgISORI5BCABHBwFAAIODg4DIAAI
 BSACDggIBAAAEj0FAAASgJUFIAEdBQ4GIAEdBR0FBCABDg4FIAESQQ4JIAMBElEdCBJVAwYSUQMG
@@ -3446,6 +4368,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[ElevationGain]"
                       name="ElevationGain"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[x]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[x]"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].Columns[x]"
+                      name="x"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3507,6 +4438,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[ElevationGain]"
                       dataType="i4"
                       name="ElevationGain" />
+                    <externalMetadataColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output].ExternalColumns[x]"
+                      dataType="i4"
+                      name="x" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3586,6 +4521,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ElevationGain]"
                       name="ElevationGain" />
                     <outputColumn
+                      refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[x]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[x]"
+                      name="x" />
+                    <outputColumn
                       refId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -3631,7 +4571,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable">User::DEST_SELECT_IDHASH</property>
+                  name="SqlCommandVariable">User::DEST_SELECT_IDHASH_FILTER</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3734,6 +4674,924 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\DF_AppToODS\UNION_DELTA"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="UNION_DELTA"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[DEST_ID]"
+                      cachedDataType="i8"
+                      cachedName="DEST_ID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[DEST_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="DEST_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1].Columns[OPERATION]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="OPERATION"
+                      lineageId="Package\DF_AppToODS\DER_OP_I.Outputs[Derived Column Output].Columns[OPERATION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[Id]"
+                      cachedDataType="i8"
+                      cachedName="Id"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[DEST_ID]"
+                      cachedDataType="i8"
+                      cachedName="DEST_ID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[DEST_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="DEST_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2].Columns[OPERATION]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="OPERATION"
+                      lineageId="Package\DF_AppToODS\DER_OP_U.Outputs[Derived Column Output].Columns[OPERATION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="CreatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[CreatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="UpdatedDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[UpdatedDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[StravaId]"
+                      cachedDataType="i8"
+                      cachedName="StravaId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[StravaId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[DateTimeStart]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="DateTimeStart"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DateTimeStart]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[ElapsedTime]"
+                      cachedDataType="i4"
+                      cachedName="ElapsedTime"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElapsedTime]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[Distance]"
+                      cachedDataType="i4"
+                      cachedName="Distance"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Distance]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[Type]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Type"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[LoadDate]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[YbaracupWebUserId]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="YbaracupWebUserId"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[YbaracupWebUserId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[DistanceDown]"
+                      cachedDataType="i4"
+                      cachedName="DistanceDown"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceDown]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[DistanceUp]"
+                      cachedDataType="i4"
+                      cachedName="DistanceUp"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DistanceUp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[ElevationGain]"
+                      cachedDataType="i4"
+                      cachedName="ElevationGain"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[ElevationGain]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[_LoadID]"
+                      cachedDataType="i4"
+                      cachedName="_LoadID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[_LoadDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="_LoadDate"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_LoadDate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[DEST_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="DEST_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[_HASH]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_HASH"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[_HASH]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[OPERATION]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="OPERATION"
+                      lineageId="Package\DF_AppToODS\DER_OP_D.Outputs[Derived Column Output].Columns[OPERATION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3].Columns[DEST_ID]"
+                      cachedDataType="i8"
+                      cachedName="DEST_ID"
+                      lineageId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output].Columns[DEST_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[StravaId]"
+                      name="StravaId" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DateTimeStart]"
+                      name="DateTimeStart" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElapsedTime]"
+                      name="ElapsedTime" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Distance]"
+                      name="Distance" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[LoadDate]"
+                      name="LoadDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[YbaracupWebUserId]"
+                      name="YbaracupWebUserId" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceDown]"
+                      name="DistanceDown" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DistanceUp]"
+                      name="DistanceUp" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[ElevationGain]"
+                      name="ElevationGain" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]"
+                      dataType="i4"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadID]"
+                      name="_LoadID" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_LoadDate]"
+                      name="_LoadDate" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_ID]"
+                      dataType="i8"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_ID]"
+                      name="DEST_ID" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[DEST_HASH]"
+                      name="DEST_HASH" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[_HASH]"
+                      name="_HASH" />
+                    <outputColumn
+                      refId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1].Columns[OPERATION]"
+                      name="OPERATION" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -3767,6 +5625,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               name="Merge Join Output"
               startId="Package\DF_AppToODS\Merge Join.Outputs[Merge Join Output]" />
             <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 1]"
+              endId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\DF_AppToODS\MLT_INSERT.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 12]"
+              endId="Package\DF_AppToODS\DEST_DELETE.Inputs[OLE DB Command Input]"
+              name="Multicast Output 1"
+              startId="Package\DF_AppToODS\MLT_DELETE.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 11]"
+              endId="Package\DF_AppToODS\DEST_UPDATE.Inputs[OLE DB Command Input]"
+              name="Multicast Output 1"
+              startId="Package\DF_AppToODS\MLT_UPDATE.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 21]"
+              endId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 3]"
+              name="Multicast Output 2"
+              startId="Package\DF_AppToODS\MLT_DELETE.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 2]"
+              endId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 2]"
+              name="Multicast Output 2"
+              startId="Package\DF_AppToODS\MLT_UPDATE.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Multicast Output 3]"
+              endId="Package\DF_AppToODS\UNION_DELTA.Inputs[Union All Input 1]"
+              name="Multicast Output 3"
+              startId="Package\DF_AppToODS\MLT_INSERT.Outputs[Multicast Output 3]" />
+            <path
               refId="Package\DF_AppToODS.Paths[NEW]"
               endId="Package\DF_AppToODS\DER_OP_I.Inputs[Derived Column Input]"
               name="NEW"
@@ -3777,20 +5665,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               name="NOCHANGE"
               startId="Package\DF_AppToODS\SPLIT_OPERATION.Outputs[NOCHANGE]" />
             <path
-              refId="Package\DF_AppToODS.Paths[OLE DB Source Output]"
-              endId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0]"
-              name="OLE DB Source Output"
-              startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
-            <path
               refId="Package\DF_AppToODS.Paths[OLE DB Source Output1]"
               endId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Right Input]"
               name="OLE DB Source Output"
               startId="Package\DF_AppToODS\SRC_DEST_HASH_ID.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\DF_AppToODS.Paths[OLE DB Source Output]"
+              endId="Package\DF_AppToODS\SCR_HASH.Inputs[Input 0]"
+              name="OLE DB Source Output"
+              startId="Package\DF_AppToODS\SRC_APP.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\DF_AppToODS.Paths[Output 0]"
               endId="Package\DF_AppToODS\DER_ETL.Inputs[Derived Column Input]"
               name="Output 0"
               startId="Package\DF_AppToODS\SCR_HASH.Outputs[Output 0]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Row Count Output 13]"
+              endId="Package\DF_AppToODS\MLT_DELETE.Inputs[Multicast Input 1]"
+              name="Row Count Output 1"
+              startId="Package\DF_AppToODS\RC_DELETE.Outputs[Row Count Output 1]" />
             <path
               refId="Package\DF_AppToODS.Paths[Row Count Output 1]"
               endId="Package\DF_AppToODS\Sort.Inputs[Sort Input]"
@@ -3798,14 +5691,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               startId="Package\DF_AppToODS\Row Count.Outputs[Row Count Output 1]" />
             <path
               refId="Package\DF_AppToODS.Paths[Row Count Output 11]"
-              endId="Package\DF_AppToODS\DEST_INSERTS.Inputs[OLE DB Destination Input]"
+              endId="Package\DF_AppToODS\MLT_INSERT.Inputs[Multicast Input 1]"
               name="Row Count Output 1"
               startId="Package\DF_AppToODS\RC_INSERT.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Row Count Output 12]"
+              endId="Package\DF_AppToODS\MLT_UPDATE.Inputs[Multicast Input 1]"
+              name="Row Count Output 1"
+              startId="Package\DF_AppToODS\RC_UPDATE.Outputs[Row Count Output 1]" />
             <path
               refId="Package\DF_AppToODS.Paths[Sort Output]"
               endId="Package\DF_AppToODS\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\DF_AppToODS\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DF_AppToODS.Paths[Union All Output 1]"
+              endId="Package\DF_AppToODS\DEST_DELTA.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\DF_AppToODS\UNION_DELTA.Outputs[Union All Output 1]" />
             <path
               refId="Package\DF_AppToODS.Paths[UPDATED]"
               endId="Package\DF_AppToODS\DER_OP_U.Inputs[Derived Column Input]"
@@ -3816,9 +5719,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\EZ_SET_LOAD_DATE"
+      DTS:CreationName="Microsoft.ExpressionTask"
+      DTS:Description="Expression Task"
+      DTS:DTSID="{E36AE503-3135-44D2-B5E5-F434687C3058}"
+      DTS:ExecutableType="Microsoft.ExpressionTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EZ_SET_LOAD_DATE"
+      DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExpressionTask
+          Expression="@[User::LOAD_DATE] =   GETDATE()" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\SQL_TRUNC_DEST"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{B980150F-06C7-4593-8D29-C52339AC46B4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3843,6 +5763,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\DF_AppToODS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{10346D0B-9CF7-45FF-B8A7-32F35DD0B044}"
+      DTS:From="Package\EZ_SET_LOAD_DATE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL_TRUNC_DEST" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3855,29 +5783,55 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\DF_AppToODS"
-          TopLeft="121.874994551763,114.947367158953" />
+          TopLeft="119.374994663522,270.2631549273" />
         <NodeLayout
           Size="178.666666666667,42.6666666666667"
           Id="Package\SQL_TRUNC_DEST"
-          TopLeft="113.749994914979,40.3684206093943" />
+          TopLeft="108.749995138496,154.631577249544" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="201.145828066704,83.035087276061">
+          TopLeft="197.395828234342,197.298243916211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.9122798828922"
+              EndConnector="0,72.9649110110896"
               Start="0,0"
-              End="0,24.4122798828922">
+              End="0,65.4649110110896">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.4122798828922" />
+                    End="0,65.4649110110896" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\EZ_SET_LOAD_DATE"
+          TopLeft="103.749995362014,32.8421049025581" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="198.249995250255,75.5087715692248">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.1228056803195"
+              Start="0,0"
+              End="0,71.6228056803195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.6228056803195" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3893,74 +5847,74 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
     design-time-name="Package\DF_AppToODS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\DER_OP_U"
-          TopLeft="324.083324448516,645.894729750309" />
+          TopLeft="415.489570362338,645.894729750309" />
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\DF_AppToODS\RC_DELETE"
-          TopLeft="502.333319251736,733.280701491449" />
+          TopLeft="593.739565165558,733.280701491449" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\DF_AppToODS\SRC_DEST_HASH_ID"
-          TopLeft="446.749981727451,16.0701765504459" />
+          TopLeft="538.156227641273,16.0701765504459" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SCR_HASH"
-          TopLeft="206.874990751967,95.2982462000099" />
+          TopLeft="298.281236665789,95.2982462000099" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\DF_AppToODS\DER_OP_I"
-          TopLeft="162.499998547137,645.82455833841" />
+          TopLeft="253.906244460959,645.82455833841" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\DF_AppToODS\Row Count"
-          TopLeft="213.749990444631,267.526312852088" />
+          TopLeft="305.156236358453,267.526312852088" />
         <NodeLayout
           Size="144,42.6666666666667"
           Id="Package\DF_AppToODS\RC_UPDATE"
-          TopLeft="324.37499131076,733.245612645276" />
+          TopLeft="415.781237224582,733.245612645276" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\DF_AppToODS\Merge Join"
-          TopLeft="329.874990975484,416.999997573464" />
+          TopLeft="421.281236889306,416.999997573464" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\DER_OP_D"
-          TopLeft="506.249983180315,645.929818596482" />
+          TopLeft="597.656229094137,645.929818596482" />
         <NodeLayout
           Size="98.6666666666667,42.6666666666667"
           Id="Package\DF_AppToODS\Sort"
-          TopLeft="229.083328695347,337.421050310218" />
+          TopLeft="320.489574609169,337.421050310218" />
         <NodeLayout
           Size="162.666666666667,42.6666666666667"
           Id="Package\DF_AppToODS\RC_NOCHANGE"
-          TopLeft="541.249981615693,496.75438478545" />
+          TopLeft="632.656227529515,496.75438478545" />
         <NodeLayout
           Size="129.333333333334,42.6666666666667"
           Id="Package\DF_AppToODS\SRC_APP"
-          TopLeft="214.374990416691,15.0526314136725" />
+          TopLeft="305.781236330513,15.0526314136725" />
         <NodeLayout
           Size="140,42.6666666666667"
           Id="Package\DF_AppToODS\RC_INSERT"
-          TopLeft="160.624998630956,731.842102761497" />
+          TopLeft="123.906250272412,718.157892385431" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\DF_AppToODS\DEST_INSERTS"
-          TopLeft="149.999993294478,818.438594019617" />
+          TopLeft="23.9062489313077,855.728067294397" />
         <NodeLayout
           Size="178.666666666667,42.6666666666667"
           Id="Package\DF_AppToODS\SPLIT_OPERATION"
-          TopLeft="312.499991841615,492.228067793977" />
+          TopLeft="403.906237755437,492.228067793977" />
         <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\DF_AppToODS\DER_ETL"
-          TopLeft="214.999990388751,181.438595304254" />
+          TopLeft="306.406236302573,181.438595304254" />
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[UPDATED]"
-          TopLeft="401.833325174948,534.894734460644">
+          TopLeft="493.23957108877,534.894734460644">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3996,7 +5950,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Sort Output]"
-          TopLeft="278.41666202868,380.087716976884">
+          TopLeft="369.822907942502,380.087716976884">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4029,30 +5983,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DF_AppToODS.Paths[Row Count Output 11]"
-          TopLeft="230.312495962717,774.508769428163">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.9298245914534"
-              Start="0,0"
-              End="0,36.4298245914534">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.4298245914534" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Row Count Output 1]"
-          TopLeft="279.083326236655,310.192979518754">
+          TopLeft="370.489572150477,310.192979518754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4074,7 +6006,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Output 0]"
-          TopLeft="277.270823903692,137.964912866677">
+          TopLeft="368.677069817514,137.964912866677">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4096,7 +6028,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[OLE DB Source Output1]"
-          TopLeft="540.749981727451,58.7368432171126">
+          TopLeft="632.156227641273,58.7368432171126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4130,7 +6062,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[OLE DB Source Output]"
-          TopLeft="277.291657250996,57.7192980803392">
+          TopLeft="368.697903164818,57.7192980803392">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4152,7 +6084,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[NOCHANGE]"
-          TopLeft="491.166658508281,515.824559623047">
+          TopLeft="582.572904422103,515.824559623047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4170,13 +6102,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-4.90628766504414,5,52.3958984375,9.5732421875"
+              BoundingBox="-4.90628766504415,5,52.3958984375,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[NEW]"
-          TopLeft="359.166658508281,534.894734460644">
+          TopLeft="450.572904422103,534.894734460644">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4206,13 +6138,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-76.5504784180722,43.0641552521748,22.434296875,9.2705078125"
+              BoundingBox="-76.550478418072,43.0641552521748,22.434296875,9.2705078125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Merge Join Output]"
-          TopLeft="398.854158075216,459.66666424013">
+          TopLeft="490.260403989038,459.66666424013">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4234,7 +6166,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Derived Column Output3]"
-          TopLeft="574.291651216025,688.596485263148">
+          TopLeft="665.697897129848,688.596485263148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4256,7 +6188,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Derived Column Output2]"
-          TopLeft="394.562491212971,688.561396416976">
+          TopLeft="485.968737126794,688.561396416976">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4278,18 +6210,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Derived Column Output1]"
-          TopLeft="229.562498589046,688.491225005077">
+          TopLeft="319.906244460959,688.491225005077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.3508777564195"
+              EndConnector="-125.999994188547,29.6666673803544"
               Start="0,0"
-              End="0,35.8508777564195">
+              End="-125.999994188547,22.1666673803544">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.8508777564195" />
+                    End="0,10.8333336901772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8333336901772"
+                    Point2="0,14.8333336901772"
+                    Point3="-4,14.8333336901772" />
+                  <mssgle:LineSegment
+                    End="-121.999994188547,14.8333336901772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.999994188547,14.8333336901772"
+                    Point2="-125.999994188547,14.8333336901772"
+                    Point3="-125.999994188547,18.8333336901772" />
+                  <mssgle:LineSegment
+                    End="-125.999994188547,22.1666673803544" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4300,7 +6244,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[Derived Column Output]"
-          TopLeft="279.374990416691,224.10526197092">
+          TopLeft="370.781236330513,224.10526197092">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4322,7 +6266,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DF_AppToODS.Paths[DELETED]"
-          TopLeft="444.499991841615,534.894734460644">
+          TopLeft="535.906237755437,534.894734460644">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4356,6 +6300,314 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\DF_AppToODS\DEST_UPDATE"
+          TopLeft="301.270822339071,859.903504959338" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\DF_AppToODS\DEST_DELETE"
+          TopLeft="685.46871935716,865.934206486471" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\MLT_INSERT"
+          TopLeft="126.406244349201,806.122804681158" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 11]"
+          TopLeft="196.822913977473,760.824559052098">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2982456290598"
+              Start="0,0"
+              End="0,37.7982456290598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7982456290598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 1]"
+          TopLeft="126.406244349201,827.456138014491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.4999954178928,28.2719292799056"
+              Start="0,0"
+              End="-22.4999954178928,20.7719292799056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.4999954178928,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.4999954178928,0"
+                    Point2="-22.4999954178928,0"
+                    Point3="-22.4999954178928,4" />
+                  <mssgle:LineSegment
+                    End="-22.4999954178928,20.7719292799056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\UNION_DELTA"
+          TopLeft="394.374982370064,969.249995682192" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 3]"
+          TopLeft="199.739577682534,848.789471347824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="235.302071354197,120.460524334368"
+              Start="0,0"
+              End="235.302071354197,112.960524334368">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.9458803547272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.9458803547272"
+                    Point2="0,78.9458803547272"
+                    Point3="4,78.9458803547272" />
+                  <mssgle:LineSegment
+                    End="231.302071354197,78.9458803547272" />
+                  <mssgle:CubicBezierSegment
+                    Point1="231.302071354197,78.9458803547272"
+                    Point2="235.302071354197,78.9458803547272"
+                    Point3="235.302071354197,82.9458803547272" />
+                  <mssgle:LineSegment
+                    End="235.302071354197,112.960524334368" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\DF_AppToODS\MLT_UPDATE"
+          TopLeft="411.562481601723,807.280700349549" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 12]"
+          TopLeft="487.338526079819,775.912279311943">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3684210376065"
+              Start="0,0"
+              End="0,23.8684210376065">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8684210376065" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 11]"
+          TopLeft="411.562481601723,828.614033682883">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.6249925959857,31.2894712764553"
+              Start="0,0"
+              End="-31.6249925959857,23.7894712764553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-27.6249925959857,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.6249925959857,0"
+                    Point2="-31.6249925959857,0"
+                    Point3="-31.6249925959857,4" />
+                  <mssgle:LineSegment
+                    End="-31.6249925959857,23.7894712764553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 2]"
+          TopLeft="486.895814935056,849.947367016216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.1874992316587,119.302628665977"
+              Start="0,0"
+              End="-15.1874992316587,111.802628665977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6513143329883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.6513143329883"
+                    Point2="0,59.6513143329883"
+                    Point3="-4,59.6513143329883" />
+                  <mssgle:LineSegment
+                    End="-11.1874992316587,59.6513143329883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.1874992316587,59.6513143329883"
+                    Point2="-15.1874992316587,59.6513143329883"
+                    Point3="-15.1874992316587,63.6513143329883" />
+                  <mssgle:LineSegment
+                    End="-15.1874992316587,111.802628665977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\DF_AppToODS\MLT_DELETE"
+          TopLeft="587.499973736704,798.925436558727" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Row Count Output 13]"
+          TopLeft="663.286436117798,775.947368158115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.9780684006113"
+              Start="0,0"
+              End="0,15.4780684006113">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4780684006113" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 12]"
+          TopLeft="684.833307070038,841.592103225393">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.6354122871226,24.3421032610777"
+              Start="0,0"
+              End="78.6354122871226,16.8421032610777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,5.89304731466258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,5.89304731466258"
+                    Point2="0,9.89304731466258"
+                    Point3="4,9.89304731466258" />
+                  <mssgle:LineSegment
+                    End="74.6354122871226,9.89304731466258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.6354122871226,9.89304731466258"
+                    Point2="78.6354122871226,9.89304731466258"
+                    Point3="78.6354122871226,13.8930473146626" />
+                  <mssgle:LineSegment
+                    End="78.6354122871226,16.8421032610777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Multicast Output 21]"
+          TopLeft="638.166640403371,841.592103225393">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.791658033307,127.657892456799"
+              Start="0,0"
+              End="-129.791658033307,120.157892456799">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.2032450053981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,68.2032450053981"
+                    Point2="0,72.2032450053981"
+                    Point3="-4,72.2032450053981" />
+                  <mssgle:LineSegment
+                    End="-125.791658033307,72.2032450053981" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.791658033307,72.2032450053981"
+                    Point2="-129.791658033307,72.2032450053981"
+                    Point3="-129.791658033307,76.2032450053981" />
+                  <mssgle:LineSegment
+                    End="-129.791658033307,120.157892456799" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\DF_AppToODS\DEST_DELTA"
+          TopLeft="397.656232223381,1042.89473132042" />
+        <EdgeLayout
+          Id="Package\DF_AppToODS.Paths[Union All Output 1]"
+          TopLeft="471.682273963389,1011.91666234886">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9780689715612"
+              Start="0,0"
+              End="0,23.4780689715612">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4780689715612" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4377,6 +6629,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF_AppToODS\DEST_INSERTS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_AppToODS\DEST_DELTA">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
