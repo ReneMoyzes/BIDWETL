@@ -1,0 +1,17 @@
+﻿ZamestnanecID;Jmeno;Prijmeni;Email;NadrizenyID;RegionID;Pozice
+1;Michal;Ředitel;reditel@firma.cz;;1;Ředitel
+2;Manažer_Ostrava;Vedoucí;manazer.ostrava@firma.cz;1;1;Manažer
+3;OZ_Ostrava_1;Prodejce;oz1.ostrava@firma.cz;2;1;Obchodní zástupce
+4;OZ_Ostrava_2;Prodejce;oz2.ostrava@firma.cz;2;1;Obchodní zástupce
+5;Manažer_Praha;Vedoucí;manazer.praha@firma.cz;1;2;Manažer
+6;OZ_Praha_1;Prodejce;oz1.praha@firma.cz;5;2;Obchodní zástupce
+7;OZ_Praha_2;Prodejce;oz2.praha@firma.cz;5;2;Obchodní zástupce
+8;Manažer_Brno;Vedoucí;manazer.brno@firma.cz;1;3;Manažer
+9;OZ_Brno_1;Prodejce;oz1.brno@firma.cz;8;3;Obchodní zástupce
+10;OZ_Brno_2;Prodejce;oz2.brno@firma.cz;8;3;Obchodní zástupce
+11;Manažer_Olomouc;Vedoucí;manazer.olomouc@firma.cz;1;4;Manažer
+12;OZ_Olomouc_1;Prodejce;oz1.olomouc@firma.cz;11;4;Obchodní zástupce
+13;OZ_Olomouc_2;Prodejce;oz2.olomouc@firma.cz;11;4;Obchodní zástupce
+14;Manažer_Liberec;Vedoucí;manazer.liberec@firma.cz;1;5;Manažer
+15;OZ_Liberec_1;Prodejce;oz1.liberec@firma.cz;14;5;Obchodní zástupce
+16;OZ_Liberec_2;Prodejce;oz2.liberec@firma.cz;14;5;Obchodní zástupce

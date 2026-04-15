@@ -1,0 +1,51 @@
+﻿ZakaznikID;Jmeno;Prijmeni;Email;Mesto;RegionID;Typ;Vek
+1;Jan;Kratochvíl;zakaznik01@example.cz;Ostrava;1;Firma;33
+2;Martin;Kratochvíl;zakaznik02@example.cz;Praha;2;Fyzická osoba;61
+3;Petr;Marek;zakaznik03@example.cz;Liberec;5;Firma;20
+4;Petr;Kučera;zakaznik04@example.cz;Ostrava;1;Fyzická osoba;50
+5;Jan;Veselý;zakaznik05@example.cz;Liberec;5;Fyzická osoba;63
+6;Jana;Kučera;zakaznik06@example.cz;Liberec;5;Firma;55
+7;Ondřej;Říha;zakaznik07@example.cz;Brno;3;Fyzická osoba;66
+8;Jiří;Horáček;zakaznik08@example.cz;Praha;2;Firma;35
+9;Tomáš;Šimánek;zakaznik09@example.cz;Praha;2;Firma;24
+10;Jana;Dvořák;zakaznik10@example.cz;Ostrava;1;Firma;72
+11;Monika;Pokorný;zakaznik11@example.cz;Brno;3;Fyzická osoba;64
+12;Kateřina;Dvořák;zakaznik12@example.cz;Olomouc;4;Firma;23
+13;Lukáš;Říha;zakaznik13@example.cz;Liberec;5;Firma;54
+14;Jiří;Dvořák;zakaznik14@example.cz;Praha;2;Fyzická osoba;60
+15;Ondřej;Pokorný;zakaznik15@example.cz;Praha;2;Fyzická osoba;72
+16;Michal;Dvořák;zakaznik16@example.cz;Praha;2;Firma;35
+17;Pavel;Říha;zakaznik17@example.cz;Olomouc;4;Firma;28
+18;Eva;Kučera;zakaznik18@example.cz;Brno;3;Firma;62
+19;Monika;Fiala;zakaznik19@example.cz;Ostrava;1;Fyzická osoba;52
+20;Martin;Procházka;zakaznik20@example.cz;Praha;2;Firma;35
+21;Tomáš;Fiala;zakaznik21@example.cz;Liberec;5;Firma;71
+22;Tomáš;Říha;zakaznik22@example.cz;Ostrava;1;Fyzická osoba;69
+23;Jana;Pokorný;zakaznik23@example.cz;Brno;3;Fyzická osoba;31
+24;Radek;Kratochvíl;zakaznik24@example.cz;Liberec;5;Firma;31
+25;Jana;Borůvka;zakaznik25@example.cz;Olomouc;4;Firma;27
+26;Martin;Kučera;zakaznik26@example.cz;Brno;3;Firma;65
+27;Jana;Borůvka;zakaznik27@example.cz;Liberec;5;Firma;41
+28;Martin;Veselý;zakaznik28@example.cz;Praha;2;Firma;23
+29;Michal;Dvořák;zakaznik29@example.cz;Ostrava;1;Fyzická osoba;58
+30;Ondřej;Fiala;zakaznik30@example.cz;Praha;2;Firma;56
+31;Jana;Horáček;zakaznik31@example.cz;Ostrava;1;Firma;51
+32;Kateřina;Říha;zakaznik32@example.cz;Brno;3;Fyzická osoba;61
+33;Pavel;Borůvka;zakaznik33@example.cz;Ostrava;1;Firma;67
+34;Petr;Pokorný;zakaznik34@example.cz;Brno;3;Firma;28
+35;Jan;Kratochvíl;zakaznik35@example.cz;Olomouc;4;Firma;50
+36;Kateřina;Borůvka;zakaznik36@example.cz;Praha;2;Fyzická osoba;73
+37;Michal;Fiala;zakaznik37@example.cz;Brno;3;Fyzická osoba;27
+38;Ondřej;Svoboda;zakaznik38@example.cz;Brno;3;Fyzická osoba;56
+39;Lenka;Novák;zakaznik39@example.cz;Brno;3;Fyzická osoba;41
+40;Tomáš;Novák;zakaznik40@example.cz;Brno;3;Fyzická osoba;74
+41;Petr;Dvořák;zakaznik41@example.cz;Liberec;5;Firma;70
+42;Ondřej;Veselý;zakaznik42@example.cz;Ostrava;1;Fyzická osoba;26
+43;Kateřina;Svoboda;zakaznik43@example.cz;Olomouc;4;Firma;51
+44;Jana;Kučera;zakaznik44@example.cz;Liberec;5;Fyzická osoba;63
+45;Jana;Fiala;zakaznik45@example.cz;Brno;3;Firma;46
+46;Lenka;Dvořák;zakaznik46@example.cz;Liberec;5;Fyzická osoba;32
+47;Eva;Novák;zakaznik47@example.cz;Ostrava;1;Fyzická osoba;55
+48;Jan;Dvořák;zakaznik48@example.cz;Praha;2;Fyzická osoba;32
+49;Radek;Novák;zakaznik49@example.cz;Ostrava;1;Firma;22
+50;Tomáš;Pokorný;zakaznik50@example.cz;Liberec;5;Firma;31

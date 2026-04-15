@@ -1,0 +1,16 @@
+﻿ProduktID;Název;Kategorie;Podkategorie;CenaCzk
+1;Notebook Pro 15;Elektronika;Notebooky;25900
+2;Notebook Air 13;Elektronika;Notebooky;18500
+3;Smartphone X12;Elektronika;Telefony;12900
+4;Smartphone Y8;Elektronika;Telefony;7990
+5;"Monitor 27"" 4K";Elektronika;Monitory;15200
+6;"Monitor 24"" FHD";Elektronika;Monitory;6800
+7;Tiskárna LaserJet;Příslušenství;Tiskárny;4500
+8;Tiskárna InkJet;Příslušenství;Tiskárny;1890
+9;Klávesnice MechPro;Příslušenství;Klávesnice;2200
+10;Myš ErgoPlus;Příslušenství;Myši;890
+11;Headset GamerX;Příslušenství;Audio;1450
+12;Webkamera HD;Příslušenství;Audio;750
+13;SSD 1TB;Komponenty;Úložiště;2800
+14;SSD 512GB;Komponenty;Úložiště;1600
+15;RAM 16GB DDR5;Komponenty;Paměť;1200
